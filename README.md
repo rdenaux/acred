@@ -29,10 +29,20 @@ TODO
 
 ![pipeline](doc/pipeline.png)
 
+## How well does it work?
+
+As good as any automated system as of August 2020 :mechanical_arm:, which is not that great :frowning_face:.
+
+As of August 2020, `acred` achieves state of the art performance on:
+* [Clef'18 CheckThat! Factuality](http://alt.qcri.org/clef2018-factcheck/index.php?id=factuality)
+* [FakeNewsNet](https://github.com/KaiDMML/FakeNewsNet) (the PolitiFact articles fragment)
+* [coinform250](https://github.com/co-inform/Datasets/blob/master/system_dataset_with5.csv)
+
+State-of-the-art performance sounds (and is) good, but you only need to play around with the system a short while before you'll see many incorrect labels and explanations which are clearly incorrect. This is still very much a research prototype and you should not rely solely on the output of `acred`. Having said that, the overall architecture seems sound and easily extensible and assuming (i) progress in the underlying NLP tasks (semantic similarity, stance and checkworthiness detection) and (ii) an up-to-date and high-quality database of fact-checked claims; we expect `acred` to be able to evolve into a production-ready library.
+
 # Further details
 
-See our paper:
+See our paper [Linked Credibility Reviews for Explainable Misinformation Detection]() to appear at the [International Semantic Web Conference 2020](https://iswc2020.semanticweb.org/).
 
- TODO
 
 
