@@ -27,7 +27,25 @@ TODO
 
 ## How does it work?
 
+Given some web-content `d` (this can be a sentence, tweet or webpage), `acred` will perform an analysis as depicted below:
 ![pipeline](doc/pipeline.png)
+
+Essentially, we:
+* decompose the item `d` into sub items. For example a tweet contains
+  individual sentences and references to webpages. Web pages, contain
+  sentences and are published on specific websites, etc. The goal here
+  is to arrive at a level (currently sentences and websites) for which
+  we can make a credibility assessment.
+* item linking: here we try to find similar items in our database,
+  while keeping track of the specific link. For example, we can
+  estimate the level of similarity and potential stance between 2
+  sentences.
+* lookup credibility reviews for the items in our database. These are
+  human-provided ratings from fact-checkers or journalists.
+* aggregate: here, we apply heuristics while taking into account the
+  item and decomposing links we found earlier to calculate the overall
+  credibility for item `d`.
+  
 
 ## How well does it work?
 
@@ -42,7 +60,7 @@ State-of-the-art performance sounds (and is) good, but you only need to play aro
 
 # Further details
 
-See our paper [Linked Credibility Reviews for Explainable Misinformation Detection]() to appear at the [International Semantic Web Conference 2020](https://iswc2020.semanticweb.org/).
+See our paper [Linked Credibility Reviews for Explainable Misinformation Detection](https://arxiv.org/abs/2008.12742) to appear at the [International Semantic Web Conference 2020](https://iswc2020.semanticweb.org/).
 
 
 
