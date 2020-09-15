@@ -1,0 +1,368 @@
+/*--------------------------------------------------------------
+##  Image Carousel
+--------------------------------------------------------------*/
+.sp-wpcp-wrapper {
+	margin-bottom: 0;
+}
+.wpcp-carousel-section.wpcp-standard {
+	overflow: hidden;
+	padding-right: 2px;
+	display: none;
+}
+.wpcp-carousel-section.wpcp-standard.slick-initialized {
+	display: block;
+	position: relative;
+}
+.wpcp-carousel-section .wpcp-single-item {
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: middle;
+	float: none;
+}
+.wpcp-all-captions li {
+	list-style: none;
+	margin: 0;
+}
+.wpcp-carousel-section ul,
+.wpcp-carousel-section p,
+.wpcp-image-carousel .wpcp-single-item .wpcp-all-captions h2 {
+	margin: 0;
+}
+
+.wpcp-carousel-section.wpcp-video-carousel .wpcp-single-item .wpcp-slide-image {
+	position: relative;
+}
+.wpcp-carousel-section.wpcp-content-carousel .wpcp-single-item{
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.wpcp-carousel-section .wpcp-single-item img {
+	margin: 0 auto;
+	max-width: 100%;
+	box-shadow: none;
+}
+.wpcp-carousel-section.wpcp-image-carousel .wpcp-single-item .wpcp-all-captions {
+	padding: 10px 20px 15px;
+}
+.wpcp-carousel-section .wpcp-single-item .wpcp-all-captions .wpcp-image-description{
+	margin: 6px 0 0;
+}
+.wpcp-carousel-section .wpcp-single-item .wpcp-slide-image a:focus{
+	outline: none;
+}
+.wpcp-carousel-section .slick-slide:focus {
+	outline: none;
+}
+.wpcp-carousel-section .slick-slide {
+	margin-right: 20px;    
+	float: none;
+	display: inline-block;
+    vertical-align: middle;
+}
+.wpcp-carousel-section .slick-list {
+	margin-right: -20px;
+}
+.wpcp-carousel-section a, .wpcp-carousel-section a:hover,
+.wpcp-carousel-section .wpcp-all-captions a {
+	text-decoration: none;
+}
+
+/*--------------------------------------------------------------
+## WP post Carousel
+--------------------------------------------------------------*/
+.wpcp-carousel-section:not(.wpcp-product-carousel) .wpcp-single-item {
+	border: 1px solid #e5e5e5;
+	background: #f9f9f9;
+}
+
+.wpcp-post-carousel .wpcp-single-item .wpcp-all-captions {
+	padding: 15px 20px 0;
+	overflow: hidden;
+}
+
+.wpcp-post-carousel .wpcp-single-item .wpcp-all-captions h2 {
+	font-size: 16px;
+	font-weight: 600;
+	margin: 0 0 10px;
+}
+
+.wpcp-single-item h2 a {
+	color: #444;
+	text-decoration: none;
+}
+
+.wpcp-post-carousel .wpcp-single-item .wpcp-all-captions .post-categories {
+	margin: 0 0 7px;
+	padding: 0;
+	display: block;
+}
+.wpcp-post-carousel .wpcp-all-captions p {
+	margin-bottom: 15px;
+}
+
+.wpcp_readmore {
+	border: 1px solid;
+	display: inline-block;
+	background: #22afba;
+	margin: 0 0 14px;
+	line-height: 32px;
+	padding: 5px 14px;
+	font-weight: 600;
+}
+
+.wpcp_readmore, .wpcp_readmore:focus, .wpcp_readmore:hover {
+	color: #fff;
+}
+.wpcp-single-item .wpcp-all-captions .wpcp-post-meta {
+	margin: 0 0 20px;
+	padding: 0;
+}
+.wpcp-post-carousel .wpcp-post-meta li {
+	display: inline-block;
+	margin-right: 5px;
+}
+
+.wpcp-post-carousel .wpcp-post-meta li:last-child {
+	margin-right: 0;
+}
+
+.wpcp-post-meta li, .wpcp-post-meta li a {
+	color: #999;
+}
+
+.wpcp-carousel-section.detail-on-right .wpcp-single-item .wpcp-slide-image,.wpcp-carousel-section.detail-on-right .wpcp-single-item .wpcp-all-captions {
+	float: left;
+	width: 50%;
+	box-sizing: border-box;
+}
+
+.wpcp-carousel-section.detail-with-overlay .wpcp-all-captions {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100%;
+}
+
+.wpcp-carousel-section.detail-with-overlay.overlay-lower .wpcp-all-captions {
+	top: auto;
+	display: block;
+	height: auto;
+}
+
+/*
+ Overlay visible on hover.
+*/
+.wpcp-carousel-section.detail-with-overlay.overlay-on-hover .wpcp-all-captions {
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0.3s linear, opacity 0.3s linear;
+}
+
+.wpcp-carousel-section.detail-with-overlay.overlay-on-hover .wpcp-single-item:hover .wpcp-all-captions {
+	visibility: visible;
+	opacity: 1;
+}
+
+.wpcp-carousel-section.detail-with-overlay .wpcp-single-item {
+	position: relative;
+}
+
+.wpcp-carousel-section .wpcp-single-item:focus {
+	outline: none;
+}
+/*--------------------------------------------------------------
+## Product Carousel
+--------------------------------------------------------------*/
+.wpcp-carousel-section.wpcp-product-carousel .wpcp-slide-image{
+	border: 1px solid #efefef;
+}
+.wpcp-product-carousel .wpcp-single-item .wpcp-all-captions {
+	padding: 15px 20px 0;
+	overflow: hidden;
+	text-align: center;
+}
+.wpcp-product-carousel .wpcp-single-item .wpcp-product-title {
+	margin: 0;
+	font-size: 16px;
+	line-height: 23px;
+	font-weight: 600;
+}
+.wpcp-product-price {
+	margin-top:5px;
+}
+.wpcp-carousel-section.wpcp-product-carousel .wpcp-cart-button {
+	margin-top: 12px;
+}
+.wpcp-carousel-section.wpcp-product-carousel .wpcp-cart-button a.button {
+	background: #ebebeb;
+	color: #545454;
+	border: 1px solid #d1d1d1;	
+	font-weight: 500;
+	padding: 0 20px;
+    line-height: 38px;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.wpcp-carousel-section.wpcp-product-carousel .wpcp-all-captions .wpcp-cart-button a.add_to_cart_button.added {
+	display: none;
+}
+
+.wpcp-carousel-section.wpcp-product-carousel .wpcp-all-captions .wpcp-cart-button .added_to_cart {
+	font-size: 100%;
+	margin: 0;
+	line-height: 38px;
+	cursor: pointer;
+	position: relative;
+	text-decoration: none;
+	overflow: visible;
+	padding: 0 20px;
+	font-weight: 600;
+	border-radius: 3px;
+	left: auto;
+	color: #515151;
+	background-color: #ebe9eb;
+	border: 0;
+	display: inline-block;
+	background-image: none;
+	box-shadow: none;
+	text-shadow: none;
+	border: 1px solid;
+}
+
+.wpcp-carousel-section.wpcp-product-carousel .wpcp-all-captions .wpcp-cart-button a.button:hover{
+	background: #3f3f3f;
+    border-color: #d1d1d1;
+    color: #fff;
+}
+
+.wpcp-carousel-section.wpcp-product-carousel .wpcp-all-captions .wpcp-cart-button .wc-forward::after {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 1;
+	vertical-align: -.125em;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-weight: 900;
+	line-height: inherit;
+	vertical-align: baseline;
+	content: "\f178";
+	margin-left: 0.5407911001em;
+}
+.wpcp-carousel-section .woocommerce-product-rating .star-rating {
+    margin: 4px auto;
+    float: none;
+}
+.wpcp-product-price span{
+	font-weight: 700;
+	font-size: 14px;
+}
+/*--------------------------------------------------------------
+## Carousel Navigation
+--------------------------------------------------------------*/
+.wpcp-carousel-section .slick-prev:before, .wpcp-carousel-section .slick-next:before, .wpcp-carousel-section .slick-prev:after, .wpcp-carousel-section .slick-next:after {
+	display: none;
+}
+
+.wpcp-carousel-section .slick-prev {
+	left: 0;
+}
+
+.wpcp-carousel-section .slick-next {
+	right: 0;
+}
+
+.wpcp-carousel-section .slick-prev, .wpcp-carousel-section .slick-next {
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	position: absolute;
+	z-index: 22;
+	left: auto;
+	top: auto;
+	font-size: 30px;
+	-webkit-transition: ease all 0.3s;
+	-moz-transition: ease all 0.3s;
+	-ms-transition: ease all 0.3s;
+	-o-transition: ease all 0.3s;
+	transition: ease all 0.3s;
+	margin-top: -15px;
+	cursor: pointer;
+}
+
+.wpcp-carousel-section.nav-vertical-center {
+	padding: 0 25px;
+}
+.wpcp-carousel-section .slick-prev i, .wpcp-carousel-section .slick-next i, .wpcp-carousel-section .slick-prev, .wpcp-carousel-section .slick-next {
+	line-height: 28px;
+	font-family: fontawesome;
+	color: #000;
+}
+.wpcp-carousel-section.nav-vertical-center .slick-next, .wpcp-carousel-section.nav-vertical-center .slick-prev { 
+	top: 50%;
+}
+
+.wpcp-carousel-section.nav-vertical-center .slick-prev {
+	left: 0;
+}
+.wpcp-carousel-section.nav-vertical-center .slick-next,
+.wpcp-carousel-section.nav-vertical-center .slick-prev {
+	margin-top: -15px;
+}
+.wpcp-carousel-section.nav-vertical-center.slick-dotted .slick-next,
+.wpcp-carousel-section.nav-vertical-center.slick-dotted .slick-prev {
+	margin-top: -35px;
+}
+.wpcp-carousel-section.nav-vertical-center .slick-next {
+	right: 0;
+	text-align: right;
+}
+
+/*--------------------------------------------------------------
+## Carousel Pagination Dots
+--------------------------------------------------------------*/
+.wpcp-carousel-section ul.slick-dots {
+	list-style: none;
+	padding: 0 !important;
+	margin: 0;
+	text-align: center;
+	margin-top: 18px;
+	position: relative;
+}
+.wpcp-carousel-section ul.slick-dots li {
+	display: inline;
+	margin: 0;
+}
+.wpcp-carousel-section ul.slick-dots li button {
+	background-color: #cccccc;
+	border: 0 solid;
+	border-radius: 50%;
+	font-size: 0;
+	margin: 3px;
+	overflow: hidden;
+	padding: 0;
+	text-indent: -999px;
+	width: 12px;
+	height: 12px;
+	cursor: pointer;
+}
+.wpcp-carousel-section ul.slick-dots,
+.wpcp-carousel-section ul.slick-dots li,
+.wpcp-carousel-section ul.slick-dots li button {
+	line-height: 1 !important;
+}
+.wpcp-carousel-section ul.slick-dots li button:focus {
+	outline: none;
+}
+
+.wpcp-carousel-section ul.slick-dots li.slick-active button {
+	background-color: #666;
+}

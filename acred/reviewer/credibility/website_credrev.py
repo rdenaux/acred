@@ -84,9 +84,12 @@ def similarSent_as_WebSiteCredRev(simSent, cfg):
         return from_old_DomainCredibility(simSent['domain_credibility'], cfg)
     elif 'domain' in simSent:
         dom = simSent['domain']
-        if type(dom) is str:
+        if type(dom) is str and dom:
             dom = content.str_as_website(dom)
-        return review(dom, cfg)
+        if dom:
+            return review(dom, cfg)
+        else:
+            return None
     else:
         doc_url = simSent['doc_url']
         domain = content.str_as_website(content.domain_from_url(doc_url))

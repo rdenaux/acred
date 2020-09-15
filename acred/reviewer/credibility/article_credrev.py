@@ -13,7 +13,7 @@ from acred.rating import agg
 
 # TODO: maybe move these dependencies to a separate module
 #  which fetches a reference article
-from coinfoapy import cisearch  # TODO: io should be cross-cutting
+from acred import gcssearch 
 from semantic_analyzer import url_scraper
 from semantic_analyzer import analyzer as semalyzer
 from semantic_analyzer import tweetrelsents as tweetsents
@@ -620,7 +620,6 @@ def analyzed_doc(article, cfg):
     :param cfg: config options
     :returns: an analyzed doc. Crucially, it will contain a field `claims_content`.
       See `semantic_analyzer.analyzer.analyze_doc` for basic analysed doc.
-      See `coinfoapy.solr2coinforesponse.calculate_claims_content` 
     :rtype: dict
     """
     start = citimings.start()
@@ -628,30 +627,25 @@ def analyzed_doc(article, cfg):
         'relsents_in_colls',
         ['generic', 'pilot-se', 'pilot-gr', 'pilot-at',
          'factcheckers', 'fc-dev'])
-    preidx_doc = cisearch.find_preindexed_doc_by_url(
+    preidx_doc = gcssearch.find_preindexed_doc_by_url(
         article['url'], ci_colls)
     if preidx_doc is None:
         fetched = url_scraper.fetch_url(article['url'])
         resolved_url = fetched['resolved_url']
         if resolved_url != article['url']:
-            preidx_doc = cisearch.find_preindexed_doc_by_url(
+            preidx_doc = gcssearch.find_preindexed_doc_by_url(
                 resolved_url, ci_colls)
             # TODO: we may want to add the article['url'] as an alias
             #  for this, the DB schema needs to support this and we
             #  need to be able to submit new values for this list
             #  of url values. Define `same_as_ss` and update
-            #  cisearch to query and update this.
+            #  gcsearch to query and update this.
     preidx_t = citimings.timing('retrieve_preindexed', start)
     if preidx_doc is not None:
         preidx_doc['timings'] = preidx_t
         return preidx_doc
     else:
         adoc = semalyzer.analyze_doc(article, {**cfg, 'expand_claims': True})
-        if 'content' in adoc and adoc['content']:
-            ci_coll = cfg.get('target_url_collect_coll',
-                              cfg.get('default_url_collect_coll', None))
-            if ci_coll is not None:
-                ci_doc, aw_doc = cisearch.analyzed_doc_insert(adoc, ci_coll)
         analyze_subt = adoc.get('timings')
         adoc['timings'] = citimings.timing('analyzed_doc', start, [
             preidx_t, analyze_subt])

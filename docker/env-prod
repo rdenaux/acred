@@ -1,0 +1,65 @@
+# Production environment variables required for running acredapi
+# using docker-compose
+# Before executing docker-compose build && docker-compose up
+# you should have performed `source docker/start-env.sh`
+#  which sets an envvar ACRED_docker_env to point to this script
+#  the docker images then uses this file to configure the
+#  environment of the container(s).
+TERM=xterm-256color
+
+# Stdout logging for docker
+ACRED_LOG_STDOUT=1
+
+# Config File
+ACRED_config_file=/etc/acred/acred.ini
+ACRED_claimencoder_config_file=/etc/claimencoder/acred.ini
+ACRED_claimneuralindex_config_file=/etc/claimneuralindex/acred.ini
+ACRED_worthinesschecker_config_file=/etc/worthinesschecker/acred.ini
+
+# Next, override variables in the config file by using envvars with
+# the format is ACRED_<SECTION>_<var>=<new_value>
+ACRED_acredapi_app_name=acred
+# API Port
+ACRED_acredapi_port=9000
+
+ACRED_acredapi_sentences_extracted_db_csv=/opt/data/sentences-extractedFrom-Articles-40K.csv
+ACRED_acredapi_sentences_from_ClaimReviews_db_csv=/opt/data/claims-from-ClaimReviews-45K.csv
+ACRED_acredapi_claimReview_db_jsonl=/opt/data/claimReviews-pruned-45K.jsonl
+
+# production settings
+ACRED_acredapi_debug=0
+ACRED_acredapi_logfile=prod.log
+ACRED_acredapi_https=1
+
+ACRED_acred_apisecret=**GENERATE_RANDOM**
+
+ACRED_acredapi_neuralindex_url=http://nginx-api:9080/claimneuralindex
+# stance predictor currently served as part of neural index!!
+ACRED_acredapi_stance_pred_url=http://nginx-api:9080/claimneuralindex
+
+ACRED_claimneuralindex_semencoder_url=http://nginx-api:9080/claimencoder
+
+ACRED_claimneuralindex_claim_embeddings_path=/opt/model/claim-embeddings/claim_embs.tsv
+ACRED_claimencoder_semantic_encoder_dir=/opt/model/semantic_encoder/
+
+ACRED_stance_fnc1_model_path=/opt/model/stance/saved_fnc1_classifier_acc_0.92
+
+ACRED_worthinesschecker_check_worthiness_model_path=/opt/model/check_worthiness
+ACRED_worthinesschecker_clef_test_batch_size=64
+ACRED_worthinesschecker_clef_test_worth_samples=64
+
+
+ACRED_acred_acred_factchecker_urls_path=/opt/acred/factchecker_urls.txt
+ACRED_acred_acred_pred_claim_search_url=http://nginx-api:9080/acred/api/v1/claim/internal-search
+# ACRED_acred_worthiness_review=False # to disable worthiness review
+ACRED_acred_worthinesschecker_url=http://nginx-api:9080/worthinesschecker
+
+ACRED_acred_relsents_url=http://nginx-api:9080/acred/api/v1/search
+ACRED_acred_relsents_search_url=http://nginx-api:9080/acred/api/v1/search
+ACRED_acred_relsents_search_auth_user=username
+ACRED_acred_relsents_search_auth_pwrd=userpass
+
+# in case you have a machine translation service
+#ACRED_acred_translation_service_url=https://example.com/text/translate
+#ACRED_acred_translation_service_key=secret
+

@@ -1,0 +1,4 @@
+{
+    "acredapi_url": "https://localhost/acred",
+    "cred_threshold": 0.75
+}

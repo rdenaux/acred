@@ -1,0 +1,52 @@
+FROM python:3.6
+MAINTAINER Ronald Denaux <rdenaux@expertsystem.com>
+COPY docker/timezone /etc/timezone
+RUN dpkg-reconfigure -f noninteractive tzdata
+RUN apt-get update && apt-get install -y \
+   build-essential \
+   lsb-release
+
+# add a user
+RUN useradd -ms /bin/bash -u 50990 acred
+
+# config and log folders
+RUN mkdir -p /opt/claimencoder /etc/claimencoder /var/log/claimencoder
+ENV PATH="/opt/claimencoder:${PATH}"
+WORKDIR /opt/claimencoder
+
+# use pip to install all the requirements
+COPY requirements.txt ./
+COPY requirements-torch.txt ./
+COPY ./requirements/ ./requirements/
+
+RUN pip3 install --upgrade pip \
+&&  pip3 install -r requirements.txt \
+&&  pip3 install -r requirements-torch.txt -f https://download.pytorch.org/whl/torch_stable.html \
+&&  pip3 install transformers==2.1.1
+
+
+# copy config 
+COPY acred.ini /etc/claimencoder/
+
+# copy library
+COPY claimencoder/ ./claimencoder/
+COPY esiutils/ ./esiutils/
+
+# copy required resources
+# none
+
+# copy additional stuff 
+COPY ./wsgi/wsgi-claimencoder-api.ini ./
+COPY ./wsgi/wsgi-claimencoder-api.py ./
+COPY *.py ./
+
+# correct permissions
+RUN chown -R acred /opt/claimencoder
+RUN chgrp -R acred /opt/claimencoder
+
+# expose ports
+EXPOSE 8080
+EXPOSE 9001
+
+# start a shell?
+CMD ["bash"]

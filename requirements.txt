@@ -1,0 +1,15 @@
+pylint
+requests
+flask
+Flask-Caching
+uwsgi
+nltk
+langdetect
+rdflib
+scikit-learn
+python-dateutil
+pandas
+scipy
+# for url scraping in semantic_analyzer
+beautifulsoup4
+microdata

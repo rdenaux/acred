@@ -1,0 +1,24 @@
+server {
+    listen 9080;
+    server_name 0.0.0.0;
+
+    location / {
+          include uwsgi_params;
+	        uwsgi_pass acredapi:9001; 
+	    }
+
+    location /claimencoder {
+          include uwsgi_params;
+	        uwsgi_pass claimencoder:9001;
+    }
+
+    location /claimneuralindex {
+          include uwsgi_params;
+	        uwsgi_pass claimneuralindex:9001;
+    }
+
+    location /worthinesschecker {
+          include uwsgi_params;
+	        uwsgi_pass worthinesschecker:9001;
+    }
+}

@@ -122,14 +122,20 @@ def aggregate_subReviews(db_Sentence, claimReview, webSiteCred, cfg):
     nClaimReview = crn.normalise(claimReview, cfg)
     if nClaimReview is None:
         nClaimReview = {}
-    
-    nWebSiteRating = websiteCredRev_as_qclaimCredRating(webSiteCred, cfg)
 
-    assert type(nWebSiteRating['confidence']) == float
+    nWebSiteRating = None
+    if webSiteCred:
+        nWebSiteRating = websiteCredRev_as_qclaimCredRating(webSiteCred, cfg)
+        assert type(nWebSiteRating['confidence']) == float
+        
     assert type(dictu.get_in(nClaimReview, ['reviewRating', 'confidence'], 0.0)) == float
     subRatings = [nWebSiteRating, nClaimReview.get('reviewRating', None)]
     subRatings = [r for r in subRatings if r is not None]
-    sel_rating = agg.select_most_confident_rating(subRatings)
+    sel_rating = agg.select_most_confident_rating(subRatings) or {
+        'ratingValue': 0.0,
+        'confidence': 0.0,
+        'ratingExplanation': 'No website or claimReview associated with this sentence'
+    }
 
     isBasedOn = [webSiteCred, nClaimReview]
     isBasedOn = [ibo for ibo in isBasedOn
@@ -218,7 +224,6 @@ def similarSent_as_DB_Sentence(simSent, cfg):
     inDoc = {
         '@type': 'Article',
         'url': simSent['doc_url'],
-        'coinform_collection': simSent['coinform_collection'],
         'publisher': simSent['domain'],
         'inLanguage': simSent['lang_orig'],
         'datePublished': simSent['published_date']
@@ -241,8 +246,6 @@ def enhance_relsent(relsent, cfg):
     :returns: a normalised `SimilarSent`
     :rtype: `SimilarSent` dict
     """
-    relsent['coinform_collection'] = relsent.get(
-        'coinform_collection', 'unknown')
     return enhance_claimreviewed_relsent(relsent, cfg)
 
 

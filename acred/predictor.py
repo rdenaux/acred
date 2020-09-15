@@ -12,7 +12,6 @@ import random
 from esiutils import isodate
 from esiutils import citimings, bot_describer, dictu, hashu
 import re
-from acred import tweetstoreclient
 from acred.reviewer.credibility import tweet_credrev
 from acred.reviewer.credibility import article_credrev, website_credrev, aggqsent_credrev
 from acred import content, itnorm
@@ -81,14 +80,9 @@ def ensure_content(docs):
     if content.is_tweet_doc(doc):
         # we got a doc without `content`, but with at least `tweet_id`
         # we need to retrieve the twitter information somehow...
-        # option 1: use co-inform tweet-store api to retrieve cached tweet info
-        fromstore = tweetstoreclient.tweet(doc['tweet_id'])
-        if fromstore is not None:
-            return {**doc, **fromstore}
-        else:
-            # option 2: use Twitter API
-            raise NotImplemented(
-                "Not retrieving content from Twitter API yet, value required.")
+        # option 2: use Twitter API
+        raise NotImplemented(
+            "Not retrieving content from Twitter API yet, value required.")
     elif content.is_article_doc(doc):
         # articles do not require content as long as a url is provided
         # as we can fetch the content

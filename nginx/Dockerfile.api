@@ -1,0 +1,16 @@
+FROM nginx:1.11.7-alpine
+MAINTAINER Ronald Denaux <rdenaux@expertsystem.com>
+ENV TZ CET
+RUN echo CET > /etc/TZ
+RUN apk add --update openssh tzdata
+RUN rm /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY acredapi-nginx /etc/nginx/conf.d/acredapi-nginx.conf
+COPY acredapi-internal-nginx /etc/nginx/conf.d/acredapi-internal-nginx.conf
+
+RUN mkdir /var/www/
+COPY static-www/index.html /var/www/
+COPY static-www/index_files /var/www/index_files
+
+COPY acredapi.crt /
+COPY acredapi.key /

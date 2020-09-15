@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en-US" class="js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>acred | Sample implementation of Linked Credibility Reviews</title>
+<!--
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+-->
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+ </style>
+ 
+ <link rel="stylesheet" id="wp-block-library-css" href="./index_files/style.min.css" type="text/css" media="all">
+ <link rel="stylesheet" id="cookie-notice-front-css" href="./index_files/front.min.css" type="text/css" media="all">
+ <link rel="stylesheet" id="wpcf-slick-css" href="./index_files/slick.css" type="text/css" media="all">
+ <!--
+<link rel="stylesheet" id="wp-carousel-free-fontawesome-css" href="./index_files/font-awesome.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-carousel-free-css" href="./index_files/wp-carousel-free-public.css" type="text/css" media="all">
+<link rel="stylesheet" id="et_monarch-css-css" href="./index_files/style.css" type="text/css" media="all">
+    -->
+ <link rel="stylesheet" id="et-gf-open-sans-css" href="./index_files/css" type="text/css" media="all">
+ <link rel="stylesheet" id="divi-style-css" href="./index_files/style(1).css" type="text/css" media="all">
+ <link rel="stylesheet" id="et-builder-googlefonts-cached-css" href="./index_files/css(1)" type="text/css" media="all">
+ <link rel="stylesheet" id="recent-posts-widget-with-thumbnails-public-style-css" href="./index_files/public.css" type="text/css" media="all">
+ <link rel="stylesheet" id="dashicons-css" href="./index_files/dashicons.min.css" type="text/css" media="all">
+
+
+ <script type="text/javascript" src="./index_files/frontend.min.js.descarga"></script>
+ <!--
+ <script type="text/javascript" src="./index_files/jquery.js.descarga"></script>
+ <script type="text/javascript" src="./index_files/jquery-migrate.min.js.descarga"></script>
+ -->
+
+<!--
+<link rel="https://api.w.org/" href="https://coinform.eu/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://coinform.eu/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://coinform.eu/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.1.1">
+<link rel="canonical" href="https://coinform.eu/">
+<link rel="shortlink" href="https://coinform.eu/">
+<link rel="alternate" type="application/json+oembed" href="https://coinform.eu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcoinform.eu%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://coinform.eu/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcoinform.eu%2F&amp;format=xml">
+   -->
+
+ <style type="text/css" id="et-social-custom-css">
+				 
+ </style><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"><style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #693c5e; }
+ </style>
+ <link rel="icon" href="https://coinform.eu/wp-content/uploads/2018/11/CO_INFORM_SYMBOL_PURPLE_LI_TW-150x150.jpg" sizes="32x32">
+ <link rel="icon" href="https://coinform.eu/wp-content/uploads/2018/11/CO_INFORM_SYMBOL_PURPLE_LI_TW-300x300.jpg" sizes="192x192">
+ <link rel="apple-touch-icon-precomposed" href="https://coinform.eu/wp-content/uploads/2018/11/CO_INFORM_SYMBOL_PURPLE_LI_TW-300x300.jpg">
+ <meta name="msapplication-TileImage" content="https://coinform.eu/wp-content/uploads/2018/11/CO_INFORM_SYMBOL_PURPLE_LI_TW-300x300.jpg">
+
+ <link rel="stylesheet" id="et-core-unified-cached-inline-styles" href="./index_files/et-core-unified-15530970284871.min.css" >
+ <style>[data-columns]::before{visibility:hidden;position:absolute;font-size:1px;}</style>
+ <style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style>
+</head>
+<body data-rsssl="1" class="home page-template-default page page-id-2 custom-background et_divi_builder et_monarch et_pb_button_helper_class et_fullwidth_nav et_fixed_nav et_show_nav et_cover_background et_pb_gutter windows et_pb_gutters3 et_primary_nav_dropdown_animation_slide et_secondary_nav_dropdown_animation_fade et_pb_footer_columns4 et_header_style_left et_pb_pagebuilder_layout et_smooth_scroll et_full_width_page et_divi_theme et-db et_minified_js et_minified_css cookies-set cookies-accepted chrome" style="overflow-x: hidden;">
+	<div id="page-container" class="et-animated-content" style="padding-top: 81px; margin-top: -1px; overflow-y: hidden;">
+		<header id="main-header" data-height-onload="306" data-height-loaded="true" data-fixed-height-onload="0" class="" style="top: 0px;">
+			<div class="container clearfix et_menu_container">
+				<div class="logo_container">
+					<span class="logo_helper"></span>
+					<a href="https://coinform.eu/">
+						<img src="./index_files/00_CO_INFORM_LOGO_OK-59.png" alt="Co-inform" id="logo" data-height-percentage="104" data-actual-width="276" data-actual-height="72">
+					</a>
+				</div>
+				<div id="et-top-navigation" data-height="91" data-fixed-height="40" style="padding-left: 249px;">
+					<nav id="top-menu-nav">
+            <!--
+						<ul id="top-menu" class="nav"><li id="menu-item-4346" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4346"><a href="about.html">About</a>
+</li>
+            </ul>
+            -->
+          </nav>
+				</div> <!-- #et-top-navigation -->
+			</div> <!-- .container -->
+		</header> <!-- #main-header -->
+      
+		<div id="et-main-area">
+	    <div id="main-content">
+	      <article id="post-2" class="post-2 page type-page status-publish hentry">
+		      <div class="entry-content">
+			      <div id="et-boc" class="et-boc">
+			        <div class="et_builder_inner_content et_pb_gutters3">
+				        <div class="et_pb_section et_pb_section_0 et_pb_fullwidth_section et_section_regular" style="height: 600px;">
+					        <section class="et_pb_module et_pb_fullwidth_header et_pb_fullwidth_header_0 et_pb_section_parallax et_pb_header_with_image et_pb_bg_layout_dark et_pb_text_align_left">
+				            <span class="et_parallax_bg" style="background-image:url(./index_files/CO_INFORM_MD.jpg); height: 840.8px; transform: translate(0px, 199.4px);"></span>
+				            <div class="et_pb_fullwidth_header_container left">
+					            <div class="header-content-container center">
+					              <div class="header-content">
+						
+                          <!--
+						              <h3 class="et_pb_module_header">Content Collector</h3>
+                          -->
+						              <span class="et_pb_fullwidth_header_subhead">acred</span>
+						              <div class="et_pb_header_content_wrapper">
+                            <ul>
+                              <li>Bots for reviewing credibility of web content</li>
+                              <li>Review Tweets</li>
+                              <li>Review WebPages</li>
+                              <li>Review Sentences</li>
+                          </div>
+                          <!--
+						                   <a class="et_pb_button et_pb_more_button et_pb_button_one" href="https://coinform.eu/about/the-project/">Read more</a>
+                             -->
+					              </div>
+				              </div>
+					            <div class="header-image-container bottom">
+					              <div class="header-image">
+						              <img src="./index_files/CO_INFORM_LOGO_OK-24-1.png" alt="" title="Co-Inform Logo">
+					              </div>
+				              </div>
+				            </div>
+                    <!--
+				                 <div class="et_pb_fullwidth_header_overlay"></div>
+				                 <div class="et_pb_fullwidth_header_scroll"><a href="https://coinform.eu/#"><span class="scroll-down et-pb-icon">;</span></a></div>
+                       -->
+			            </section>
+							  </div> <!-- .et_pb_section -->
+                
+
+                <!-- .et_pb_section -->
+                <div class="et_pb_section et_pb_section_3 et_section_regular">
+				          <div class="et_pb_row et_pb_row_3 et_pb_row_fullwidth">
+				            <div class="et_pb_column et_pb_column_4_4 et_pb_column_5    et_pb_css_mix_blend_mode_passthrough et-last-child">
+				              <div class="et_pb_with_border et_pb_module et_pb_image et_pb_image_3 et_always_center_on_mobile et-animated" style="" data-animation-style="slide" data-animation-repeat="" data-animation-duration="1000ms" data-animation-delay="0ms" data-animation-intensity="50%" data-animation-starting-opacity="0%" data-animation-speed-curve="ease-in-out">
+				                <span class="et_pb_image_wrap "><img src="./index_files/CO_INFORM_LOGO_OK-60.png" alt=""></span>
+			                </div><div class="et_pb_module et_pb_text et_pb_text_7 et_pb_bg_layout_light  et_pb_text_align_center">
+				                <div class="et_pb_text_inner">
+					                <p>Our results</p>
+				                </div>
+			                </div><!-- .et_pb_text -->
+                      <div class="et_pb_module et_pb_text et_pb_text_8 et_pb_bg_layout_light  et_pb_text_align_center">
+				                <div class="et_pb_text_inner">
+					                <p>
+                            Don’t miss any of our project contributions – for all interested parties!</p>
+				                </div>
+			                </div> <!-- .et_pb_text -->
+                      <div class="et_pb_button_module_wrapper et_pb_button_0_wrapper et_pb_button_alignment_center et_pb_module ">
+				                <a class="et_pb_button et_pb_button_0 et_pb_bg_layout_light" href="https://coinform.eu/project-deliverables/">project deliverables</a>
+			                </div>
+			              </div> <!-- .et_pb_column -->
+			            </div> <!-- .et_pb_row -->
+			          </div> <!-- .et_pb_section -->
+
+                <div class="et_pb_section et_pb_section_4 et_pb_with_background et_pb_fullwidth_section et_section_regular">
+				          <section class="et_pb_with_border et_pb_module et_pb_fullwidth_header et_pb_fullwidth_header_1 et_pb_bg_layout_dark et_pb_text_align_center" style="" data-animation-style="fade" data-animation-repeat="" data-animation-duration="1000ms" data-animation-delay="0ms" data-animation-intensity="50%" data-animation-starting-opacity="0%" data-animation-speed-curve="ease-in-out">
+				            <div class="et_pb_fullwidth_header_container center">
+					            <div class="header-content-container center">
+					              <div class="header-content">
+						              <h1 class="et_pb_module_header">Responsible Consortium Member</h1>
+						              <div class="et_pb_header_content_wrapper">
+				                    <img src="./index_files/Expert-System-Iberia.jpg" alt="Expert-System-Iberia">
+			                    </div></div></div>
+                    </div>
+						
+				            <div class="et_pb_fullwidth_header_overlay"></div>
+				            <div class="et_pb_fullwidth_header_scroll"></div>
+			            </section>
+	              </div>
+			        </div> <!-- .et_pb_section -->
+        
+              <div class="et_pb_section et_pb_section_8 et_pb_with_background et_section_regular">
+					      <div class="et_pb_row et_pb_row_6 et_pb_row_fullwidth et_pb_row_1-2_1-4_1-4">
+				          <div class="et_pb_column et_pb_column_1_2 et_pb_column_8    et_pb_css_mix_blend_mode_passthrough">
+				            <div class="et_pb_module et_pb_text et_pb_text_11 et_pb_bg_layout_light  et_pb_text_align_left">
+				              <div class="et_pb_text_inner">
+					              <div style="display: inline;">Co-Inform <span style="font-weight: normal; vertical-align: middle; font-size: 14px;"><em>Copyright 2019<br></em><a href="https://coinform.eu/disclaimer/"><span style="color: #eaeaea;">Disclaimer</span></a></span></div>
+				              </div>
+			              </div> <!-- .et_pb_text -->
+			            </div> <!-- .et_pb_<!-- comment ---------------------------------->umn -->
+			          </div> <!-- .et_pb_row -->
+			        </div> <!-- .et_pb_section -->
+        
+              <div class="et_pb_section et_pb_section_10 et_pb_with_background et_section_regular section_has_divider et_pb_top_divider">
+				  <div class="et_pb_top_inside_divider"></div>
+					<div class="et_pb_row et_pb_row_7">
+				    <div class="et_pb_column et_pb_column_1_3 et_pb_column_11    et_pb_css_mix_blend_mode_passthrough">
+				      <div class="et_pb_module et_pb_image et_pb_image_4 et_always_center_on_mobile et-animated" style="" data-animation-style="slide" data-animation-repeat="" data-animation-duration="1000ms" data-animation-delay="0ms" data-animation-intensity="50%" data-animation-starting-opacity="0%" data-animation-speed-curve="ease-in-out">
+				        <span class="et_pb_image_wrap "><img src="./index_files/EC-H2020.png" alt=""></span>
+			        </div>
+			      </div> <!-- .et_pb_column -->
+            <div class="et_pb_column et_pb_column_2_3 et_pb_column_12    et_pb_css_mix_blend_mode_passthrough">
+				      <div class="et_pb_module et_pb_text et_pb_text_12 et_pb_bg_layout_light  et_pb_text_align_left" style="" data-animation-style="slide" data-animation-repeat="" data-animation-duration="1000ms" data-animation-delay="0ms" data-animation-intensity="50%" data-animation-starting-opacity="0%" data-animation-speed-curve="ease-in-out">
+				        <div class="et_pb_text_inner">
+					        <p>Co-inform project is co-funded by Horizon 2020 – the Framework Programme for Research and Innovation (2014-2020)<br>H2020-SC6-CO-CREATION-2016-2017 (CO-CREATION FOR GROWTH AND INCLUSION)<br>Type of action: RIA (Research and Innovation action)<br>Proposal number: 770302</p>
+				        </div>
+			        </div> <!-- .et_pb_text -->
+			      </div> <!-- .et_pb_column -->
+			    </div> <!-- .et_pb_row -->
+			        </div> <!-- .et_pb_section -->
+            </div>
+		      </div>
+      </div> <!-- .entry-content -->
+	      </article> <!-- .et_pb_post -->
+
+    </div> <!-- #main-content -->
+	  <span class="et_pb_scroll_top et-pb-icon et-hidden" style="display: inline;"></span>
+	  <footer id="main-footer">
+		  <div id="footer-bottom">
+			  <div class="container clearfix">
+				  <p id="footer-info"></p>					</div>	<!-- .container -->
+		  </div>
+	  </footer> <!-- #main-footer -->
+	</div> <!-- #et-main-area -->
+  
+
+	</div> <!-- #page-container -->
+
+</body></html>

@@ -10,4 +10,3 @@ Provides functionality to predict the credibility of claims and documents
 
 # circular imports and visible submodules
 import acred.predictor
-import acred.tweetstoreclient

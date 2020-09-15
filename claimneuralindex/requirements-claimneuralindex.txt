@@ -1,0 +1,8 @@
+flask
+flask_httpauth
+flask_limiter
+Flask-Caching
+scikit-learn
+pandas
+# for stance submodule
+transformers==2.1.1

@@ -1,0 +1,36 @@
+server {
+    listen 9000 ssl;
+        server_name 0.0.0.0;
+        ssl_certificate /acredapi.crt;
+	    ssl_certificate_key /acredapi.key;
+
+    location /claimencoder {
+          include uwsgi_params;
+	        uwsgi_pass claimencoder:9001;
+    }
+
+    location /claimneuralindex {
+          include uwsgi_params;
+	        uwsgi_pass claimneuralindex:9001;
+    }
+
+    location /worthinesschecker {
+          include uwsgi_params;
+	        uwsgi_pass worthinesschecker:9001;
+    }
+
+    location / {
+            include uwsgi_params;
+	        uwsgi_pass acredapi:9001;
+	    }
+
+}
+
+server {
+  listen 9090;
+  server_name 0.0.0.0;
+
+  location / {
+    root /var/www;
+  }
+}

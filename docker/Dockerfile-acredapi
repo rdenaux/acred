@@ -1,0 +1,52 @@
+FROM python:3.6
+MAINTAINER Ronald Denaux <rdenaux@expertsystem.com>
+COPY docker/timezone /etc/timezone
+RUN dpkg-reconfigure -f noninteractive tzdata
+RUN apt-get update && apt-get install -y \
+   build-essential \
+   lsb-release
+
+# add a user
+RUN useradd -ms /bin/bash -u 50990 acred
+
+# config and log folders
+RUN mkdir -p /opt/acred /etc/acred /var/log/acred
+ENV PATH="/opt/acred:${PATH}"
+WORKDIR /opt/acred
+
+# use pip to install all the requirements
+COPY requirements.txt ./
+COPY ./requirements/ ./requirements/
+RUN pip3 install --upgrade pip \
+&&  pip3 install -r requirements.txt
+
+
+RUN python -c "import nltk; nltk.download('punkt')"
+
+# copy config 
+COPY acred.ini /etc/acred/
+
+# copy library
+COPY acredapi/ ./acredapi/
+COPY acred/ ./acred/
+COPY semantic_analyzer/ ./semantic_analyzer/
+COPY esiutils/ ./esiutils/
+
+# copy required resources
+COPY factchecker_urls.txt ./
+
+# copy additional stuff 
+COPY ./wsgi/wsgi-acred-api.ini ./
+COPY ./wsgi/wsgi-acred-api.py ./
+COPY *.py ./
+
+# correct permissions
+RUN chown -R acred /opt/acred
+RUN chgrp -R acred /opt/acred
+
+# expose ports
+EXPOSE 8080
+EXPOSE 9001
+
+# start a shell?
+CMD ["bash"]

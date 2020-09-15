@@ -1,0 +1,83 @@
+version: '2'
+services:
+
+  nginx-api:
+    image: acred/acred-nginx
+    restart: always
+    command: /bin/sh -c "nginx -g 'daemon off;'"
+    build:
+      context: ./nginx/
+      dockerfile: Dockerfile.api
+    expose:
+      - "9080"
+      - "9000"
+      - "9090"
+    ports:
+      - ${ACRED_docker_api_port}:9000
+      - ${ACRED_docker_html_port}:9090
+    volumes:
+      - ${ACRED_docker_logdir}nginx:/var/log/nginx
+      - ./nginx/static-www:/var/www/
+    depends_on:
+      - acredapi
+      - claimencoder
+      - claimneuralindex
+      - worthinesschecker
+
+  acredapi:
+    image: acred/acredapi
+    env_file: ${ACRED_docker_env}
+    build:
+      context: .
+      dockerfile: docker/Dockerfile-acredapi
+    expose:
+      - "9001"
+    command: su -c '/usr/local/bin/uwsgi --ini /opt/acred/wsgi-acred-api.ini' acred
+    volumes:
+     - ${ACRED_docker_logdir}:/var/log/acred
+     - ${ACRED_docker_acred_model_dir}:/opt/model/
+     - ${ACRED_docker_acred_data_dir}:/opt/data/     
+    depends_on:
+     - claimneuralindex
+     - worthinesschecker
+
+  claimneuralindex:
+    image: acred/claimneuralindex
+    env_file: ${ACRED_docker_env}
+    build:
+      context: .
+      dockerfile: docker/Dockerfile-claimneuralindex
+    expose:
+      - "9001"
+    command: su -c '/usr/local/bin/uwsgi --ini /opt/claimneuralindex/wsgi-claimneuralindex-api.ini' acred
+    volumes:
+     - ${ACRED_docker_logdir}:/var/log/claimneuralindex
+     - ${ACRED_docker_acred_model_dir}:/opt/model/
+    depends_on:
+     - claimencoder
+
+  claimencoder:
+    image: acred/claimencoder
+    env_file: ${ACRED_docker_env}
+    build:
+      context: .
+      dockerfile: docker/Dockerfile-claimencoder
+    expose:
+      - "9001"
+    command: su -c '/usr/local/bin/uwsgi --ini /opt/claimencoder/wsgi-claimencoder-api.ini' acred
+    volumes:
+     - ${ACRED_docker_logdir}:/var/log/claimencoder
+     - ${ACRED_docker_acred_model_dir}:/opt/model/
+
+  worthinesschecker:
+    image: acred/worthinesschecker
+    env_file: ${ACRED_docker_env}
+    build:
+      context: .
+      dockerfile: docker/Dockerfile-worthinesschecker
+    expose:
+      - "9001"
+    command: su -c '/usr/local/bin/uwsgi --ini /opt/worthinesschecker/wsgi-worthinesschecker-api.ini' acred
+    volumes:
+      - ${ACRED_docker_logdir}:/var/log/worthinesschecker
+      - ${ACRED_docker_acred_model_dir}:/opt/model/
