@@ -1,0 +1,317 @@
+{
+    "similarity": 0.6789597091735332,
+    "sentence": "Prada removed a display from their store in the Soho neighborhood of New York City after a complaint regarding monkey-like figurines spread widely online.",
+    "published_date": null,
+    "lang_orig": null,
+    "domain_credibility": {
+        "timings": {
+            "total_ms": 0,
+            "sub_timings": [],
+            "phase": "misinfome_source_credibility",
+            "@type": "Timing",
+            "@context": "http://coinform.eu"
+        },
+        "itemReviewed": "www.snopes.com",
+        "credibility": {
+            "value": 0.9676923076923077,
+            "confidence": 0.8666666666666667
+        },
+        "assessments": [
+            {
+                "weights": {
+                    "origin_weight": 10,
+                    "final_weight": 10.0
+                },
+                "url": "https://api.newsguardtech.com/43BDEB50725ED59ABAFFDFB6C6788672ACF2C71FE59A72B0CA31BB2AD018CAD7095FBAE653BDC760C9787A31BF7D68D0C3612193710A1624",
+                "source": "snopes.com",
+                "original": {
+                    "topline": "The website of Snopes, one of the most widely cited U.S. fact-checking organizations, which has verified or debunked politicians’ claims, urban legends, memes, and hoaxes.",
+                    "shieldAuthorized": false,
+                    "score": 100.0,
+                    "rank": "T",
+                    "parent": null,
+                    "locale": "en-US",
+                    "language": "en",
+                    "labelToken": "43BDEB50725ED59ABAFFDFB6C6788672ACF2C71FE59A72B0CA31BB2AD018CAD7095FBAE653BDC760C9787A31BF7D68D0C3612193710A1624",
+                    "identifier": "snopes.com",
+                    "id": "79c00ff1-c592-4ec9-9e4f-cee194425f00",
+                    "groupName": null,
+                    "criteria": [
+                        {
+                            "title": "ownership",
+                            "order": 0,
+                            "body": "Yes"
+                        },
+                        {
+                            "title": "management",
+                            "order": 0,
+                            "body": "Yes"
+                        },
+                        {
+                            "title": "newsOpinion",
+                            "order": 0,
+                            "body": "Yes"
+                        },
+                        {
+                            "title": "falseContent",
+                            "order": 0,
+                            "body": "Yes"
+                        },
+                        {
+                            "title": "basicStandards",
+                            "order": 0,
+                            "body": "Yes"
+                        },
+                        {
+                            "title": "contentCreators",
+                            "order": 0,
+                            "body": "Yes"
+                        },
+                        {
+                            "title": "labelsAdvertising",
+                            "order": 0,
+                            "body": "Yes"
+                        },
+                        {
+                            "title": "deceptiveHeadlines",
+                            "order": 0,
+                            "body": "Yes"
+                        },
+                        {
+                            "title": "accountabilityPractices",
+                            "order": 0,
+                            "body": "Yes"
+                        }
+                    ],
+                    "country": "US",
+                    "authorized": false
+                },
+                "origin_id": "newsguard",
+                "origin": {
+                    "weight": 10.0,
+                    "origin_type": "realtime",
+                    "name": "NewsGuard",
+                    "logo": "https://logo.clearbit.com/newsguardtech.com",
+                    "id": "newsguard",
+                    "homepage": "https://www.newsguardtech.com/",
+                    "description": "NewsGuard uses journalism to fight false news, misinformation, and disinformation. Our trained analysts, who are experienced journalists, research online news brands to help readers and viewers know which ones are trying to do legitimate journalism--and which are not.",
+                    "assessments_count": 752
+                },
+                "itemReviewed": "snopes.com",
+                "granularity": "source",
+                "domain": "snopes.com",
+                "credibility": {
+                    "value": 1.0,
+                    "confidence": 1.0
+                }
+            },
+            {
+                "weights": {
+                    "origin_weight": 5,
+                    "final_weight": 3.0
+                },
+                "url": "https://www.mywot.com/en/scorecard/snopes.com",
+                "source": "snopes.com",
+                "original": {
+                    "target": "snopes.com",
+                    "reputation_components": {
+                        "4": {
+                            "type": "Child safety",
+                            "reputation_value": 90,
+                            "reputation_scale": "Excellent",
+                            "confidence": 54
+                        },
+                        "2": {
+                            "type": "Deprecated",
+                            "reputation_value": 93,
+                            "reputation_scale": "Excellent",
+                            "confidence": 60
+                        },
+                        "1": {
+                            "type": "Deprecated",
+                            "reputation_value": 93,
+                            "reputation_scale": "Excellent",
+                            "confidence": 60
+                        },
+                        "0": {
+                            "type": "Trustworthiness",
+                            "reputation_value": 93,
+                            "reputation_scale": "Excellent",
+                            "confidence": 60
+                        }
+                    },
+                    "detail_page": "https://www.mywot.com/en/scorecard/snopes.com",
+                    "categories": {
+                        "501": {
+                            "description": "Good site",
+                            "confidence": 100,
+                            "category_group": "Positive"
+                        },
+                        "303": {
+                            "description": "Opinions, religion, politics",
+                            "confidence": 20,
+                            "category_group": "Neutral"
+                        }
+                    },
+                    "blacklists": {
+                    }
+                },
+                "origin_id": "mywot",
+                "origin": {
+                    "weight": 5.0,
+                    "origin_type": "realtime",
+                    "name": "Web Of Trust",
+                    "logo": "https://www.mywot.com/images/logo.png",
+                    "id": "mywot",
+                    "homepage": "https://mywot.com/",
+                    "description": "Ever wondered how to check if a website is safe? Get the community to do the website security checks for you.",
+                    "assessments_count": 2312
+                },
+                "itemReviewed": "snopes.com",
+                "granularity": "source",
+                "domain": "snopes.com",
+                "credibility": {
+                    "value": 0.86,
+                    "confidence": 0.6
+                }
+            }
+        ],
+        "@type": "DomainCredibility",
+        "@context": "http://coinform.eu"
+    },
+    "domain": "www.snopes.com",
+    "doc_url": "https://www.snopes.com/fact-check/prada-store-blackface-imagery/",
+    "coinform_collection": "unknown",
+    "claimspot_score": -1.0,
+    "claimReview": {
+        "url": "https://www.snopes.com/fact-check/prada-store-blackface-imagery/",
+        "reviewRating": {
+            "ratingValue": 3,
+            "author": "http://data.gesis.org/claimskg/organization/claimskg",
+            "alternateName": "TRUE",
+            "@type": "schema:Rating"
+        },
+        "mentions": [
+            {
+                "isString": "Prada",
+                "endIndex": 33,
+                "beginIndex": 28,
+                "@type": "nif:String"
+            },
+            {
+                "isString": "the New York Times",
+                "endIndex": 597,
+                "beginIndex": 579,
+                "@type": "nif:String"
+            },
+            {
+                "isString": "blackface",
+                "endIndex": 3737,
+                "beginIndex": 3728,
+                "@type": "nif:String"
+            },
+            {
+                "isString": "Prada Group",
+                "endIndex": 3877,
+                "beginIndex": 3866,
+                "@type": "nif:String"
+            },
+            {
+                "isString": "Facebook",
+                "endIndex": 3468,
+                "beginIndex": 3460,
+                "@type": "nif:String"
+            },
+            {
+                "isString": "Sambo",
+                "endIndex": 1058,
+                "beginIndex": 1053,
+                "@type": "nif:String"
+            },
+            {
+                "isString": "civil rights movement",
+                "endIndex": 1119,
+                "beginIndex": 1098,
+                "@type": "nif:String"
+            },
+            {
+                "isString": "blackface",
+                "endIndex": 327,
+                "beginIndex": 318,
+                "@type": "nif:String"
+            },
+            {
+                "isString": "blackface",
+                "endIndex": 4084,
+                "beginIndex": 4075,
+                "@type": "nif:String"
+            },
+            {
+                "isString": "New York City",
+                "endIndex": 88,
+                "beginIndex": 75,
+                "@type": "nif:String"
+            },
+            {
+                "isString": "Wesleyan University",
+                "endIndex": 507,
+                "beginIndex": 488,
+                "@type": "nif:String"
+            },
+            {
+                "isString": "civil rights movement",
+                "endIndex": 664,
+                "beginIndex": 643,
+                "@type": "nif:String"
+            },
+            {
+                "isString": "Facebook",
+                "endIndex": 155,
+                "beginIndex": 147,
+                "@type": "nif:String"
+            },
+            {
+                "isString": "Sambo",
+                "endIndex": 701,
+                "beginIndex": 696,
+                "@type": "nif:String"
+            }
+        ],
+        "itemReviewed": {
+            "text": "Prada removed a display from their store in the Soho neighborhood of New York City after a complaint regarding monkey-like figurines spread widely online.",
+            "mentions": {
+                "isString": "New York City",
+                "endIndex": 82,
+                "beginIndex": 69,
+                "@type": "nif:String"
+            },
+            "citation": [
+                "http://gothamist.com/2018/12/14/soho_prada_blackface.php?",
+                "http://www.prada.com/en/a-future-archive/projects/pradamalia.html?cc%3DGB",
+                "https://www.nytimes.com/1987/01/04/books/an-icon-through-history.html?"
+            ],
+            "@type": "schema:CreativeWork",
+            "@id": "http://data.gesis.org/claimskg/creative_work/0643496f-2939-5ff5-8633-a71f5dc83491"
+        },
+        "inLanguage": {
+            "name": "English",
+            "alternateName": "en",
+            "@type": "schema:Language"
+        },
+        "headline": "Did a Prada Store Remove Products Resembling ‘Blackface Imagery’?",
+        "datePublished": "2018-12-14",
+        "claimReviewed": "Prada removed a display from their store in the Soho neighborhood of New York City after a complaint regarding monkey-like figurines spread widely online.",
+        "author": {
+            "url": "http://www.snopes.com",
+            "@type": "schema:Organization"
+        },
+        "@type": "schema:ClaimReview",
+        "@id": "http://data.gesis.org/claimskg/claim_review/c3a7d741-16c5-5773-9316-5dcdb7e380ed",
+        "@context": {
+            "schema": "http://schema.org",
+            "nif": "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#"
+        }
+    },
+    "@type": "SimilarSent",
+    "@context": "http://coinform.eu"
+}

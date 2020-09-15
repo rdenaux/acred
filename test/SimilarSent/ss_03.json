@@ -1,0 +1,184 @@
+{
+    "similarity": 0.6736812762270209,
+    "sentence": "But City 4 U warns against the new trend of the Palms Tattoos: Mouth is full of bacteria and the risk of infection correspondingly high!",
+    "published_date": "2019-03-18T16:17:56.145Z",
+    "lang_orig": "en",
+    "domain_credibility": {
+        "timings": {
+            "total_ms": 0,
+            "sub_timings": [],
+            "phase": "misinfome_source_credibility",
+            "@type": "Timing",
+            "@context": "http://coinform.eu"
+        },
+        "itemReviewed": "www.krone.at",
+        "credibility": {
+            "value": 0.2553846153846154,
+            "confidence": 0.7799999999999999
+        },
+        "assessments": [
+            {
+                "weights": {
+                    "origin_weight": 10,
+                    "final_weight": 10.0
+                },
+                "url": "https://api.newsguardtech.com/A1E3A56894E6BE97C040F1E3461CC013CBC6E63659D63EB1FD1868EAD3564CD3C5B8E5455674419428B4224A1C421DE67F002C77AFA65628",
+                "source": "krone.at",
+                "original": {
+                    "topline": "The website of the Eurosceptic Austrian daily newspaper Kronen Zeitung,&nbsp;which has published false and misleading content about immigration and the EU.",
+                    "shieldAuthorized": false,
+                    "score": 59.5,
+                    "rank": "N",
+                    "parent": null,
+                    "locale": "en",
+                    "language": "en",
+                    "labelToken": "A1E3A56894E6BE97C040F1E3461CC013CBC6E63659D63EB1FD1868EAD3564CD3C5B8E5455674419428B4224A1C421DE67F002C77AFA65628",
+                    "identifier": "krone.at",
+                    "id": "ee3765bb-ba11-4d72-9005-d38a2996031d",
+                    "groupName": null,
+                    "criteria": [
+                        {
+                            "title": "ownership",
+                            "order": 0,
+                            "body": "Yes"
+                        },
+                        {
+                            "title": "management",
+                            "order": 0,
+                            "body": "No"
+                        },
+                        {
+                            "title": "newsOpinion",
+                            "order": 0,
+                            "body": "Yes"
+                        },
+                        {
+                            "title": "falseContent",
+                            "order": 0,
+                            "body": "Yes"
+                        },
+                        {
+                            "title": "basicStandards",
+                            "order": 0,
+                            "body": "No"
+                        },
+                        {
+                            "title": "contentCreators",
+                            "order": 0,
+                            "body": "No"
+                        },
+                        {
+                            "title": "labelsAdvertising",
+                            "order": 0,
+                            "body": "Yes"
+                        },
+                        {
+                            "title": "deceptiveHeadlines",
+                            "order": 0,
+                            "body": "Yes"
+                        },
+                        {
+                            "title": "accountabilityPractices",
+                            "order": 0,
+                            "body": "No"
+                        }
+                    ],
+                    "country": "ALL",
+                    "authorized": false
+                },
+                "origin_id": "newsguard",
+                "origin": {
+                    "weight": 10.0,
+                    "origin_type": "realtime",
+                    "name": "NewsGuard",
+                    "logo": "https://logo.clearbit.com/newsguardtech.com",
+                    "id": "newsguard",
+                    "homepage": "https://www.newsguardtech.com/",
+                    "description": "NewsGuard uses journalism to fight false news, misinformation, and disinformation. Our trained analysts, who are experienced journalists, research online news brands to help readers and viewers know which ones are trying to do legitimate journalism--and which are not.",
+                    "assessments_count": 752
+                },
+                "itemReviewed": "krone.at",
+                "granularity": "source",
+                "domain": "krone.at",
+                "credibility": {
+                    "value": 0.19,
+                    "confidence": 1.0
+                }
+            },
+            {
+                "weights": {
+                    "origin_weight": 5,
+                    "final_weight": 1.7000000000000002
+                },
+                "url": "https://www.mywot.com/en/scorecard/krone.at",
+                "source": "krone.at",
+                "original": {
+                    "target": "krone.at",
+                    "reputation_components": {
+                        "4": {
+                            "type": "Child safety",
+                            "reputation_value": 67,
+                            "reputation_scale": "Good",
+                            "confidence": 26
+                        },
+                        "2": {
+                            "type": "Deprecated",
+                            "reputation_value": 82,
+                            "reputation_scale": "Excellent",
+                            "confidence": 34
+                        },
+                        "1": {
+                            "type": "Deprecated",
+                            "reputation_value": 82,
+                            "reputation_scale": "Excellent",
+                            "confidence": 34
+                        },
+                        "0": {
+                            "type": "Trustworthiness",
+                            "reputation_value": 82,
+                            "reputation_scale": "Excellent",
+                            "confidence": 34
+                        }
+                    },
+                    "detail_page": "https://www.mywot.com/en/scorecard/krone.at",
+                    "categories": {
+                        "501": {
+                            "description": "Good site",
+                            "confidence": 34,
+                            "category_group": "Positive"
+                        }
+                    },
+                    "blacklists": {
+                    }
+                },
+                "origin_id": "mywot",
+                "origin": {
+                    "weight": 5.0,
+                    "origin_type": "realtime",
+                    "name": "Web Of Trust",
+                    "logo": "https://www.mywot.com/images/logo.png",
+                    "id": "mywot",
+                    "homepage": "https://mywot.com/",
+                    "description": "Ever wondered how to check if a website is safe? Get the community to do the website security checks for you.",
+                    "assessments_count": 2312
+                },
+                "itemReviewed": "krone.at",
+                "granularity": "source",
+                "domain": "krone.at",
+                "credibility": {
+                    "value": 0.64,
+                    "confidence": 0.34
+                }
+            }
+        ],
+        "@type": "DomainCredibility",
+        "@context": "http://coinform.eu"
+    },
+    "domain": "www.krone.at",
+    "doc_url": "https://www.krone.at/1878470",
+    "coinform_collection": "pilot-at",
+    "claimspot_score": 0.3671819680863262,
+    "claimReview": null,
+    "@type": "SimilarSent",
+    "@context": "http://coinform.eu"
+}

@@ -1,0 +1,274 @@
+{
+  "@context": {
+    "nif": "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#",
+    "schema": "http://schema.org"
+  },
+  "@id": "http://data.gesis.org/claimskg/claim_review/e294c1ae-abdb-5284-a018-15e45b7e686a",
+  "@type": "schema:ClaimReview",
+  "author": {
+    "@type": "schema:Organization",
+    "url": "http://www.politifact.com"
+  },
+  "claimReviewed": "'African American unemployment is the lowest ever recorded in our country. The Hispanic unemployment rate dropped a full point in the last year and is close to the lowest in recorded history. Dems did nothing for you but get your vote!'",
+  "datePublished": "2018-01-08",
+  "headline": "How accurate is Donald Trump about black, Hispanic unemployment?",
+  "inLanguage": {
+    "@type": "schema:Language",
+    "alternateName": "en",
+    "name": "English"
+  },
+  "itemReviewed": {
+    "@id": "http://data.gesis.org/claimskg/creative_work/cda1d901-539d-500c-bfa9-d4ac5e8889a5",
+    "@type": "schema:CreativeWork",
+    "author": {
+      "@type": "Thing",
+      "name": "Donald Trump"
+    },
+    "citation": [
+      "https://t.co/LyNYIQ4D8s?",
+      "https://twitter.com/IvankaTrump/status/949334430157549570?ref_src%3Dtwsrc%5Etfw",
+      "https://twitter.com/WhiteHouseCEA?ref_src%3Dtwsrc%5Etfw",
+      "https://twitter.com/foxandfriends?ref_src%3Dtwsrc%5Etfw",
+      "https://twitter.com/hashtag/NeverForget?src%3Dhash%26ref_src%3Dtwsrc%5Etfw",
+      "https://twitter.com/realDonaldTrump/status/950371619247153154?ref_src%3Dtwsrc%5Etfw",
+      "https://twitter.com/realDonaldTrump/status/950371619247153154?s%3D03",
+      "https://www.politifact.com/truth-o-meter/statements/2018/jan/08/donald-trump/how-accurate-donald-trumps-about-black-hispa/?"
+    ],
+    "datePublished": "2018-01-08",
+    "keywords": "Economy,Jobs",
+    "mentions": [
+      {
+        "@type": "nif:String",
+        "beginIndex": 0,
+        "endIndex": 16,
+        "isString": "African American"
+      },
+      {
+        "@type": "nif:String",
+        "beginIndex": 77,
+        "endIndex": 85,
+        "isString": "Hispanic"
+      }
+    ],
+    "text": "'African American unemployment is the lowest ever recorded in our country. The Hispanic unemployment rate dropped a full point in the last year and is close to the lowest in recorded history. Dems did nothing for you but get your vote!'"
+  },
+  "mentions": [
+    {
+      "@type": "nif:String",
+      "beginIndex": 1910,
+      "endIndex": 1915,
+      "isString": "https"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 2309,
+      "endIndex": 2314,
+      "isString": "https"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 3479,
+      "endIndex": 3490,
+      "isString": "White House"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 662,
+      "endIndex": 678,
+      "isString": "African American"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 1918,
+      "endIndex": 1926,
+      "isString": "infogram"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 2619,
+      "endIndex": 2627,
+      "isString": "Hispanic"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 4403,
+      "endIndex": 4410,
+      "isString": "twitter"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 2842,
+      "endIndex": 2854,
+      "isString": "Barack Obama"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 531,
+      "endIndex": 536,
+      "isString": "https"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 1961,
+      "endIndex": 1969,
+      "isString": "Hispanic"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 739,
+      "endIndex": 747,
+      "isString": "Hispanic"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 1695,
+      "endIndex": 1701,
+      "isString": "2}/.test"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 1178,
+      "endIndex": 1192,
+      "isString": "Donald J. Trump"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 2533,
+      "endIndex": 2538,
+      "isString": "https"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 4095,
+      "endIndex": 4105,
+      "isString": "PolitiFact"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 2318,
+      "endIndex": 2324,
+      "isString": "2}/.test"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 206,
+      "endIndex": 218,
+      "isString": "Ivanka Trump"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 3034,
+      "endIndex": 3042,
+      "isString": "Hispanic"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 4219,
+      "endIndex": 4227,
+      "isString": "Hispanic"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 997,
+      "endIndex": 1005,
+      "isString": "Hispanic"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 2541,
+      "endIndex": 2549,
+      "isString": "infogram"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 1686,
+      "endIndex": 1691,
+      "isString": "https"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 4142,
+      "endIndex": 4158,
+      "isString": "African American"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 2407,
+      "endIndex": 2421,
+      "isString": "getElementById"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 3396,
+      "endIndex": 3410,
+      "isString": "business cycle"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 553,
+      "endIndex": 565,
+      "isString": "Ivanka Trump"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 537,
+      "endIndex": 541,
+      "isString": "t.co"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 4397,
+      "endIndex": 4402,
+      "isString": "https"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 185,
+      "endIndex": 196,
+      "isString": "White House"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 1784,
+      "endIndex": 1798,
+      "isString": "getElementById"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 920,
+      "endIndex": 936,
+      "isString": "African American"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 4374,
+      "endIndex": 4386,
+      "isString": "Donald Trump"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 3560,
+      "endIndex": 3576,
+      "isString": "African American"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 3637,
+      "endIndex": 3645,
+      "isString": "Hispanic"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 10,
+      "endIndex": 22,
+      "isString": "Donald Trump"
+    }
+  ],
+  "reviewRating": {
+    "@type": "schema:Rating",
+    "alternateName": "MIXTURE",
+    "author": "http://data.gesis.org/claimskg/organization/claimskg",
+    "ratingValue": 2
+  },
+  "url": "http://www.politifact.com/truth-o-meter/statements/2018/jan/08/donald-trump/how-accurate-donald-trumps-about-black-hispa/"
+}

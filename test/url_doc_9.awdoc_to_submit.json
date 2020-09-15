@@ -1,0 +1,97 @@
+{
+  "url": "https://steiermark.orf.at/stories/3034174/",
+  "title": "Passed by cars - 72-year-old pedestrian dead - steiermark.ORF.at",
+  "contentLength": 28139,
+  "publishedDate": "2020-02-11T08:22:00.000Z",
+  "content": "The South Styrian was on her way home on the eastern side of the Sch\u00f6nbergstra\u00dfe (L 602). As she wished to cross the heavily used road, she may have overlooked a 44-year-old car approaching: The dark-dressed 72-year-old was captured by the car and thrown to the side of the road. Initial aid measures by a so-called First Contact of the Red Cross and an emergency doctor could no longer help the woman: She died of serious injuries at the scene of the accident. red, steiermark.ORF.at",
+  "source": "BeautifulSoup-esilab",
+  "source_id": [
+    "steiermark.orf.at"
+  ],
+  "lang_orig": "de",
+  "lang": "en",
+  "content_language": "Die S\u00fcdsteirerin war auf dem \u00f6stlichen Begleitweg der Sch\u00f6nbergstra\u00dfe (L 602) zu Fu\u00df auf dem Heimweg. Als sie die stark befahrene Landesstra\u00dfe \u00fcberqueren wollte, d\u00fcrfte sie den herannahenden Pkw einer 44-J\u00e4hrigen \u00fcbersehen haben: Die dunkel gekleidete 72-J\u00e4hrige wurde von dem Auto erfasst und an den Fahrbahnrand geschleudert. Erste-Hilfe-Ma\u00dfnahmen eines sogenannten First Responders des Roten Kreuzes sowie eines Notarztes konnten der Frau nicht mehr helfen: Sie erlag noch an der Unfallstelle ihren schweren Verletzungen. red, steiermark.ORF.at",
+  "title_language": "Von Pkw erfasst \u2013 72-j\u00e4hrige Fu\u00dfg\u00e4ngerin tot - steiermark.ORF.at",
+  "organizations_ss": [
+    "Red Cross"
+  ],
+  "organizations_hl": [
+    "Red Cross|403-411"
+  ],
+  "taxonomy_intelligence_tax": [
+    "/INTELLIGENCE_TAX/14000000/14023000",
+    "/INTELLIGENCE_TAX/19000000/19001000/19001001",
+    "/INTELLIGENCE_TAX/19000000/19006000"
+  ],
+  "taxonomy_intelligence_tax_hl": [
+    "/INTELLIGENCE_TAX/14000000/14023000|0-64|346-549",
+    "/INTELLIGENCE_TAX/19000000/19001000/19001001|156-344",
+    "/INTELLIGENCE_TAX/19000000/19006000|156-344"
+  ],
+  "fact_intelligence_tax": [
+    "/INTELLIGENCE_TAX/14000000/Organizations/Red Cross"
+  ],
+  "fact_intelligence_tax_hl": [
+    "/INTELLIGENCE_TAX/14000000|346-549"
+  ],
+  "facts_domain_intelligence_tax": [
+    "/INTELLIGENCE_TAX/14000000"
+  ],
+  "main_elements": [
+    "help the woman",
+    "side of the Sch\u00f6nbergstra\u00dfe",
+    "initial aid",
+    "dark-dressed 72-year-old",
+    "emergency doctor",
+    "scene",
+    "way",
+    "Sch\u00f6nbergstra\u00dfe",
+    "First Contact",
+    "dark",
+    "emergency",
+    "dressed",
+    "venue",
+    "woman",
+    "injury",
+    "route",
+    "Red Cross",
+    "pedestrian",
+    "darkness",
+    "aid",
+    "doctor",
+    "road",
+    "car"
+  ],
+  "main_elements_hl": [
+    "help the woman|453-466",
+    "side of the Sch\u00f6nbergstra\u00dfe|119-145",
+    "initial aid|346-356",
+    "dark-dressed 72-year-old|261-284",
+    "emergency doctor|420-435",
+    "scene|505-509",
+    "way|95-97",
+    "Sch\u00f6nbergstra\u00dfe|131-145",
+    "First Contact|382-394",
+    "dark|261-264",
+    "emergency|420-428",
+    "dressed|266-272",
+    "venue|505-509",
+    "woman|462-466|469-471",
+    "injury|489-496",
+    "route|95-97",
+    "Red Cross|403-411",
+    "pedestrian|29-38",
+    "darkness|261-264",
+    "aid|354-356",
+    "doctor|430-435",
+    "road|196-199|340-343",
+    "car|10-13|240-242|306-308"
+  ],
+  "status": "done",
+  "submitted_time": "2020-02-11T09:14:43Z",
+  "id": "https://steiermark.orf.at/stories/3034174/",
+  "type_nutch": [
+    "text/html"
+  ],
+  "digest": "2a0ecc53605e84c40ba7acbff35f1f95"
+}

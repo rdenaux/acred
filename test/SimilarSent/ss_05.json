@@ -1,0 +1,15 @@
+{
+    "@context": "http://coinform.eu",
+    "@type": "SimilarSent",
+    "claimspot_score": -1,
+    "coinform_collection": "unknown",
+    "doc_content": "",
+    "doc_url": "https://www.factcheck.org/2019/11/trump-spins-court-ruling-on-trump-foundation/",
+    "domain": "www.factcheck.org",
+    "lang_orig": null,
+    "published_date": "2019-11-07T00:00:00Z",
+    "sent_stance": "unrelated",
+    "sent_stance_confidence": 0.9742276072502136,
+    "sentence": "Said of the findings in a case against his charitable foundation: \"All they found was incredibly effective philanthropy and some small technical violations, such as not keeping board minutes.\"",
+    "similarity": 0.7966040180216952
+}

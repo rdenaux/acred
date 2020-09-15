@@ -1,0 +1,220 @@
+{
+    "@context": "http://coinform.eu",
+    "@type": "SemanticClaimSimilarityResult",
+    "dateCreated": "2020-05-27T21:55:10.673392Z",
+    "q_claim": "Coronavirus kills people",
+    "results": [
+      {
+        "@context": "http://coinform.eu",
+        "@type": "SimilarSent",
+        "appearance": [
+          "https://www.krone.at/1880312"
+        ],
+        "claimReview": null,
+        "claimspot_score": 0.3372690350683948,
+        "coinform_collection": "pilot-at",
+        "doc_url": "https://www.krone.at/1880312",
+        "domain": "www.krone.at",
+        "lang_orig": "en",
+        "published_date": "2019-03-18T16:14:56.728Z",
+        "sent_stance": "agree",
+        "sent_stance_confidence": 0.9341689348220825,
+        "sentence": "Diarrhea, gut, blood and bone marrow cells are being destroyed, which can cause death after about two days.",
+        "similarity": 0.8116980201965451
+      },
+      {
+        "@context": "http://coinform.eu",
+        "@type": "SimilarSent",
+        "appearance": [
+          "https://www.zdf.de/serien/notruf-hafenkante/feind-und-helfer-100.html"
+        ],
+        "claimReview": null,
+        "claimspot_score": -1.0,
+        "coinform_collection": "pilot-at",
+        "doc_url": "https://www.zdf.de/serien/notruf-hafenkante/feind-und-helfer-100.html",
+        "domain": "www.zdf.de",
+        "lang_orig": "en",
+        "published_date": "2019-03-18T16:13:25.670Z",
+        "sent_stance": "unrelated",
+        "sent_stance_confidence": 0.9718939065933228,
+        "sentence": "When Hans and Franzi arrive in the shouting colony colony, the offender who cut himself into a leg has disappeared.",
+        "similarity": 0.7966222556517951
+      }
+    ],
+    "simReviewer": {
+      "@context": "http://coinform.eu",
+      "@type": "SemSentSimReviewer",
+      "additionalType": [
+        "SoftwareApplication",
+        "Bot"
+      ],
+      "applicationCategory": [
+        "NLP"
+      ],
+      "applicationSubCategory": [
+        "SemanticSimilarity"
+      ],
+      "applicationSuite": [
+        "Co-inform"
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Expert System Lab Madrid",
+        "url": "http://expertsystem.com"
+      },
+      "dateCreated": "2020-03-19T15:09:00Z",
+      "description": "Claim neural index that uses a semantic similarity measure based on a semantic encoder. It achieved 83% accuracy on STS-B.",
+      "executionEnvironment": {
+        "hostname": "FMERENDA-NB",
+        "python.version": "3.6.9"
+      },
+      "identifier": "1DPxGVvvVjS6tztvhSRfdyZ3t4Cm4TM7oZo4IrpnITc",
+      "isBasedOn": [
+        {
+          "@context": "http://coinform.eu",
+          "@type": "SentenceEncoder",
+          "additionalType": [
+            "SoftwareApplication",
+            "Bot"
+          ],
+          "applicationCategory": [
+            "NLP",
+            "SentenceEncoder"
+          ],
+          "applicationSuite": [
+            "Co-inform"
+          ],
+          "author": {
+            "@type": "Organization",
+            "name": "Expert System Lab Madrid",
+            "url": "http://expertsystem.com"
+          },
+          "dateCreated": "2019-10-17T10:40:00Z",
+          "description": "Encodes sentences in a way that, hopefully, places semantically similar sentences close to each other. It was trained on SNS-B and achieved 83% accuracy.",
+          "executionEnvironment": {},
+          "launchConfiguration": {
+            "class": "RoBERTa_Finetuned_Encoder",
+            "model_name_or_path": "models/coinform/semantic_encoder/",
+            "pooling_strategy": "pooled",
+            "powerfun_k": 8,
+            "powerfun_min_val": 0.85,
+            "seq_len": 64
+          },
+          "name": "RoBERTa_Finetuned_Encoder",
+          "softwareRequirements": [
+            "python",
+            "pytorch",
+            "transformers",
+            "RoBERTaTokenizer",
+            "RoBERTaModel"
+          ],
+          "softwareVersion": "0.1.1"
+        }
+      ],
+      "launchConfiguration": {
+        "vecSpace": {
+          "@context": "http://schema.org",
+          "@type": "Dataset",
+          "creator": {
+            "@type": "Organization",
+            "name": "Expert System Iberia Lab",
+            "url": "http://expertsystem.com"
+          },
+          "dateCreated": "2020-05-13T15:45:35.112726Z",
+          "dateModified": "2020-01-13T10:57:07.962000Z",
+          "description": "Dataset of 88443 sentence embeddings extracted from claim reviews and articles collected as part of the Co-inform project",
+          "encoding": {
+            "@type": "MediaObject",
+            "contentSize": "1301.59 MB",
+            "encodingFormat": "text/tab-separated-values"
+          },
+          "identifier": "e2525c22c80332df3775ca9e09b5500149664af30cb9bf35ec226a69948e072a",
+          "name": "Co-inform Sentence embeddings"
+        }
+      },
+      "name": "ESI Sentence Similarity Reviewer numpy",
+      "softwareRequirements": [
+        "python",
+        "numpy"
+      ],
+      "softwareVersion": "0.1.0-numpy"
+    },
+    "stanceReviewer": {
+      "@context": "http://coinform.eu",
+      "@type": "SentStanceReviewer",
+      "additionalType": [
+        "SoftwareApplication",
+        "Bot"
+      ],
+      "applicationCategory": [
+        "NLP"
+      ],
+      "applicationSubCategory": [
+        "Stance Detection"
+      ],
+      "applicationSuite": [
+        "Co-inform"
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Expert System Iberia Lab",
+        "url": "http://expertsystem.com"
+      },
+      "dateCreated": "2020-01-13T15:18:00Z",
+      "description": "Assesses the stance between two sentences (e.g. agree, disagree, discuss) it was trained and evaluated on FNC-1 achieving 92% accuracy.",
+      "executionEnvironment": {
+        "cuda": false,
+        "hostname": "FMERENDA-NB",
+        "python.version": "3.6.9"
+      },
+      "identifier": "lVVMq0mwsW0gBaYK9h-wCY_9VFHDcmd6bsN1uRHRqko",
+      "isBasedOn": [],
+      "launchConfiguration": {
+        "model": {
+          "batch_size": 64,
+          "class": "RoBERTa",
+          "finetuned_from_layer": 8,
+          "seq_len": 128,
+          "stance2i": {
+            "agree": 1,
+            "disagree": 2,
+            "discuss": 3,
+            "unrelated": 0
+          },
+          "train_val_result": {
+            "loss": 0.28,
+            "metrics": {
+              "acc": 0.923,
+              "f1_weighted": 0.9186,
+              "n": 25413
+            }
+          }
+        },
+        "model_config": {
+          "@type": "MediaObject",
+          "contentSize": "682 B",
+          "dateCreated": "2020-05-17T22:34:28.300978Z",
+          "dateModified": "2020-01-13T15:18:40Z",
+          "name": "config.json",
+          "sha256Digest": "0a6bdf3e86b77df920446d8be14946eb63a76f9a03bb7a1199967a87e94356e6"
+        },
+        "pytorch_model": {
+          "@type": "MediaObject",
+          "contentSize": "477.80 MB",
+          "dateCreated": "2020-05-17T22:29:47.277066Z",
+          "dateModified": "2020-01-13T15:18:40Z",
+          "name": "pytorch_model.bin",
+          "sha256Digest": "e704d40b6dc392c7a6bb5a45a27286210385a49731a996115654585d2a559963"
+        }
+      },
+      "name": "ESI Sentence Stance Reviewer",
+      "softwareRequirements": [
+        "python",
+        "pytorch",
+        "transformers",
+        "RoBERTaModel",
+        "RoBERTaTokenizer"
+      ],
+      "softwareVersion": "0.1.0"
+    }
+}

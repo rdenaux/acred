@@ -1,0 +1,202 @@
+{
+    "similarity": 0.6694539857619283,
+    "sentence": "A popular photograph online shows a tote bag bearing the message, 'The only purpose of this text is to terrify those afraid of Arabic.'",
+    "published_date": null,
+    "lang_orig": null,
+    "domain_credibility": {
+        "timings": {
+            "total_ms": 0,
+            "sub_timings": [],
+            "phase": "misinfome_source_credibility",
+            "@type": "Timing",
+            "@context": "http://coinform.eu"
+        },
+        "itemReviewed": "www.truthorfiction.com",
+        "credibility": {
+            "value": 0.7999999999999999,
+            "confidence": 0.44000000000000006
+        },
+        "assessments": [
+            {
+                "weights": {
+                    "origin_weight": 5,
+                    "final_weight": 2.2
+                },
+                "url": "https://www.mywot.com/en/scorecard/truthorfiction.com",
+                "source": "truthorfiction.com",
+                "original": {
+                    "target": "truthorfiction.com",
+                    "reputation_components": {
+                        "4": {
+                            "type": "Child safety",
+                            "reputation_value": 90,
+                            "reputation_scale": "Excellent",
+                            "confidence": 40
+                        },
+                        "2": {
+                            "type": "Deprecated",
+                            "reputation_value": 90,
+                            "reputation_scale": "Excellent",
+                            "confidence": 44
+                        },
+                        "1": {
+                            "type": "Deprecated",
+                            "reputation_value": 90,
+                            "reputation_scale": "Excellent",
+                            "confidence": 44
+                        },
+                        "0": {
+                            "type": "Trustworthiness",
+                            "reputation_value": 90,
+                            "reputation_scale": "Excellent",
+                            "confidence": 44
+                        }
+                    },
+                    "detail_page": "https://www.mywot.com/en/scorecard/truthorfiction.com",
+                    "categories": {
+                        "501": {
+                            "description": "Good site",
+                            "confidence": 44,
+                            "category_group": "Positive"
+                        }
+                    },
+                    "blacklists": {
+                    }
+                },
+                "origin_id": "mywot",
+                "origin": {
+                    "weight": 5.0,
+                    "origin_type": "realtime",
+                    "name": "Web Of Trust",
+                    "logo": "https://www.mywot.com/images/logo.png",
+                    "id": "mywot",
+                    "homepage": "https://mywot.com/",
+                    "description": "Ever wondered how to check if a website is safe? Get the community to do the website security checks for you.",
+                    "assessments_count": 2313
+                },
+                "itemReviewed": "truthorfiction.com",
+                "granularity": "source",
+                "domain": "truthorfiction.com",
+                "credibility": {
+                    "value": 0.8,
+                    "confidence": 0.44
+                }
+            }
+        ],
+        "@type": "DomainCredibility",
+        "@context": "http://coinform.eu"
+    },
+    "domain": "www.truthorfiction.com",
+    "doc_url": "https://www.truthorfiction.com/totebag-terrify-arabic/",
+    "coinform_collection": "unknown",
+    "claimspot_score": -1.0,
+    "claimReview": {
+        "url": "https://www.truthorfiction.com/totebag-terrify-arabic/",
+        "reviewRating": {
+            "ratingValue": -1,
+            "author": "http://data.gesis.org/claimskg/organization/claimskg",
+            "alternateName": "OTHER",
+            "@type": "schema:Rating"
+        },
+        "mentions": [
+            {
+                "isString": "Paper Scissors",
+                "endIndex": 1468,
+                "beginIndex": 1454,
+                "@type": "nif:String"
+            },
+            {
+                "isString": "Haitham",
+                "endIndex": 579,
+                "beginIndex": 572,
+                "@type": "nif:String"
+            },
+            {
+                "isString": "Rock Paper Scissors",
+                "endIndex": 1468,
+                "beginIndex": 1449,
+                "@type": "nif:String"
+            },
+            {
+                "isString": "twitter",
+                "endIndex": 770,
+                "beginIndex": 763,
+                "@type": "nif:String"
+            },
+            {
+                "isString": "Israel",
+                "endIndex": 1060,
+                "beginIndex": 1054,
+                "@type": "nif:String"
+            },
+            {
+                "isString": "jQuery",
+                "endIndex": 2277,
+                "beginIndex": 2271,
+                "@type": "nif:String"
+            },
+            {
+                "isString": "Tarek",
+                "endIndex": 791,
+                "beginIndex": 786,
+                "@type": "nif:String"
+            },
+            {
+                "isString": "Arabic",
+                "endIndex": 1148,
+                "beginIndex": 1142,
+                "@type": "nif:String"
+            }
+        ],
+        "itemReviewed": {
+            "text": "A popular photograph online shows a tote bag bearing the message, 'The only purpose of this text is to terrify those afraid of Arabic.'",
+            "mentions": {
+                "isString": "tote bag",
+                "endIndex": 44,
+                "beginIndex": 36,
+                "@type": "nif:String"
+            },
+            "citation": [
+                "https://api.whatsapp.com/send?text%3Dhttps%3A%2F%2Fwww.truthorfiction.com%2Ftotebag-terrify-arabic%2F",
+                "https://t.co/CwJVq6Oz4R?",
+                "https://tinyurl.com/y3955wkr?",
+                "https://twitter.com/Elmessidi/status/765723424375336960?",
+                "https://twitter.com/Elmessidi/status/765723424375336960?ref_src%3Dtwsrc%5Etfw",
+                "https://twitter.com/intent/tweet?text%3DDid+the+Text+on+this+Tote+Bag+Say+It+Was+There+to+%27Terrify+Those+Afraid+of+Arabic%27%3F%26url%3Dhttps%3A%2F%2Fwww.truthorfiction.com%2Ftotebag-terrify-arabic%2F%26via%3Derumor",
+                "https://twitter.com/intent/tweet?text%3DDid+the+Text+on+this+Tote+Bag+Say+It+Was+There+to+%27Terrify+Those+Afraid+of+Arabic%27%3F%26url%3Dhttps%3A%2F%2Fwww.truthorfiction.com%2Ftotebag-terrify-arabic%2F%26via%3Derumors",
+                "https://twitter.com/search?f%3Dtweets%26vertical%3Ddefault%26q%3Darabic%20bag%20text%26src%3Dtypd",
+                "https://www.aljazeera.com/indepth/features/2016/08/tote-bag-designers-idea-reality-arabs-160818162129045.html?",
+                "https://www.ezoic.com/what-is-ezoic/?",
+                "https://www.facebook.com/share.php?u%3Dhttps%3A%2F%2Fwww.truthorfiction.com%2Ftotebag-terrify-arabic%2F",
+                "https://www.instagram.com/p/BYF5SkfnelG/?",
+                "https://www.instagram.com/p/BdNfIP4Ht_f/?",
+                "https://www.linkedin.com/cws/share?url%3Dhttps%3A%2F%2Fwww.truthorfiction.com%2Ftotebag-terrify-arabic%2F",
+                "https://www.reddit.com/submit?url%3Dhttps%3A%2F%2Fwww.truthorfiction.com%2Ftotebag-terrify-arabic%2F",
+                "https://www.truthorfiction.com/author/art/?",
+                "https://www.truthorfiction.com/category/fact-checks/viral-content/?"
+            ],
+            "@type": "schema:CreativeWork",
+            "@id": "http://data.gesis.org/claimskg/creative_work/ae61b9ae-2bee-5fca-aeff-3c48004db393"
+        },
+        "inLanguage": {
+            "name": "English",
+            "alternateName": "en",
+            "@type": "schema:Language"
+        },
+        "headline": "Did the Text on this Tote Bag Say It Was There to ‘Terrify Those...",
+        "datePublished": "2019-08-23",
+        "claimReviewed": "A popular photograph online shows a tote bag bearing the message, 'The only purpose of this text is to terrify those afraid of Arabic.'",
+        "author": {
+            "url": "https://www.truthorfiction.com",
+            "@type": "schema:Organization"
+        },
+        "@type": "schema:ClaimReview",
+        "@id": "http://data.gesis.org/claimskg/claim_review/38ffb76a-8d79-5059-9ffc-70c6f01736b0",
+        "@context": {
+            "schema": "http://schema.org",
+            "nif": "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#"
+        }
+    },
+    "@type": "SimilarSent",
+    "@context": "http://coinform.eu"
+}

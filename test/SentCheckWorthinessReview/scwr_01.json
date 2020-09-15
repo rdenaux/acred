@@ -1,0 +1,131 @@
+{
+    "@context": "http://coinform.eu",
+    "@type": "SentCheckWorthinessReview",
+    "additionalType": [
+      "CheckWorthinessReview",
+      "Review"
+    ],
+    "reviewAspect": "checkworthiness",
+    "itemReviewed": {
+      "@context": "http://coinform.eu",
+      "@type": "Sentence",
+      "identifier": "lX6qO0UToshl9783rSaBAg",
+      "text": "Coronavirus kills people",
+      "additionalTypes": [
+        "CreativeWork"
+      ],
+      "description": "A single sentence, possibly appearing in some larger document",
+      "appearance": []
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "reviewAspect": "checkworthiness",
+      "ratingValue": "worthy",
+      "confidence": 0.9947441816329956,
+      "ratingExplanation": "Sentence **Coronavirus kills people** seems like a factual sentence worth checking."
+    },
+    "dateCreated": "2020-05-27T21:54:57.231729Z",
+    "author": {
+      "@context": "http://coinform.eu",
+      "@type": "SentCheckWorthinessReviewer",
+      "additionalType": [
+        "SoftwareApplication",
+        "Bot"
+      ],
+      "applicationCategory": [
+        "NLP"
+      ],
+      "applicationSubCategory": [
+        "Check-worthiness"
+      ],
+      "applicationSuite": [
+        "Co-inform"
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Expert System Iberia Lab",
+        "url": "http://expertsystem.com"
+      },
+      "dateCreated": "2020-05-08T15:18:00Z",
+      "description": "Assesses the worthiness of a sentence: CFS (whorty) NCS (unwhorty). It was trained and evaluated on a group of different datasets (CBD+Poynter+Clef'19T1) achieving 95% accuracy.",
+      "executionEnvironment": {
+        "cuda": false,
+        "hostname": "FMERENDA-NB",
+        "python.version": "3.6.9"
+      },
+      "identifier": "InBB_c0ROxz6iz6pZYK5WMhBGglj1v2_HCpDOBPXf1w",
+      "isBasedOn": [],
+      "launchConfiguration": {
+        "model": {
+          "base_model": "roberta-base",
+          "batch_size": 64,
+          "class": "transformers.RobertaForSequenceClassification",
+          "finetuned_from_layer": 8,
+          "isBasedOn": [
+            "transformers=2.8.0"
+          ],
+          "label2i": {
+            "CFS": 1,
+            "NCS": 0
+          },
+          "loss": "torch.nn.CrossEntropyLoss",
+          "seq_len": 128,
+          "train_val_result": {
+            "loss": 0.11967675889340731,
+            "metrics": {
+              "acc": 0.9553752535496958,
+              "confusion_matrix": [
+                [
+                  352,
+                  77
+                ],
+                [
+                  33,
+                  2003
+                ]
+              ],
+              "confusion_matrix_norm": [
+                [
+                  0.8205128205128205,
+                  0.1794871794871795
+                ],
+                [
+                  0.016208251473477406,
+                  0.9837917485265226
+                ]
+              ],
+              "f1_weighted": 0.9544076983742505,
+              "n": 2465,
+              "prec_micro": 0.9553752535496958,
+              "recall_micro": 0.9553752535496958
+            }
+          }
+        },
+        "model_config": {
+          "@type": "MediaObject",
+          "contentSize": "481 B",
+          "dateCreated": "2020-05-13T15:45:32.230276Z",
+          "dateModified": "2020-05-08T02:48:12.163000Z",
+          "name": "config.json",
+          "sha256Digest": "ef0185e2aae6e06c5f105a285006952c340e20c7dbf43c86ec82601b13fc45e9"
+        },
+        "pytorch_model": {
+          "@type": "MediaObject",
+          "contentSize": "477.79 MB",
+          "dateCreated": "2020-05-13T15:45:32.271233Z",
+          "dateModified": "2020-05-08T03:28:05.299000Z",
+          "name": "pytorch_model.bin",
+          "sha256Digest": "d203ea8936fd59e26723e35584b65560f872f3baef0afd6c6bfe5f9da1bd8bcd"
+        }
+      },
+      "name": "ESI Sentence Worth Reviewer",
+      "softwareRequirements": [
+        "python",
+        "pytorch",
+        "transformers",
+        "RoBERTaModel",
+        "RoBERTaTokenizer"
+      ],
+      "softwareVersion": "0.1.0"
+    }
+}

@@ -1,0 +1,4286 @@
+{
+  "@context": "http://coinform.eu",
+  "@type": "AggQSentCredReview",
+  "additionalType": [
+    "CredibilityReview",
+    "Review"
+  ],
+  "author": {
+    "@context": "http://coinform.eu",
+    "@type": "AggQSentCredReviewer",
+    "additionalType": [
+      "Bot",
+      "SoftwareApplication"
+    ],
+    "applicationCategory": [
+      "Disinformation Detection"
+    ],
+    "author": {
+      "@type": "Organization",
+      "name": "Expert System Lab Madrid",
+      "url": "http://expertsystem.com"
+    },
+    "dateCreated": "2020-03-19T15:09:00Z",
+    "description": "Reviews the credibility of a query setence by comparing it to semantically similar sentences in the Co-inform DB and the credibility of those.",
+    "executionEnvironment": {
+      "hostname": "3145f862236d",
+      "python.version": "3.6.10"
+    },
+    "identifier": "8a2nk0f0VsNWBOjt9qT4FsV9CG9enr8OeqPVBfHZVpc",
+    "isBasedOn": [],
+    "launchConfiguration": {
+      "acred_pred_claim_search_url": "http://nginx-api:9080/cc/api/v1/claim/internal-search"
+    },
+    "name": "ESI Aggregate Query Sentence Credibility Reviewer",
+    "softwareRequirements": [
+      "python"
+    ],
+    "softwareVersion": "0.1.0"
+  },
+  "dateCreated": "2020-04-12T09:25:31.493854Z",
+  "isBasedOn": [
+    {
+      "@context": "http://coinform.eu",
+      "@type": "QSentCredReview",
+      "additionalType": [
+        "CredibilityReview",
+        "Review"
+      ],
+      "author": {
+        "@context": "http://coinform.eu",
+        "@type": "QSentCredReviewer",
+        "additionalType": [
+          "SoftwareApplication",
+          "Bot"
+        ],
+        "applicationSuite": "Co-inform",
+        "dateCreated": "2020-03-27T22:54:00Z",
+        "description": "Estimates the credibility of a sentence based on its polar similarity with a sentence in the Co-inform database for which a credibility can be estimated",
+        "identifier": "Uq0Fj57weeOOevIFX1grhnn83suv1Qhj9catKSyehYc",
+        "isBasedOn": [],
+        "launchConfiguration": {},
+        "name": "ESI Query Sentence Credibility Reviewer",
+        "softwareVersion": "0.1.0",
+        "url": "http://coinform.eu/bot/QSentenceCredReviewer/0.1.0"
+      },
+      "dateCreated": "2020-04-12T09:25:31.492184Z",
+      "isBasedOn": [
+        {
+          "@context": "http://coinform.eu",
+          "@type": "SentPolarSimilarityReview",
+          "additionalType": [
+            "Review"
+          ],
+          "author": {
+            "@context": "http://coinform.eu",
+            "@type": "SentPolarityReviewer",
+            "additionalType": [
+              "SoftwareApplication",
+              "Bot"
+            ],
+            "applicationSuite": "Co-inform",
+            "dateCreated": "2020-03-27T22:54:00Z",
+            "description": "Estimates the polar similarity between two sentences",
+            "identifier": "KbF8SznYVInInLxwDsoyutkAEUsV5kLnOLI7bajBF30",
+            "isBasedOn": [],
+            "launchConfiguration": {},
+            "name": "ESI Sentence Polarity Reviewer",
+            "softwareVersion": "0.1.0",
+            "url": "http://coinform.eu/bot/SentencePolarSimilarityReviewer/0.1.0"
+          },
+          "dateCreated": "2020-04-12T09:25:31.491776Z",
+          "headline": "agrees with",
+          "isBasedOn": [
+            {
+              "@context": "http://coinform.eu",
+              "@type": "SentSimilarityReview",
+              "author": {
+                "@context": "http://coinform.eu",
+                "@type": "SemSentSimReviewer",
+                "additionalType": [
+                  "SoftwareApplication",
+                  "Bot"
+                ],
+                "applicationCategory": [
+                  "NLP"
+                ],
+                "applicationSubCategory": [
+                  "SemanticSimilarity"
+                ],
+                "applicationSuite": [
+                  "Co-inform"
+                ],
+                "author": {
+                  "@type": "Organization",
+                  "name": "Expert System Lab Madrid",
+                  "url": "http://expertsystem.com"
+                },
+                "dateCreated": "2020-03-19T15:09:00Z",
+                "description": "Claim neural index that uses a semantic similarity measure based on a semantic encoder. It achieved 83% accuracy on STS-B.",
+                "executionEnvironment": {
+                  "hostname": "294b42a5477c",
+                  "python.version": "3.7.3"
+                },
+                "identifier": "cbQNmZMDfFeZXgRfSnvBbA8wbrAgOkWUq-JxFAzlMAA",
+                "isBasedOn": [
+                  {
+                    "@context": "http://coinform.eu",
+                    "@type": "SentenceEncoder",
+                    "additionalType": [
+                      "SoftwareApplication",
+                      "Bot"
+                    ],
+                    "applicationCategory": [
+                      "NLP",
+                      "SentenceEncoder"
+                    ],
+                    "applicationSuite": [
+                      "Co-inform"
+                    ],
+                    "author": {
+                      "@type": "Organization",
+                      "name": "Expert System Lab Madrid",
+                      "url": "http://expertsystem.com"
+                    },
+                    "dateCreated": "2019-10-17T10:40:00Z",
+                    "description": "Encodes sentences in a way that, hopefully, places semantically similar sentences close to each other. It was trained on SNS-B and achieved 83% accuracy.",
+                    "executionEnvironment": {},
+                    "launchConfiguration": {
+                      "class": "RoBERTa_Finetuned_Encoder",
+                      "model_name_or_path": "/opt/model/semantic_encoder/",
+                      "pooling_strategy": "pooled",
+                      "powerfun_k": 8,
+                      "powerfun_min_val": 0.85,
+                      "seq_len": 64
+                    },
+                    "name": "RoBERTa_Finetuned_Encoder",
+                    "softwareRequirements": [
+                      "python",
+                      "pytorch",
+                      "transformers",
+                      "RoBERTaTokenizer",
+                      "RoBERTaModel"
+                    ],
+                    "softwareVersion": "0.1.0"
+                  }
+                ],
+                "launchConfiguration": {
+                  "vecSpace": {
+                    "@context": "http://schema.org",
+                    "@type": "Dataset",
+                    "creator": {
+                      "@type": "Organization",
+                      "name": "Expert System Iberia Lab",
+                      "url": "http://expertsystem.com"
+                    },
+                    "dateCreated": "2020-03-25T09:16:42.032125Z",
+                    "dateModified": "2020-03-24T20:18:10Z",
+                    "description": "Dataset of 80298 sentence embeddings extracted from claim reviews and articles collected as part of the Co-inform project",
+                    "encoding": {
+                      "@type": "MediaObject",
+                      "contentSize": "1181.60 MB",
+                      "encodingFormat": "text/tab-separated-values"
+                    },
+                    "identifier": "58ae94d80fc358877932021c33b1dd50c1e2fd1985a093f5c185ddbe19788a07",
+                    "name": "Co-inform Sentence embeddings"
+                  }
+                },
+                "name": "ESI Sentence Similarity Reviewer None",
+                "softwareRequirements": [
+                  "python",
+                  "numpy"
+                ],
+                "softwareVersion": "0.1.0-None"
+              },
+              "dateCreated": "2020-04-12T09:25:31.064443Z",
+              "itemReviewed": {
+                "@context": "http://coinform.eu",
+                "@type": "SentencePair",
+                "additionalTypes": [
+                  "ItemPair",
+                  "CreativeWork"
+                ],
+                "description": "CreativeWork consisting of exactly two sentences",
+                "identifier": "eEZmRoVTIQzydE6ccClwQg",
+                "roleA": "querySentence",
+                "roleB": "sentenceInDB",
+                "sentA": {
+                  "@context": "http://coinform.eu",
+                  "@type": "Sentence",
+                  "additionalTypes": [
+                    "CreativeWork"
+                  ],
+                  "appearance": [],
+                  "description": "A single sentence, possibly appearing in some larger document",
+                  "identifier": "--1RRg8ttsArjJ_WfShZrg",
+                  "text": "Ford Motor Company is moving their small car division out of the USA."
+                },
+                "sentB": {
+                  "@context": "http://coinform.eu",
+                  "@type": "Sentence",
+                  "additionalTypes": [
+                    "CreativeWork"
+                  ],
+                  "appearance": [],
+                  "description": "A single sentence, possibly appearing in some larger document",
+                  "identifier": "PvjNRJgjTesnSeM8CS62lA",
+                  "text": "'Ford is moving all of their small-car production to Mexico.'"
+                },
+                "text": "'Ford is moving all of their small-car production to Mexico.' Ford Motor Company is moving their small car division out of the USA."
+              },
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": 0.8661883197569902,
+                "reviewAspect": "similarity"
+              }
+            },
+            {
+              "@context": "http://coinform.eu",
+              "@type": "SentStanceReview",
+              "additionalType": [
+                "Review"
+              ],
+              "author": {
+                "@context": "http://coinform.eu",
+                "@type": "SentStanceReviewer",
+                "additionalType": [
+                  "SoftwareApplication",
+                  "Bot"
+                ],
+                "applicationCategory": [
+                  "NLP"
+                ],
+                "applicationSubCategory": [
+                  "Stance Detection"
+                ],
+                "applicationSuite": [
+                  "Co-inform"
+                ],
+                "author": {
+                  "@type": "Organization",
+                  "name": "Expert System Iberia Lab",
+                  "url": "http://expertsystem.com"
+                },
+                "dateCreated": "2020-01-13T15:18:00Z",
+                "description": "Assesses the stance between two sentences (e.g. agree, disagree, discuss) it was trained and evaluated on FNC-1 achieving 92% accuracy.",
+                "executionEnvironment": {
+                  "cuda": false,
+                  "hostname": "294b42a5477c",
+                  "python.version": "3.7.3"
+                },
+                "identifier": "Q-HBTj4_Ey5Aat7SXIOQ_mTTRl8TAJcOON1tBORnRfs",
+                "isBasedOn": [],
+                "launchConfiguration": {
+                  "model": {
+                    "batch_size": 64,
+                    "class": "RoBERTa",
+                    "finetuned_from_layer": 8,
+                    "seq_len": 128,
+                    "stance2i": {
+                      "agree": 1,
+                      "disagree": 2,
+                      "discuss": 3,
+                      "unrelated": 0
+                    },
+                    "train_val_result": {
+                      "loss": 0.28,
+                      "metrics": {
+                        "acc": 0.923,
+                        "f1_weighted": 0.9186,
+                        "n": 25413
+                      }
+                    }
+                  },
+                  "model_config": {
+                    "@type": "MediaObject",
+                    "contentSize": "682 B",
+                    "dateCreated": "2020-02-06T14:26:04.601783Z",
+                    "dateModified": "2020-01-13T14:18:40Z",
+                    "name": "config.json",
+                    "sha256Digest": "0a6bdf3e86b77df920446d8be14946eb63a76f9a03bb7a1199967a87e94356e6"
+                  },
+                  "pytorch_model": {
+                    "@type": "MediaObject",
+                    "contentSize": "477.80 MB",
+                    "dateCreated": "2020-02-06T14:26:04.598783Z",
+                    "dateModified": "2020-01-13T14:18:40Z",
+                    "name": "pytorch_model.bin",
+                    "sha256Digest": "e704d40b6dc392c7a6bb5a45a27286210385a49731a996115654585d2a559963"
+                  }
+                },
+                "name": "ESI Sentence Stance Reviewer",
+                "softwareRequirements": [
+                  "python",
+                  "pytorch",
+                  "transformers",
+                  "RoBERTaModel",
+                  "RoBERTaTokenizer"
+                ],
+                "softwareVersion": "0.1.0"
+              },
+              "dateCreated": "2020-04-12T09:25:31.064443Z",
+              "itemReviewed": {
+                "@context": "http://coinform.eu",
+                "@type": "SentencePair",
+                "additionalTypes": [
+                  "ItemPair",
+                  "CreativeWork"
+                ],
+                "description": "CreativeWork consisting of exactly two sentences",
+                "identifier": "eEZmRoVTIQzydE6ccClwQg",
+                "roleA": "querySentence",
+                "roleB": "sentenceInDB",
+                "sentA": {
+                  "@context": "http://coinform.eu",
+                  "@type": "Sentence",
+                  "additionalTypes": [
+                    "CreativeWork"
+                  ],
+                  "appearance": [],
+                  "description": "A single sentence, possibly appearing in some larger document",
+                  "identifier": "--1RRg8ttsArjJ_WfShZrg",
+                  "text": "Ford Motor Company is moving their small car division out of the USA."
+                },
+                "sentB": {
+                  "@context": "http://coinform.eu",
+                  "@type": "Sentence",
+                  "additionalTypes": [
+                    "CreativeWork"
+                  ],
+                  "appearance": [],
+                  "description": "A single sentence, possibly appearing in some larger document",
+                  "identifier": "PvjNRJgjTesnSeM8CS62lA",
+                  "text": "'Ford is moving all of their small-car production to Mexico.'"
+                },
+                "text": "'Ford is moving all of their small-car production to Mexico.' Ford Motor Company is moving their small car division out of the USA."
+              },
+              "reviewAspect": "stance",
+              "reviewRating": {
+                "@type": "Rating",
+                "confidence": 0.8698891997337341,
+                "ratingExplanation": "Sentence `dbSent` **agree** `qSent`.",
+                "ratingValue": "agree",
+                "reviewAspect": "stance"
+              }
+            }
+          ],
+          "itemReviewed": {
+            "@context": "http://coinform.eu",
+            "@type": "SentencePair",
+            "additionalTypes": [
+              "ItemPair",
+              "CreativeWork"
+            ],
+            "description": "CreativeWork consisting of exactly two sentences",
+            "identifier": "eEZmRoVTIQzydE6ccClwQg",
+            "roleA": "querySentence",
+            "roleB": "sentenceInDB",
+            "sentA": {
+              "@context": "http://coinform.eu",
+              "@type": "Sentence",
+              "additionalTypes": [
+                "CreativeWork"
+              ],
+              "appearance": [],
+              "description": "A single sentence, possibly appearing in some larger document",
+              "identifier": "--1RRg8ttsArjJ_WfShZrg",
+              "text": "Ford Motor Company is moving their small car division out of the USA."
+            },
+            "sentB": {
+              "@context": "http://coinform.eu",
+              "@type": "Sentence",
+              "additionalTypes": [
+                "CreativeWork"
+              ],
+              "appearance": [],
+              "description": "A single sentence, possibly appearing in some larger document",
+              "identifier": "PvjNRJgjTesnSeM8CS62lA",
+              "text": "'Ford is moving all of their small-car production to Mexico.'"
+            },
+            "text": "'Ford is moving all of their small-car production to Mexico.' Ford Motor Company is moving their small car division out of the USA."
+          },
+          "reviewAspect": "polarSimilarity",
+          "reviewBody": "Sentence `Ford Motor Company is moving their small car division out of the USA.` agrees with `'Ford is moving all of their small-car production to Mexico.'`",
+          "reviewRating": {
+            "@type": "AggregateRating",
+            "confidence": 0.8698891997337341,
+            "ratingCount": 2,
+            "ratingExplanation": "Sentence `Ford Motor Company is moving their small car division out of the USA.` agrees with `'Ford is moving all of their small-car production to Mexico.'`",
+            "ratingValue": 0.8680387597453622,
+            "reviewAspect": "polarSimilarity",
+            "reviewCount": 2
+          }
+        },
+        {
+          "@context": "http://coinform.eu",
+          "@type": "DBSentCredReview",
+          "additionalType": [
+            "CredibilityReview",
+            "Review"
+          ],
+          "author": {
+            "@context": "http://coinform.eu",
+            "@type": "DBSentCredReviewer",
+            "additionalType": [
+              "SoftwareApplication",
+              "Bot"
+            ],
+            "applicationSuite": "Co-inform",
+            "dateCreated": "2020-03-20T20:03:00Z",
+            "description": "Estimates the credibility of a sentence in the Co-inform DB based on known ClaimReviews or websites where the sentence has been published.",
+            "identifier": "IpZh6qysghtjbxqYuU7kCRd0C2J9s3tgDs6dfqfYwSQ",
+            "isBasedOn": [
+              {
+                "@context": "http://coinform.eu",
+                "@type": "MisinfoMeSourceCredReviewer",
+                "additionalType": [
+                  "Bot",
+                  "SoftwareApplication"
+                ],
+                "applicationSuite": "MisinfoMe",
+                "softwareVersion": "2020-04-06T00:00:00Z",
+                "url": "https://socsem.kmi.open.ac.uk/misinfo"
+              },
+              {
+                "@context": "http://coinform.eu",
+                "@type": "ClaimReviewNormalizer",
+                "additionalType": [
+                  "SoftwareApplication",
+                  "Bot"
+                ],
+                "applicationSuite": "Co-inform",
+                "dateCreated": "2020-03-20T18:27:00Z",
+                "description": "Analyses the alternateName and numerical rating value for a ClaimReview and tries to convert that into a normalised credibility rating",
+                "identifier": "uPo0cltI6ThRQZL4DS_X4ypCUisZII9cP0nNPGbRV9Y",
+                "isBasedOn": [],
+                "launchConfiguration": {},
+                "name": "ESI ClaimReview Credibility Normalizer",
+                "softwareVersion": "0.1.0",
+                "url": "http://coinform.eu/bot/ClaimReviewNormalizer/0.1.0"
+              }
+            ],
+            "launchConfiguration": {
+              "acred_factchecker_urls": [
+                "https://factcheckni.org/",
+                "https://mediabiasfactcheck.com/",
+                "https://www.snopes.com/",
+                "http://www.politifact.com/",
+                "http://www.factcheck.org/",
+                "http://www.washingtonpost.com/blogs/fact-checker/",
+                "http://truthbetold.news/category/fact-checks/",
+                "http://www.npr.org/sections/politics-fact-check",
+                "http://eldetectordementiras.com/",
+                "http://www.hoax-slayer.com/",
+                "https://apnews.com/tag/APFactCheck",
+                "https://africacheck.org/",
+                "http://www.lupa.news/",
+                "http://apublica.org/truco",
+                "http://aosfatos.org/",
+                "http://chequeado.com/",
+                "http://climatefeedback.org/",
+                "https://correctiv.org/echtjetzt/",
+                "http://www.dogrulukpayi.com/",
+                "http://www.lasexta.com/programas/el-objetivo/prueba-verificacion/",
+                "http://factcheck.ge/",
+                "http://observers.france24.com/fr/",
+                "https://fullfact.org/",
+                "http://www.istinomer.rs/",
+                "http://istinomjer.ba/",
+                "http://www.lemonde.fr/les-decodeurs/",
+                "http://www.liberation.fr/desintox,99721",
+                "http://observador.pt/seccao/observador/fact-check/",
+                "https://pagellapolitica.it/",
+                "http://www.abc.net.au/news/factcheck/",
+                "https://teyit.org/",
+                "https://theconversation.com/au/factcheck",
+                "http://www.thejournal.ie/factcheck/news/",
+                "https://www.washingtonpost.com/news/fact-checker/",
+                "http://www.metro.se/viralgranskaren",
+                "https://eufactcheck.eu/fact-checks/",
+                "https://factcheckeu.info/en/",
+                "https://correctiv.org/thema/faktencheck/",
+                "https://www.20minutes.fr/",
+                "https://factuel.afp.com/",
+                "https://www.liberation.fr/checknews,100893",
+                "https://www.ellinikahoaxes.gr/",
+                "https://faktograf.hr/",
+                "https://observers.france24.com/fr/",
+                "https://www.lavoce.info/",
+                "https://leadstories.com/",
+                "https://factcheckeu.info/es/publisher/les-d%C3%A9codeurs",
+                "https://maldita.es/",
+                "https://newtral.es/",
+                "https://observador.pt/",
+                "https://pagellapolitica.it/",
+                "https://www.15min.lt/patikrinta-15min",
+                "https://www.thejournal.ie/",
+                "https://www.mm.dk/tjekdet/",
+                "http://sadroz.af/",
+                "http://www.vertetematesi.info/",
+                "http://chequeado.com/",
+                "http://www.abc.net.au/news/factcheck/",
+                "http://www.crikey.com.au/column/get-fact/",
+                "http://www.medicalobserver.com.au/",
+                "http://www.politifact.com.au/",
+                "http://theconversation.com/us/topics/election-factcheck",
+                "https://factcheckeu.org/",
+                "http://blogs.oglobo.globo.com/preto-no-branco/",
+                "http://apublica.org/truco/",
+                "http://istinomjer.ba/",
+                "https://globalnews.ca/tag/baloney-meter/",
+                "http://factscan.ca/",
+                "https://lasillavacia.com/hilos-tematicos/detector-de-mentiras",
+                "http://media.elfinancierocr.com/retealcandidato/",
+                "http://uycheck.com/",
+                "http://morsimeter.com/en",
+                "http://faktabaari.fi/",
+                "http://www.liberation.fr/desintox,99721",
+                "http://tempsreel.nouvelobs.com/politique/les-pinocchios-de-l-obs/",
+                "http://factcheck.ge/en/",
+                "https://faktomat.adhocracy.de/instance/faktomat",
+                "http://www.spiegel.de/thema/muenchhausen_check/",
+                "http://zdfcheck.zdf.de/",
+                "http://idemagog.hu/",
+                "http://factchecker.in/",
+                "https://rouhanimeter.com/",
+                "http://www.politicometro.it/",
+                "http://www.animalpolitico.com/elsabueso/el-sabueso/",
+                "http://www.promis.md/",
+                "https://fhjfactcheck.wordpress.com/",
+                "http://www.journalistiekennieuwemedia.nl/NC/",
+                "http://www.radionz.co.nz/news/political/252810/election-2014-fact-or-fiction",
+                "http://www.buharimeter.ng/",
+                "http://www.bt.no/nyheter/innenriks/faktasjekk/",
+                "http://demagog.org.pl/",
+                "http://www.obywatelerozliczaja.pl/",
+                "http://www.factual.ro/",
+                "http://www.istinomer.rs/",
+                "http://www.demagog.sk/",
+                "https://africacheck.org/",
+                "http://poll.ilyo.co.kr/?ac=poll&tac=main",
+                "http://news.jtbc.joins.com/hotissue/timeline_issue.aspx?comp_id=NC10011176",
+                "http://newstapa.org/tag/%EC%A0%95%EB%A7%90",
+                "http://www.periodistadigital.com/verdadmentira/",
+                "http://blog.svd.se/faktakollen/",
+                "http://www.svt.se/nyheter/2923690",
+                "http://jomaameter.org/?locale=en#.VfNoMpfriio",
+                "http://www.dogrulukpayi.com/",
+                "http://fakecontrol.org/",
+                "http://www.stopfake.org/en/news/",
+                "http://vladometr.org/",
+                "http://www.theguardian.com/news/reality-check",
+                "http://blogs.channel4.com/factcheck/"
+              ],
+              "factchecker_website_to_qclaim_confidence_penalty_factor": 0.5
+            },
+            "name": "ESI DB Sentence Credibility Reviewer",
+            "softwareVersion": "0.1.0",
+            "url": "http://coinform.eu/bot/DBSentCredReviewer/0.1.0"
+          },
+          "dateCreated": "2020-04-12T09:25:31.491975Z",
+          "isBasedOn": [
+            {
+              "@context": "http://coinform.eu",
+              "@type": "WebSiteCredReview",
+              "additionalType": ["CredibilityReview", "Review"],
+              "author": {
+                "@context": "http://coinform.eu",
+                "@type": "MisinfoMeSourceCredReviewer",
+                "additionalType": [
+                  "Bot",
+                  "SoftwareApplication"
+                ],
+                "applicationSuite": "MisinfoMe",
+                "softwareVersion": "2020-04-06T00:00:00Z",
+                "url": "https://socsem.kmi.open.ac.uk/misinfo"
+              },
+              "dateCreated": "2020-04-12T09:25:31.491512Z",
+              "isBasedOn": [],
+              "isBasedOn_assessments": [
+                {
+                  "credibility": {
+                    "confidence": 1.0,
+                    "value": 1.0
+                  },
+                  "domain": "politifact.com",
+                  "granularity": "source",
+                  "itemReviewed": "politifact.com",
+                  "origin": {
+                    "assessments_count": 759,
+                    "description": "NewsGuard uses journalism to fight false news, misinformation, and disinformation. Our trained analysts, who are experienced journalists, research online news brands to help readers and viewers know which ones are trying to do legitimate journalism--and which are not.",
+                    "homepage": "https://www.newsguardtech.com/",
+                    "id": "newsguard",
+                    "logo": "https://logo.clearbit.com/newsguardtech.com",
+                    "name": "NewsGuard",
+                    "origin_type": "realtime",
+                    "weight": 10.0
+                  },
+                  "origin_id": "newsguard",
+                  "original": {
+                    "authorized": false,
+                    "country": "US",
+                    "criteria": [
+                      {
+                        "body": "Yes",
+                        "order": 0,
+                        "title": "ownership"
+                      },
+                      {
+                        "body": "Yes",
+                        "order": 0,
+                        "title": "management"
+                      },
+                      {
+                        "body": "Yes",
+                        "order": 0,
+                        "title": "newsOpinion"
+                      },
+                      {
+                        "body": "Yes",
+                        "order": 0,
+                        "title": "falseContent"
+                      },
+                      {
+                        "body": "Yes",
+                        "order": 0,
+                        "title": "basicStandards"
+                      },
+                      {
+                        "body": "Yes",
+                        "order": 0,
+                        "title": "contentCreators"
+                      },
+                      {
+                        "body": "Yes",
+                        "order": 0,
+                        "title": "labelsAdvertising"
+                      },
+                      {
+                        "body": "Yes",
+                        "order": 0,
+                        "title": "deceptiveHeadlines"
+                      },
+                      {
+                        "body": "Yes",
+                        "order": 0,
+                        "title": "accountabilityPractices"
+                      }
+                    ],
+                    "groupName": null,
+                    "id": "a479e415-901e-4a33-b112-b837a175655a",
+                    "identifier": "politifact.com",
+                    "labelToken": "BB657F5F8622DCCB6215D9258BEFF05D354AA329BFD7366DCD1190B1C8BB9DBCD6E7225F63631DD4E94DA1DBBD856DB4C3F2D3D251F06B7C",
+                    "language": "en",
+                    "locale": "en-US",
+                    "parent": null,
+                    "rank": "T",
+                    "score": 100.0,
+                    "shieldAuthorized": false,
+                    "topline": "A nonprofit&nbsp;fact-checking website that evaluates the credibility of statements by politicians and pundits. "
+                  },
+                  "source": "politifact.com",
+                  "url": "https://api.newsguardtech.com/BB657F5F8622DCCB6215D9258BEFF05D354AA329BFD7366DCD1190B1C8BB9DBCD6E7225F63631DD4E94DA1DBBD856DB4C3F2D3D251F06B7C",
+                  "weights": {
+                    "final_weight": 10.0,
+                    "origin_weight": 10
+                  }
+                },
+                {
+                  "credibility": {
+                    "confidence": 0.47,
+                    "value": 0.84
+                  },
+                  "domain": "politifact.com",
+                  "granularity": "source",
+                  "itemReviewed": "politifact.com",
+                  "origin": {
+                    "assessments_count": 2375,
+                    "description": "Ever wondered how to check if a website is safe? Get the community to do the website security checks for you.",
+                    "homepage": "https://mywot.com/",
+                    "id": "mywot",
+                    "logo": "https://www.mywot.com/images/logo.png",
+                    "name": "Web Of Trust",
+                    "origin_type": "realtime",
+                    "weight": 5.0
+                  },
+                  "origin_id": "mywot",
+                  "original": {
+                    "blacklists": {},
+                    "categories": {
+                      "304": {
+                        "category_group": "Neutral",
+                        "confidence": 4,
+                        "description": "Other"
+                      },
+                      "501": {
+                        "category_group": "Positive",
+                        "confidence": 47,
+                        "description": "Good site"
+                      }
+                    },
+                    "detail_page": "https://www.mywot.com/en/scorecard/politifact.com",
+                    "reputation_components": {
+                      "0": {
+                        "confidence": 47,
+                        "reputation_scale": "Excellent",
+                        "reputation_value": 92,
+                        "type": "Trustworthiness"
+                      },
+                      "1": {
+                        "confidence": 47,
+                        "reputation_scale": "Excellent",
+                        "reputation_value": 92,
+                        "type": "Deprecated"
+                      },
+                      "2": {
+                        "confidence": 47,
+                        "reputation_scale": "Excellent",
+                        "reputation_value": 92,
+                        "type": "Deprecated"
+                      },
+                      "4": {
+                        "confidence": 45,
+                        "reputation_scale": "Excellent",
+                        "reputation_value": 93,
+                        "type": "Child safety"
+                      }
+                    },
+                    "target": "politifact.com"
+                  },
+                  "source": "politifact.com",
+                  "url": "https://www.mywot.com/en/scorecard/politifact.com",
+                  "weights": {
+                    "final_weight": 2.3499999999999996,
+                    "origin_weight": 5
+                  }
+                }
+              ],
+              "itemReviewed": {
+                "@type": "WebSite",
+                "identifier": "http://www.politifact.com/",
+                "name": "www.politifact.com",
+                "url": "http://www.politifact.com/"
+              },
+              "reviewAspect": "credibility",
+              "reviewRating": {
+                "@type": "AggregateRating",
+                "confidence": 1.8281672472160912e-16,
+                "ratingCount": 2,
+                "ratingExplanation": "Based on 2 review(s) for site `www.politifact.com` by external rater(s) ([NewsGuard](https://www.newsguardtech.com/) or [Web Of Trust](https://mywot.com/))",
+                "ratingValue": 0.9695546558704454,
+                "reviewAspect": "credibility",
+                "reviewCount": 2
+              },
+              "timings": {
+                "@context": "http://coinform.eu",
+                "@type": "Timing",
+                "phase": "misinfome_source_credibility",
+                "sub_timings": [],
+                "total_ms": 0
+              }
+            },
+            {
+              "@context": "http://coinform.eu",
+              "@type": "NormalisedClaimReview",
+              "additionalType": [
+                "ClaimReview",
+                "Review"
+              ],
+              "author": {
+                "@context": "http://coinform.eu",
+                "@type": "ClaimReviewNormalizer",
+                "additionalType": [
+                  "SoftwareApplication",
+                  "Bot"
+                ],
+                "applicationSuite": "Co-inform",
+                "dateCreated": "2020-03-20T18:27:00Z",
+                "description": "Analyses the alternateName and numerical rating value for a ClaimReview and tries to convert that into a normalised credibility rating",
+                "identifier": "uPo0cltI6ThRQZL4DS_X4ypCUisZII9cP0nNPGbRV9Y",
+                "isBasedOn": [],
+                "launchConfiguration": {},
+                "name": "ESI ClaimReview Credibility Normalizer",
+                "softwareVersion": "0.1.0",
+                "url": "http://coinform.eu/bot/ClaimReviewNormalizer/0.1.0"
+              },
+              "basedOn": [
+                {
+                  "@type": "Rating",
+                  "confidence": 0.0,
+                  "ratingExplanation": "Unknown accuracy for textual claim-review rating 'mixture'",
+                  "ratingValue": 0.0,
+                  "reviewAspect": "credibility"
+                },
+                {
+                  "@type": "Rating",
+                  "confidence": 0.85,
+                  "description": "Normalised accuracy from original rating value (and range)",
+                  "ratingExplanation": "Based on normalised numeric ratingValue 2 in range [1-5]",
+                  "ratingValue": -0.5,
+                  "reviewAspect": "credibility"
+                }
+              ],
+              "basedOnClaimReview": {
+                "@context": {
+                  "nif": "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#",
+                  "schema": "http://schema.org"
+                },
+                "@id": "http://data.gesis.org/claimskg/claim_review/03aa9502-c58c-54a7-b42c-6826198a76fe",
+                "@type": "schema:ClaimReview",
+                "author": {
+                  "@type": "schema:Organization",
+                  "url": "http://www.politifact.com"
+                },
+                "claimReviewed": "'Ford is moving all of their small-car production to Mexico.'",
+                "datePublished": "2016-10-23",
+                "headline": "Donald Trump says Ford is moving all small-car production to Mexico",
+                "inLanguage": {
+                  "@type": "schema:Language",
+                  "alternateName": "en",
+                  "name": "English"
+                },
+                "itemReviewed": {
+                  "@id": "http://data.gesis.org/claimskg/creative_work/076cca8a-bed6-527b-a2b0-34c5ef21fed0",
+                  "@type": "schema:CreativeWork",
+                  "author": {
+                    "@type": "Thing",
+                    "name": "Donald Trump"
+                  },
+                  "citation": [
+                    "https://money.cnn.com/2016/09/15/news/companies/donald-trump-ford-ceo-mark-fields/index.html?",
+                    "https://www.cnbc.com/2016/09/15/ford-to-move-all-small-car-production-to-mexico-from-us-ceo.html?",
+                    "https://www.sharethefacts.co/share/0f5ed3db-289b-4d1c-a1d6-4c03ac61e82?",
+                    "https://www.youtube.com/watch?v%3DKi6lvK1_Hpg"
+                  ],
+                  "datePublished": "2016-10-20",
+                  "keywords": "Corporations,Trade,Workers",
+                  "text": "'Ford is moving all of their small-car production to Mexico.'"
+                },
+                "mentions": [
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 1204,
+                    "endIndex": 1223,
+                    "isString": "United Auto Workers"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 7,
+                    "endIndex": 19,
+                    "isString": "Donald Trump"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 1489,
+                    "endIndex": 1508,
+                    "isString": "low gasoline prices"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 2359,
+                    "endIndex": 2367,
+                    "isString": "Fox News"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 1844,
+                    "endIndex": 1863,
+                    "isString": "United Auto Workers"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 152,
+                    "endIndex": 165,
+                    "isString": "Delaware, Ohio"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 747,
+                    "endIndex": 758,
+                    "isString": "Mark Fields"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 950,
+                    "endIndex": 957,
+                    "isString": "Reuters"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 3231,
+                    "endIndex": 3236,
+                    "isString": "https"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 1676,
+                    "endIndex": 1679,
+                    "isString": "CNN"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 1175,
+                    "endIndex": 1185,
+                    "isString": "Wayne, Mich"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 1299,
+                    "endIndex": 1306,
+                    "isString": "Reuters"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 2578,
+                    "endIndex": 2581,
+                    "isString": "CNN"
+                  }
+                ],
+                "reviewRating": {
+                  "@type": "schema:Rating",
+                  "alternateName": "MIXTURE",
+                  "author": "http://data.gesis.org/claimskg/organization/claimskg",
+                  "ratingValue": 2
+                },
+                "url": "http://www.politifact.com/truth-o-meter/statements/2016/oct/23/donald-trump/donald-trump-says-ford-moving-all-small-car-produc/"
+              },
+              "claimReviewed": "'Ford is moving all of their small-car production to Mexico.'",
+              "dateCreated": "2020-04-12T09:25:31.491941Z",
+              "reviewAspect": "credibility",
+              "reviewRating": {
+                "@type": "AggregateRating",
+                "confidence": 0.85,
+                "description": "Normalised accuracy from original rating value (and range)",
+                "ratingCount": 2,
+                "ratingExplanation": "Based on normalised numeric ratingValue 2 in range [1-5]",
+                "ratingValue": -0.5,
+                "reviewAspect": "credibility",
+                "reviewCount": 1
+              }
+            }
+          ],
+          "itemReviewed": {
+            "@context": "http://coinform.eu",
+            "@type": "Sentence",
+            "additionalTypes": [
+              "CreativeWork"
+            ],
+            "appearance": [
+              {
+                "@type": "Article",
+                "coinform_collection": "unknown",
+                "datePublished": "2016-10-20T00:00:00Z",
+                "inLanguage": null,
+                "publisher": "www.politifact.com",
+                "url": "http://www.politifact.com/truth-o-meter/statements/2016/oct/23/donald-trump/donald-trump-says-ford-moving-all-small-car-produc/"
+              }
+            ],
+            "description": "A single sentence, possibly appearing in some larger document",
+            "identifier": "PvjNRJgjTesnSeM8CS62lA",
+            "text": "'Ford is moving all of their small-car production to Mexico.'"
+          },
+          "reviewAspect": "credibility",
+          "reviewRating": {
+            "@type": "AggregateRating",
+            "confidence": 0.85,
+            "ratingCount": 6,
+            "ratingExplanation": "Based on normalised numeric ratingValue 2 in range [1-5]",
+            "ratingValue": -0.5,
+            "reviewAspect": "credibility",
+            "reviewCount": 5
+          }
+        }
+      ],
+      "itemReviewed": {
+        "@context": "http://coinform.eu",
+        "@type": "Sentence",
+        "additionalTypes": [
+          "CreativeWork"
+        ],
+        "appearance": [],
+        "description": "A single sentence, possibly appearing in some larger document",
+        "identifier": "--1RRg8ttsArjJ_WfShZrg",
+        "text": "Ford Motor Company is moving their small car division out of the USA."
+      },
+      "reviewAspect": "credibility",
+      "reviewRating": {
+        "@context": "http://coinform.eu",
+        "@type": "AggregateRating",
+        "additionalType": [
+          "Rating"
+        ],
+        "confidence": 0.7378329457835578,
+        "ratingCount": 10,
+        "ratingExplanation": "Sentence `Ford Motor Company is moving their small car division out of the USA.` agrees with:\n\n * 'Ford is moving all of their small-car production to Mexico.'\nthat seems mostly not credible. Based on normalised numeric ratingValue 2 in range [1-5]",
+        "ratingValue": -0.5,
+        "reviewAspect": "credibility",
+        "reviewCount": 9
+      }
+    },
+    {
+      "@context": "http://coinform.eu",
+      "@type": "QSentCredReview",
+      "additionalType": [
+        "CredibilityReview",
+        "Review"
+      ],
+      "author": {
+        "@context": "http://coinform.eu",
+        "@type": "QSentCredReviewer",
+        "additionalType": [
+          "SoftwareApplication",
+          "Bot"
+        ],
+        "applicationSuite": "Co-inform",
+        "dateCreated": "2020-03-27T22:54:00Z",
+        "description": "Estimates the credibility of a sentence based on its polar similarity with a sentence in the Co-inform database for which a credibility can be estimated",
+        "identifier": "Uq0Fj57weeOOevIFX1grhnn83suv1Qhj9catKSyehYc",
+        "isBasedOn": [],
+        "launchConfiguration": {},
+        "name": "ESI Query Sentence Credibility Reviewer",
+        "softwareVersion": "0.1.0",
+        "url": "http://coinform.eu/bot/QSentenceCredReviewer/0.1.0"
+      },
+      "dateCreated": "2020-04-12T09:25:31.492650Z",
+      "isBasedOn": [
+        {
+          "@context": "http://coinform.eu",
+          "@type": "SentPolarSimilarityReview",
+          "additionalType": [
+            "Review"
+          ],
+          "author": {
+            "@context": "http://coinform.eu",
+            "@type": "SentPolarityReviewer",
+            "additionalType": [
+              "SoftwareApplication",
+              "Bot"
+            ],
+            "applicationSuite": "Co-inform",
+            "dateCreated": "2020-03-27T22:54:00Z",
+            "description": "Estimates the polar similarity between two sentences",
+            "identifier": "KbF8SznYVInInLxwDsoyutkAEUsV5kLnOLI7bajBF30",
+            "isBasedOn": [],
+            "launchConfiguration": {},
+            "name": "ESI Sentence Polarity Reviewer",
+            "softwareVersion": "0.1.0",
+            "url": "http://coinform.eu/bot/SentencePolarSimilarityReviewer/0.1.0"
+          },
+          "dateCreated": "2020-04-12T09:25:31.492292Z",
+          "headline": "is similar(?) but unrelated to",
+          "isBasedOn": [
+            {
+              "@context": "http://coinform.eu",
+              "@type": "SentSimilarityReview",
+              "author": {
+                "@context": "http://coinform.eu",
+                "@type": "SemSentSimReviewer",
+                "additionalType": [
+                  "SoftwareApplication",
+                  "Bot"
+                ],
+                "applicationCategory": [
+                  "NLP"
+                ],
+                "applicationSubCategory": [
+                  "SemanticSimilarity"
+                ],
+                "applicationSuite": [
+                  "Co-inform"
+                ],
+                "author": {
+                  "@type": "Organization",
+                  "name": "Expert System Lab Madrid",
+                  "url": "http://expertsystem.com"
+                },
+                "dateCreated": "2020-03-19T15:09:00Z",
+                "description": "Claim neural index that uses a semantic similarity measure based on a semantic encoder. It achieved 83% accuracy on STS-B.",
+                "executionEnvironment": {
+                  "hostname": "294b42a5477c",
+                  "python.version": "3.7.3"
+                },
+                "identifier": "cbQNmZMDfFeZXgRfSnvBbA8wbrAgOkWUq-JxFAzlMAA",
+                "isBasedOn": [
+                  {
+                    "@context": "http://coinform.eu",
+                    "@type": "SentenceEncoder",
+                    "additionalType": [
+                      "SoftwareApplication",
+                      "Bot"
+                    ],
+                    "applicationCategory": [
+                      "NLP",
+                      "SentenceEncoder"
+                    ],
+                    "applicationSuite": [
+                      "Co-inform"
+                    ],
+                    "author": {
+                      "@type": "Organization",
+                      "name": "Expert System Lab Madrid",
+                      "url": "http://expertsystem.com"
+                    },
+                    "dateCreated": "2019-10-17T10:40:00Z",
+                    "description": "Encodes sentences in a way that, hopefully, places semantically similar sentences close to each other. It was trained on SNS-B and achieved 83% accuracy.",
+                    "executionEnvironment": {},
+                    "launchConfiguration": {
+                      "class": "RoBERTa_Finetuned_Encoder",
+                      "model_name_or_path": "/opt/model/semantic_encoder/",
+                      "pooling_strategy": "pooled",
+                      "powerfun_k": 8,
+                      "powerfun_min_val": 0.85,
+                      "seq_len": 64
+                    },
+                    "name": "RoBERTa_Finetuned_Encoder",
+                    "softwareRequirements": [
+                      "python",
+                      "pytorch",
+                      "transformers",
+                      "RoBERTaTokenizer",
+                      "RoBERTaModel"
+                    ],
+                    "softwareVersion": "0.1.0"
+                  }
+                ],
+                "launchConfiguration": {
+                  "vecSpace": {
+                    "@context": "http://schema.org",
+                    "@type": "Dataset",
+                    "creator": {
+                      "@type": "Organization",
+                      "name": "Expert System Iberia Lab",
+                      "url": "http://expertsystem.com"
+                    },
+                    "dateCreated": "2020-03-25T09:16:42.032125Z",
+                    "dateModified": "2020-03-24T20:18:10Z",
+                    "description": "Dataset of 80298 sentence embeddings extracted from claim reviews and articles collected as part of the Co-inform project",
+                    "encoding": {
+                      "@type": "MediaObject",
+                      "contentSize": "1181.60 MB",
+                      "encodingFormat": "text/tab-separated-values"
+                    },
+                    "identifier": "58ae94d80fc358877932021c33b1dd50c1e2fd1985a093f5c185ddbe19788a07",
+                    "name": "Co-inform Sentence embeddings"
+                  }
+                },
+                "name": "ESI Sentence Similarity Reviewer None",
+                "softwareRequirements": [
+                  "python",
+                  "numpy"
+                ],
+                "softwareVersion": "0.1.0-None"
+              },
+              "dateCreated": "2020-04-12T09:25:31.064443Z",
+              "itemReviewed": {
+                "@context": "http://coinform.eu",
+                "@type": "SentencePair",
+                "additionalTypes": [
+                  "ItemPair",
+                  "CreativeWork"
+                ],
+                "description": "CreativeWork consisting of exactly two sentences",
+                "identifier": "78X2CAhb5Od-V0O1I39rjA",
+                "roleA": "querySentence",
+                "roleB": "sentenceInDB",
+                "sentA": {
+                  "@context": "http://coinform.eu",
+                  "@type": "Sentence",
+                  "additionalTypes": [
+                    "CreativeWork"
+                  ],
+                  "appearance": [],
+                  "description": "A single sentence, possibly appearing in some larger document",
+                  "identifier": "--1RRg8ttsArjJ_WfShZrg",
+                  "text": "Ford Motor Company is moving their small car division out of the USA."
+                },
+                "sentB": {
+                  "@context": "http://coinform.eu",
+                  "@type": "Sentence",
+                  "additionalTypes": [
+                    "CreativeWork"
+                  ],
+                  "appearance": [],
+                  "description": "A single sentence, possibly appearing in some larger document",
+                  "identifier": "zrcjFPSE7iSPcS0mey9dwg",
+                  "text": "'General Motors is the largest corporation in the world again.'"
+                },
+                "text": "'General Motors is the largest corporation in the world again.' Ford Motor Company is moving their small car division out of the USA."
+              },
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": 0.7903001623628234,
+                "reviewAspect": "similarity"
+              }
+            },
+            {
+              "@context": "http://coinform.eu",
+              "@type": "SentStanceReview",
+              "additionalType": [
+                "Review"
+              ],
+              "author": {
+                "@context": "http://coinform.eu",
+                "@type": "SentStanceReviewer",
+                "additionalType": [
+                  "SoftwareApplication",
+                  "Bot"
+                ],
+                "applicationCategory": [
+                  "NLP"
+                ],
+                "applicationSubCategory": [
+                  "Stance Detection"
+                ],
+                "applicationSuite": [
+                  "Co-inform"
+                ],
+                "author": {
+                  "@type": "Organization",
+                  "name": "Expert System Iberia Lab",
+                  "url": "http://expertsystem.com"
+                },
+                "dateCreated": "2020-01-13T15:18:00Z",
+                "description": "Assesses the stance between two sentences (e.g. agree, disagree, discuss) it was trained and evaluated on FNC-1 achieving 92% accuracy.",
+                "executionEnvironment": {
+                  "cuda": false,
+                  "hostname": "294b42a5477c",
+                  "python.version": "3.7.3"
+                },
+                "identifier": "Q-HBTj4_Ey5Aat7SXIOQ_mTTRl8TAJcOON1tBORnRfs",
+                "isBasedOn": [],
+                "launchConfiguration": {
+                  "model": {
+                    "batch_size": 64,
+                    "class": "RoBERTa",
+                    "finetuned_from_layer": 8,
+                    "seq_len": 128,
+                    "stance2i": {
+                      "agree": 1,
+                      "disagree": 2,
+                      "discuss": 3,
+                      "unrelated": 0
+                    },
+                    "train_val_result": {
+                      "loss": 0.28,
+                      "metrics": {
+                        "acc": 0.923,
+                        "f1_weighted": 0.9186,
+                        "n": 25413
+                      }
+                    }
+                  },
+                  "model_config": {
+                    "@type": "MediaObject",
+                    "contentSize": "682 B",
+                    "dateCreated": "2020-02-06T14:26:04.601783Z",
+                    "dateModified": "2020-01-13T14:18:40Z",
+                    "name": "config.json",
+                    "sha256Digest": "0a6bdf3e86b77df920446d8be14946eb63a76f9a03bb7a1199967a87e94356e6"
+                  },
+                  "pytorch_model": {
+                    "@type": "MediaObject",
+                    "contentSize": "477.80 MB",
+                    "dateCreated": "2020-02-06T14:26:04.598783Z",
+                    "dateModified": "2020-01-13T14:18:40Z",
+                    "name": "pytorch_model.bin",
+                    "sha256Digest": "e704d40b6dc392c7a6bb5a45a27286210385a49731a996115654585d2a559963"
+                  }
+                },
+                "name": "ESI Sentence Stance Reviewer",
+                "softwareRequirements": [
+                  "python",
+                  "pytorch",
+                  "transformers",
+                  "RoBERTaModel",
+                  "RoBERTaTokenizer"
+                ],
+                "softwareVersion": "0.1.0"
+              },
+              "dateCreated": "2020-04-12T09:25:31.064443Z",
+              "itemReviewed": {
+                "@context": "http://coinform.eu",
+                "@type": "SentencePair",
+                "additionalTypes": [
+                  "ItemPair",
+                  "CreativeWork"
+                ],
+                "description": "CreativeWork consisting of exactly two sentences",
+                "identifier": "78X2CAhb5Od-V0O1I39rjA",
+                "roleA": "querySentence",
+                "roleB": "sentenceInDB",
+                "sentA": {
+                  "@context": "http://coinform.eu",
+                  "@type": "Sentence",
+                  "additionalTypes": [
+                    "CreativeWork"
+                  ],
+                  "appearance": [],
+                  "description": "A single sentence, possibly appearing in some larger document",
+                  "identifier": "--1RRg8ttsArjJ_WfShZrg",
+                  "text": "Ford Motor Company is moving their small car division out of the USA."
+                },
+                "sentB": {
+                  "@context": "http://coinform.eu",
+                  "@type": "Sentence",
+                  "additionalTypes": [
+                    "CreativeWork"
+                  ],
+                  "appearance": [],
+                  "description": "A single sentence, possibly appearing in some larger document",
+                  "identifier": "zrcjFPSE7iSPcS0mey9dwg",
+                  "text": "'General Motors is the largest corporation in the world again.'"
+                },
+                "text": "'General Motors is the largest corporation in the world again.' Ford Motor Company is moving their small car division out of the USA."
+              },
+              "reviewAspect": "stance",
+              "reviewRating": {
+                "@type": "Rating",
+                "confidence": 0.8526970744132996,
+                "ratingExplanation": "Sentence `dbSent` **unrelated** `qSent`.",
+                "ratingValue": "unrelated",
+                "reviewAspect": "stance"
+              }
+            }
+          ],
+          "itemReviewed": {
+            "@context": "http://coinform.eu",
+            "@type": "SentencePair",
+            "additionalTypes": [
+              "ItemPair",
+              "CreativeWork"
+            ],
+            "description": "CreativeWork consisting of exactly two sentences",
+            "identifier": "78X2CAhb5Od-V0O1I39rjA",
+            "roleA": "querySentence",
+            "roleB": "sentenceInDB",
+            "sentA": {
+              "@context": "http://coinform.eu",
+              "@type": "Sentence",
+              "additionalTypes": [
+                "CreativeWork"
+              ],
+              "appearance": [],
+              "description": "A single sentence, possibly appearing in some larger document",
+              "identifier": "--1RRg8ttsArjJ_WfShZrg",
+              "text": "Ford Motor Company is moving their small car division out of the USA."
+            },
+            "sentB": {
+              "@context": "http://coinform.eu",
+              "@type": "Sentence",
+              "additionalTypes": [
+                "CreativeWork"
+              ],
+              "appearance": [],
+              "description": "A single sentence, possibly appearing in some larger document",
+              "identifier": "zrcjFPSE7iSPcS0mey9dwg",
+              "text": "'General Motors is the largest corporation in the world again.'"
+            },
+            "text": "'General Motors is the largest corporation in the world again.' Ford Motor Company is moving their small car division out of the USA."
+          },
+          "reviewAspect": "polarSimilarity",
+          "reviewBody": "Sentence `Ford Motor Company is moving their small car division out of the USA.` is similar(?) but unrelated to `'General Motors is the largest corporation in the world again.'`",
+          "reviewRating": {
+            "@type": "AggregateRating",
+            "confidence": 0.8526970744132996,
+            "ratingCount": 2,
+            "ratingExplanation": "Sentence `Ford Motor Company is moving their small car division out of the USA.` is similar(?) but unrelated to `'General Motors is the largest corporation in the world again.'`",
+            "ratingValue": 0.711270146126541,
+            "reviewAspect": "polarSimilarity",
+            "reviewCount": 2
+          }
+        },
+        {
+          "@context": "http://coinform.eu",
+          "@type": "DBSentCredReview",
+          "additionalType": [
+            "CredibilityReview",
+            "Review"
+          ],
+          "author": {
+            "@context": "http://coinform.eu",
+            "@type": "DBSentCredReviewer",
+            "additionalType": [
+              "SoftwareApplication",
+              "Bot"
+            ],
+            "applicationSuite": "Co-inform",
+            "dateCreated": "2020-03-20T20:03:00Z",
+            "description": "Estimates the credibility of a sentence in the Co-inform DB based on known ClaimReviews or websites where the sentence has been published.",
+            "identifier": "IpZh6qysghtjbxqYuU7kCRd0C2J9s3tgDs6dfqfYwSQ",
+            "isBasedOn": [
+              {
+                "@context": "http://coinform.eu",
+                "@type": "MisinfoMeSourceCredReviewer",
+                "additionalType": [
+                  "Bot",
+                  "SoftwareApplication"
+                ],
+                "applicationSuite": "MisinfoMe",
+                "softwareVersion": "2020-04-06T00:00:00Z",
+                "url": "https://socsem.kmi.open.ac.uk/misinfo"
+              },
+              {
+                "@context": "http://coinform.eu",
+                "@type": "ClaimReviewNormalizer",
+                "additionalType": [
+                  "SoftwareApplication",
+                  "Bot"
+                ],
+                "applicationSuite": "Co-inform",
+                "dateCreated": "2020-03-20T18:27:00Z",
+                "description": "Analyses the alternateName and numerical rating value for a ClaimReview and tries to convert that into a normalised credibility rating",
+                "identifier": "uPo0cltI6ThRQZL4DS_X4ypCUisZII9cP0nNPGbRV9Y",
+                "isBasedOn": [],
+                "launchConfiguration": {},
+                "name": "ESI ClaimReview Credibility Normalizer",
+                "softwareVersion": "0.1.0",
+                "url": "http://coinform.eu/bot/ClaimReviewNormalizer/0.1.0"
+              }
+            ],
+            "launchConfiguration": {
+              "acred_factchecker_urls": [
+                "https://factcheckni.org/",
+                "https://mediabiasfactcheck.com/",
+                "https://www.snopes.com/",
+                "http://www.politifact.com/",
+                "http://www.factcheck.org/",
+                "http://www.washingtonpost.com/blogs/fact-checker/",
+                "http://truthbetold.news/category/fact-checks/",
+                "http://www.npr.org/sections/politics-fact-check",
+                "http://eldetectordementiras.com/",
+                "http://www.hoax-slayer.com/",
+                "https://apnews.com/tag/APFactCheck",
+                "https://africacheck.org/",
+                "http://www.lupa.news/",
+                "http://apublica.org/truco",
+                "http://aosfatos.org/",
+                "http://chequeado.com/",
+                "http://climatefeedback.org/",
+                "https://correctiv.org/echtjetzt/",
+                "http://www.dogrulukpayi.com/",
+                "http://www.lasexta.com/programas/el-objetivo/prueba-verificacion/",
+                "http://factcheck.ge/",
+                "http://observers.france24.com/fr/",
+                "https://fullfact.org/",
+                "http://www.istinomer.rs/",
+                "http://istinomjer.ba/",
+                "http://www.lemonde.fr/les-decodeurs/",
+                "http://www.liberation.fr/desintox,99721",
+                "http://observador.pt/seccao/observador/fact-check/",
+                "https://pagellapolitica.it/",
+                "http://www.abc.net.au/news/factcheck/",
+                "https://teyit.org/",
+                "https://theconversation.com/au/factcheck",
+                "http://www.thejournal.ie/factcheck/news/",
+                "https://www.washingtonpost.com/news/fact-checker/",
+                "http://www.metro.se/viralgranskaren",
+                "https://eufactcheck.eu/fact-checks/",
+                "https://factcheckeu.info/en/",
+                "https://correctiv.org/thema/faktencheck/",
+                "https://www.20minutes.fr/",
+                "https://factuel.afp.com/",
+                "https://www.liberation.fr/checknews,100893",
+                "https://www.ellinikahoaxes.gr/",
+                "https://faktograf.hr/",
+                "https://observers.france24.com/fr/",
+                "https://www.lavoce.info/",
+                "https://leadstories.com/",
+                "https://factcheckeu.info/es/publisher/les-d%C3%A9codeurs",
+                "https://maldita.es/",
+                "https://newtral.es/",
+                "https://observador.pt/",
+                "https://pagellapolitica.it/",
+                "https://www.15min.lt/patikrinta-15min",
+                "https://www.thejournal.ie/",
+                "https://www.mm.dk/tjekdet/",
+                "http://sadroz.af/",
+                "http://www.vertetematesi.info/",
+                "http://chequeado.com/",
+                "http://www.abc.net.au/news/factcheck/",
+                "http://www.crikey.com.au/column/get-fact/",
+                "http://www.medicalobserver.com.au/",
+                "http://www.politifact.com.au/",
+                "http://theconversation.com/us/topics/election-factcheck",
+                "https://factcheckeu.org/",
+                "http://blogs.oglobo.globo.com/preto-no-branco/",
+                "http://apublica.org/truco/",
+                "http://istinomjer.ba/",
+                "https://globalnews.ca/tag/baloney-meter/",
+                "http://factscan.ca/",
+                "https://lasillavacia.com/hilos-tematicos/detector-de-mentiras",
+                "http://media.elfinancierocr.com/retealcandidato/",
+                "http://uycheck.com/",
+                "http://morsimeter.com/en",
+                "http://faktabaari.fi/",
+                "http://www.liberation.fr/desintox,99721",
+                "http://tempsreel.nouvelobs.com/politique/les-pinocchios-de-l-obs/",
+                "http://factcheck.ge/en/",
+                "https://faktomat.adhocracy.de/instance/faktomat",
+                "http://www.spiegel.de/thema/muenchhausen_check/",
+                "http://zdfcheck.zdf.de/",
+                "http://idemagog.hu/",
+                "http://factchecker.in/",
+                "https://rouhanimeter.com/",
+                "http://www.politicometro.it/",
+                "http://www.animalpolitico.com/elsabueso/el-sabueso/",
+                "http://www.promis.md/",
+                "https://fhjfactcheck.wordpress.com/",
+                "http://www.journalistiekennieuwemedia.nl/NC/",
+                "http://www.radionz.co.nz/news/political/252810/election-2014-fact-or-fiction",
+                "http://www.buharimeter.ng/",
+                "http://www.bt.no/nyheter/innenriks/faktasjekk/",
+                "http://demagog.org.pl/",
+                "http://www.obywatelerozliczaja.pl/",
+                "http://www.factual.ro/",
+                "http://www.istinomer.rs/",
+                "http://www.demagog.sk/",
+                "https://africacheck.org/",
+                "http://poll.ilyo.co.kr/?ac=poll&tac=main",
+                "http://news.jtbc.joins.com/hotissue/timeline_issue.aspx?comp_id=NC10011176",
+                "http://newstapa.org/tag/%EC%A0%95%EB%A7%90",
+                "http://www.periodistadigital.com/verdadmentira/",
+                "http://blog.svd.se/faktakollen/",
+                "http://www.svt.se/nyheter/2923690",
+                "http://jomaameter.org/?locale=en#.VfNoMpfriio",
+                "http://www.dogrulukpayi.com/",
+                "http://fakecontrol.org/",
+                "http://www.stopfake.org/en/news/",
+                "http://vladometr.org/",
+                "http://www.theguardian.com/news/reality-check",
+                "http://blogs.channel4.com/factcheck/"
+              ],
+              "factchecker_website_to_qclaim_confidence_penalty_factor": 0.5
+            },
+            "name": "ESI DB Sentence Credibility Reviewer",
+            "softwareVersion": "0.1.0",
+            "url": "http://coinform.eu/bot/DBSentCredReviewer/0.1.0"
+          },
+          "dateCreated": "2020-04-12T09:25:31.492446Z",
+          "isBasedOn": [
+            {
+              "@context": "http://coinform.eu",
+              "@type": "WebSiteCredReview",
+              "additionalType": ["CredibilityReview", "Review"],
+              "author": {
+                "@context": "http://coinform.eu",
+                "@type": "MisinfoMeSourceCredReviewer",
+                "additionalType": [
+                  "Bot",
+                  "SoftwareApplication"
+                ],
+                "applicationSuite": "MisinfoMe",
+                "softwareVersion": "2020-04-06T00:00:00Z",
+                "url": "https://socsem.kmi.open.ac.uk/misinfo"
+              },
+              "dateCreated": "2020-04-12T09:25:31.491521Z",
+              "isBasedOn": [],
+              "isBasedOn_assessments": [
+                {
+                  "credibility": {
+                    "confidence": 1.0,
+                    "value": 1.0
+                  },
+                  "domain": "politifact.com",
+                  "granularity": "source",
+                  "itemReviewed": "politifact.com",
+                  "origin": {
+                    "assessments_count": 759,
+                    "description": "NewsGuard uses journalism to fight false news, misinformation, and disinformation. Our trained analysts, who are experienced journalists, research online news brands to help readers and viewers know which ones are trying to do legitimate journalism--and which are not.",
+                    "homepage": "https://www.newsguardtech.com/",
+                    "id": "newsguard",
+                    "logo": "https://logo.clearbit.com/newsguardtech.com",
+                    "name": "NewsGuard",
+                    "origin_type": "realtime",
+                    "weight": 10.0
+                  },
+                  "origin_id": "newsguard",
+                  "original": {
+                    "authorized": false,
+                    "country": "US",
+                    "criteria": [
+                      {
+                        "body": "Yes",
+                        "order": 0,
+                        "title": "ownership"
+                      },
+                      {
+                        "body": "Yes",
+                        "order": 0,
+                        "title": "management"
+                      },
+                      {
+                        "body": "Yes",
+                        "order": 0,
+                        "title": "newsOpinion"
+                      },
+                      {
+                        "body": "Yes",
+                        "order": 0,
+                        "title": "falseContent"
+                      },
+                      {
+                        "body": "Yes",
+                        "order": 0,
+                        "title": "basicStandards"
+                      },
+                      {
+                        "body": "Yes",
+                        "order": 0,
+                        "title": "contentCreators"
+                      },
+                      {
+                        "body": "Yes",
+                        "order": 0,
+                        "title": "labelsAdvertising"
+                      },
+                      {
+                        "body": "Yes",
+                        "order": 0,
+                        "title": "deceptiveHeadlines"
+                      },
+                      {
+                        "body": "Yes",
+                        "order": 0,
+                        "title": "accountabilityPractices"
+                      }
+                    ],
+                    "groupName": null,
+                    "id": "a479e415-901e-4a33-b112-b837a175655a",
+                    "identifier": "politifact.com",
+                    "labelToken": "BB657F5F8622DCCB6215D9258BEFF05D354AA329BFD7366DCD1190B1C8BB9DBCD6E7225F63631DD4E94DA1DBBD856DB4C3F2D3D251F06B7C",
+                    "language": "en",
+                    "locale": "en-US",
+                    "parent": null,
+                    "rank": "T",
+                    "score": 100.0,
+                    "shieldAuthorized": false,
+                    "topline": "A nonprofit&nbsp;fact-checking website that evaluates the credibility of statements by politicians and pundits. "
+                  },
+                  "source": "politifact.com",
+                  "url": "https://api.newsguardtech.com/BB657F5F8622DCCB6215D9258BEFF05D354AA329BFD7366DCD1190B1C8BB9DBCD6E7225F63631DD4E94DA1DBBD856DB4C3F2D3D251F06B7C",
+                  "weights": {
+                    "final_weight": 10.0,
+                    "origin_weight": 10
+                  }
+                },
+                {
+                  "credibility": {
+                    "confidence": 0.47,
+                    "value": 0.84
+                  },
+                  "domain": "politifact.com",
+                  "granularity": "source",
+                  "itemReviewed": "politifact.com",
+                  "origin": {
+                    "assessments_count": 2375,
+                    "description": "Ever wondered how to check if a website is safe? Get the community to do the website security checks for you.",
+                    "homepage": "https://mywot.com/",
+                    "id": "mywot",
+                    "logo": "https://www.mywot.com/images/logo.png",
+                    "name": "Web Of Trust",
+                    "origin_type": "realtime",
+                    "weight": 5.0
+                  },
+                  "origin_id": "mywot",
+                  "original": {
+                    "blacklists": {},
+                    "categories": {
+                      "304": {
+                        "category_group": "Neutral",
+                        "confidence": 4,
+                        "description": "Other"
+                      },
+                      "501": {
+                        "category_group": "Positive",
+                        "confidence": 47,
+                        "description": "Good site"
+                      }
+                    },
+                    "detail_page": "https://www.mywot.com/en/scorecard/politifact.com",
+                    "reputation_components": {
+                      "0": {
+                        "confidence": 47,
+                        "reputation_scale": "Excellent",
+                        "reputation_value": 92,
+                        "type": "Trustworthiness"
+                      },
+                      "1": {
+                        "confidence": 47,
+                        "reputation_scale": "Excellent",
+                        "reputation_value": 92,
+                        "type": "Deprecated"
+                      },
+                      "2": {
+                        "confidence": 47,
+                        "reputation_scale": "Excellent",
+                        "reputation_value": 92,
+                        "type": "Deprecated"
+                      },
+                      "4": {
+                        "confidence": 45,
+                        "reputation_scale": "Excellent",
+                        "reputation_value": 93,
+                        "type": "Child safety"
+                      }
+                    },
+                    "target": "politifact.com"
+                  },
+                  "source": "politifact.com",
+                  "url": "https://www.mywot.com/en/scorecard/politifact.com",
+                  "weights": {
+                    "final_weight": 2.3499999999999996,
+                    "origin_weight": 5
+                  }
+                }
+              ],
+              "itemReviewed": {
+                "@type": "WebSite",
+                "identifier": "http://www.politifact.com/",
+                "name": "www.politifact.com",
+                "url": "http://www.politifact.com/"
+              },
+              "reviewAspect": "credibility",
+              "reviewRating": {
+                "@type": "AggregateRating",
+                "confidence": 1.8281672472160912e-16,
+                "ratingCount": 2,
+                "ratingExplanation": "Based on 2 review(s) for site `www.politifact.com` by external rater(s) ([NewsGuard](https://www.newsguardtech.com/) or [Web Of Trust](https://mywot.com/))",
+                "ratingValue": 0.9695546558704454,
+                "reviewAspect": "credibility",
+                "reviewCount": 2
+              },
+              "timings": {
+                "@context": "http://coinform.eu",
+                "@type": "Timing",
+                "phase": "misinfome_source_credibility",
+                "sub_timings": [],
+                "total_ms": 0
+              }
+            },
+            {
+              "@context": "http://coinform.eu",
+              "@type": "NormalisedClaimReview",
+              "additionalType": [
+                "ClaimReview",
+                "Review"
+              ],
+              "author": {
+                "@context": "http://coinform.eu",
+                "@type": "ClaimReviewNormalizer",
+                "additionalType": [
+                  "SoftwareApplication",
+                  "Bot"
+                ],
+                "applicationSuite": "Co-inform",
+                "dateCreated": "2020-03-20T18:27:00Z",
+                "description": "Analyses the alternateName and numerical rating value for a ClaimReview and tries to convert that into a normalised credibility rating",
+                "identifier": "uPo0cltI6ThRQZL4DS_X4ypCUisZII9cP0nNPGbRV9Y",
+                "isBasedOn": [],
+                "launchConfiguration": {},
+                "name": "ESI ClaimReview Credibility Normalizer",
+                "softwareVersion": "0.1.0",
+                "url": "http://coinform.eu/bot/ClaimReviewNormalizer/0.1.0"
+              },
+              "basedOn": [
+                {
+                  "@type": "Rating",
+                  "confidence": 1.0,
+                  "ratingExplanation": "Based on textual claim-review rating 'false'",
+                  "ratingValue": -1.0,
+                  "reviewAspect": "credibility"
+                },
+                {
+                  "@type": "Rating",
+                  "confidence": 0.85,
+                  "description": "Normalised accuracy from original rating value (and range)",
+                  "ratingExplanation": "Based on normalised numeric ratingValue 1 in range [1-5]",
+                  "ratingValue": -1.0,
+                  "reviewAspect": "credibility"
+                }
+              ],
+              "basedOnClaimReview": {
+                "@context": {
+                  "nif": "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#",
+                  "schema": "http://schema.org"
+                },
+                "@id": "http://data.gesis.org/claimskg/claim_review/09c3a442-4f7b-5351-9db1-f8d1235f6c9d",
+                "@type": "schema:ClaimReview",
+                "author": {
+                  "@type": "schema:Organization",
+                  "url": "http://www.politifact.com"
+                },
+                "claimReviewed": "'General Motors is the largest corporation in the world again.'",
+                "datePublished": "2012-04-09",
+                "headline": "Vice President Joe Biden says, 'General Motors is the largest corporation in the world'",
+                "inLanguage": {
+                  "@type": "schema:Language",
+                  "alternateName": "en",
+                  "name": "English"
+                },
+                "itemReviewed": {
+                  "@id": "http://data.gesis.org/claimskg/creative_work/f49751f7-f221-567e-b25e-141104837a36",
+                  "@type": "schema:CreativeWork",
+                  "author": {
+                    "@type": "Thing",
+                    "name": "Joe Biden"
+                  },
+                  "citation": [
+                    "http://articles.latimes.com/2012/jan/12/business/la-fi-autos-hiring-20120113?",
+                    "http://www.foxnews.com/opinion/2012/04/03/fresh-fibs-half-truths-and-more-from-biden-but-media-stays-mum/?",
+                    "https://money.cnn.com/magazines/fortune/global500/2011/?",
+                    "https://money.cnn.com/magazines/fortune/global500/2011/faq/?",
+                    "https://twitter.com/politifact?",
+                    "https://www.cbsnews.com/video/watch/?id%3D7403928n%26tag%3DmorningFlexGridLeft;ftnImageStack",
+                    "https://www.facebook.com/politifact?",
+                    "https://www.forbes.com/2011/04/20/global-2000-11-methodology.html?",
+                    "https://www.forbes.com/companies/general-motors/?",
+                    "https://www.forbes.com/global2000/list/?",
+                    "https://www.politifact.com/truth-o-meter/statements/2012/feb/27/mitt-romney/mitt-romney-says-obama-gave-away-car-companies-uni/?",
+                    "https://www.politifact.com/truth-o-meter/statements/2012/jan/25/barack-obama/Barack-Obama-bailout-GM-number-one?"
+                  ],
+                  "datePublished": "2012-04-01",
+                  "keywords": "Corporations,Economy",
+                  "mentions": {
+                    "@type": "nif:String",
+                    "beginIndex": 0,
+                    "endIndex": 14,
+                    "isString": "General Motors"
+                  },
+                  "text": "'General Motors is the largest corporation in the world again.'"
+                },
+                "mentions": [
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 2323,
+                    "endIndex": 2337,
+                    "isString": "General Motors"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 2395,
+                    "endIndex": 2430,
+                    "isString": "vice president of the United States"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 15,
+                    "endIndex": 24,
+                    "isString": "Joe Biden"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 1345,
+                    "endIndex": 1351,
+                    "isString": "Forbes"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 1915,
+                    "endIndex": 1921,
+                    "isString": "Toyota"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 1945,
+                    "endIndex": 1959,
+                    "isString": "General Motors"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 1654,
+                    "endIndex": 1660,
+                    "isString": "Toyota"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 144,
+                    "endIndex": 154,
+                    "isString": "April Fool"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 1783,
+                    "endIndex": 1799,
+                    "isString": "General Electric"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 466,
+                    "endIndex": 474,
+                    "isString": "Facebook"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 1977,
+                    "endIndex": 1993,
+                    "isString": "General Electric"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 1838,
+                    "endIndex": 1848,
+                    "isString": "Volkswagen"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 2004,
+                    "endIndex": 2010,
+                    "isString": "Forbes"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 1665,
+                    "endIndex": 1675,
+                    "isString": "Volkswagen"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 418,
+                    "endIndex": 427,
+                    "isString": "Karl Rove"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 1057,
+                    "endIndex": 1071,
+                    "isString": "General Motors"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 1826,
+                    "endIndex": 1832,
+                    "isString": "Forbes"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 1883,
+                    "endIndex": 1895,
+                    "isString": "Mercedes-Benz"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 400,
+                    "endIndex": 408,
+                    "isString": "Fox News"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 633,
+                    "endIndex": 645,
+                    "isString": "Barack Obama"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 572,
+                    "endIndex": 582,
+                    "isString": "Republican"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 34,
+                    "endIndex": 48,
+                    "isString": "General Motors"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 606,
+                    "endIndex": 617,
+                    "isString": "Mitt Romney"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 118,
+                    "endIndex": 133,
+                    "isString": "Face the Nation"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 495,
+                    "endIndex": 510,
+                    "isString": "Face the Nation"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 458,
+                    "endIndex": 465,
+                    "isString": "Twitter"
+                  },
+                  {
+                    "@type": "nif:String",
+                    "beginIndex": 516,
+                    "endIndex": 529,
+                    "isString": "Bob Schieffer"
+                  }
+                ],
+                "reviewRating": {
+                  "@type": "schema:Rating",
+                  "alternateName": "FALSE",
+                  "author": "http://data.gesis.org/claimskg/organization/claimskg",
+                  "ratingValue": 1
+                },
+                "url": "http://www.politifact.com/truth-o-meter/statements/2012/apr/09/joe-biden/vice-president-joe-biden-says-general-motors-large/"
+              },
+              "claimReviewed": "'General Motors is the largest corporation in the world again.'",
+              "dateCreated": "2020-04-12T09:25:31.492415Z",
+              "reviewAspect": "credibility",
+              "reviewRating": {
+                "@type": "AggregateRating",
+                "confidence": 1.0,
+                "ratingCount": 2,
+                "ratingExplanation": "Based on textual claim-review rating 'false'",
+                "ratingValue": -1.0,
+                "reviewAspect": "credibility",
+                "reviewCount": 1
+              }
+            }
+          ],
+          "itemReviewed": {
+            "@context": "http://coinform.eu",
+            "@type": "Sentence",
+            "additionalTypes": [
+              "CreativeWork"
+            ],
+            "appearance": [
+              {
+                "@type": "Article",
+                "coinform_collection": "unknown",
+                "datePublished": "2012-04-01T00:00:00Z",
+                "inLanguage": null,
+                "publisher": "www.politifact.com",
+                "url": "http://www.politifact.com/truth-o-meter/statements/2012/apr/09/joe-biden/vice-president-joe-biden-says-general-motors-large/"
+              }
+            ],
+            "description": "A single sentence, possibly appearing in some larger document",
+            "identifier": "zrcjFPSE7iSPcS0mey9dwg",
+            "text": "'General Motors is the largest corporation in the world again.'"
+          },
+          "reviewAspect": "credibility",
+          "reviewRating": {
+            "@type": "AggregateRating",
+            "confidence": 1.0,
+            "ratingCount": 6,
+            "ratingExplanation": "Based on textual claim-review rating 'false'",
+            "ratingValue": -1.0,
+            "reviewAspect": "credibility",
+            "reviewCount": 5
+          }
+        }
+      ],
+      "itemReviewed": {
+        "@context": "http://coinform.eu",
+        "@type": "Sentence",
+        "additionalTypes": [
+          "CreativeWork"
+        ],
+        "appearance": [],
+        "description": "A single sentence, possibly appearing in some larger document",
+        "identifier": "--1RRg8ttsArjJ_WfShZrg",
+        "text": "Ford Motor Company is moving their small car division out of the USA."
+      },
+      "reviewAspect": "credibility",
+      "reviewRating": {
+        "@context": "http://coinform.eu",
+        "@type": "AggregateRating",
+        "additionalType": [
+          "Rating"
+        ],
+        "confidence": 0.711270146126541,
+        "ratingCount": 10,
+        "ratingExplanation": "Sentence `Ford Motor Company is moving their small car division out of the USA.` is similar(?) but unrelated to:\n\n * 'General Motors is the largest corporation in the world again.'\nthat seems not credible. Based on textual claim-review rating 'false'",
+        "ratingValue": -1.0,
+        "reviewAspect": "credibility",
+        "reviewCount": 9
+      }
+    },
+    {
+      "@context": "http://coinform.eu",
+      "@type": "QSentCredReview",
+      "additionalType": [
+        "CredibilityReview",
+        "Review"
+      ],
+      "author": {
+        "@context": "http://coinform.eu",
+        "@type": "QSentCredReviewer",
+        "additionalType": [
+          "SoftwareApplication",
+          "Bot"
+        ],
+        "applicationSuite": "Co-inform",
+        "dateCreated": "2020-03-27T22:54:00Z",
+        "description": "Estimates the credibility of a sentence based on its polar similarity with a sentence in the Co-inform database for which a credibility can be estimated",
+        "identifier": "Uq0Fj57weeOOevIFX1grhnn83suv1Qhj9catKSyehYc",
+        "isBasedOn": [],
+        "launchConfiguration": {},
+        "name": "ESI Query Sentence Credibility Reviewer",
+        "softwareVersion": "0.1.0",
+        "url": "http://coinform.eu/bot/QSentenceCredReviewer/0.1.0"
+      },
+      "dateCreated": "2020-04-12T09:25:31.493047Z",
+      "isBasedOn": [
+        {
+          "@context": "http://coinform.eu",
+          "@type": "SentPolarSimilarityReview",
+          "additionalType": [
+            "Review"
+          ],
+          "author": {
+            "@context": "http://coinform.eu",
+            "@type": "SentPolarityReviewer",
+            "additionalType": [
+              "SoftwareApplication",
+              "Bot"
+            ],
+            "applicationSuite": "Co-inform",
+            "dateCreated": "2020-03-27T22:54:00Z",
+            "description": "Estimates the polar similarity between two sentences",
+            "identifier": "KbF8SznYVInInLxwDsoyutkAEUsV5kLnOLI7bajBF30",
+            "isBasedOn": [],
+            "launchConfiguration": {},
+            "name": "ESI Sentence Polarity Reviewer",
+            "softwareVersion": "0.1.0",
+            "url": "http://coinform.eu/bot/SentencePolarSimilarityReviewer/0.1.0"
+          },
+          "dateCreated": "2020-04-12T09:25:31.492750Z",
+          "headline": "is similar(?) but unrelated to",
+          "isBasedOn": [
+            {
+              "@context": "http://coinform.eu",
+              "@type": "SentSimilarityReview",
+              "author": {
+                "@context": "http://coinform.eu",
+                "@type": "SemSentSimReviewer",
+                "additionalType": [
+                  "SoftwareApplication",
+                  "Bot"
+                ],
+                "applicationCategory": [
+                  "NLP"
+                ],
+                "applicationSubCategory": [
+                  "SemanticSimilarity"
+                ],
+                "applicationSuite": [
+                  "Co-inform"
+                ],
+                "author": {
+                  "@type": "Organization",
+                  "name": "Expert System Lab Madrid",
+                  "url": "http://expertsystem.com"
+                },
+                "dateCreated": "2020-03-19T15:09:00Z",
+                "description": "Claim neural index that uses a semantic similarity measure based on a semantic encoder. It achieved 83% accuracy on STS-B.",
+                "executionEnvironment": {
+                  "hostname": "294b42a5477c",
+                  "python.version": "3.7.3"
+                },
+                "identifier": "cbQNmZMDfFeZXgRfSnvBbA8wbrAgOkWUq-JxFAzlMAA",
+                "isBasedOn": [
+                  {
+                    "@context": "http://coinform.eu",
+                    "@type": "SentenceEncoder",
+                    "additionalType": [
+                      "SoftwareApplication",
+                      "Bot"
+                    ],
+                    "applicationCategory": [
+                      "NLP",
+                      "SentenceEncoder"
+                    ],
+                    "applicationSuite": [
+                      "Co-inform"
+                    ],
+                    "author": {
+                      "@type": "Organization",
+                      "name": "Expert System Lab Madrid",
+                      "url": "http://expertsystem.com"
+                    },
+                    "dateCreated": "2019-10-17T10:40:00Z",
+                    "description": "Encodes sentences in a way that, hopefully, places semantically similar sentences close to each other. It was trained on SNS-B and achieved 83% accuracy.",
+                    "executionEnvironment": {},
+                    "launchConfiguration": {
+                      "class": "RoBERTa_Finetuned_Encoder",
+                      "model_name_or_path": "/opt/model/semantic_encoder/",
+                      "pooling_strategy": "pooled",
+                      "powerfun_k": 8,
+                      "powerfun_min_val": 0.85,
+                      "seq_len": 64
+                    },
+                    "name": "RoBERTa_Finetuned_Encoder",
+                    "softwareRequirements": [
+                      "python",
+                      "pytorch",
+                      "transformers",
+                      "RoBERTaTokenizer",
+                      "RoBERTaModel"
+                    ],
+                    "softwareVersion": "0.1.0"
+                  }
+                ],
+                "launchConfiguration": {
+                  "vecSpace": {
+                    "@context": "http://schema.org",
+                    "@type": "Dataset",
+                    "creator": {
+                      "@type": "Organization",
+                      "name": "Expert System Iberia Lab",
+                      "url": "http://expertsystem.com"
+                    },
+                    "dateCreated": "2020-03-25T09:16:42.032125Z",
+                    "dateModified": "2020-03-24T20:18:10Z",
+                    "description": "Dataset of 80298 sentence embeddings extracted from claim reviews and articles collected as part of the Co-inform project",
+                    "encoding": {
+                      "@type": "MediaObject",
+                      "contentSize": "1181.60 MB",
+                      "encodingFormat": "text/tab-separated-values"
+                    },
+                    "identifier": "58ae94d80fc358877932021c33b1dd50c1e2fd1985a093f5c185ddbe19788a07",
+                    "name": "Co-inform Sentence embeddings"
+                  }
+                },
+                "name": "ESI Sentence Similarity Reviewer None",
+                "softwareRequirements": [
+                  "python",
+                  "numpy"
+                ],
+                "softwareVersion": "0.1.0-None"
+              },
+              "dateCreated": "2020-04-12T09:25:31.064443Z",
+              "itemReviewed": {
+                "@context": "http://coinform.eu",
+                "@type": "SentencePair",
+                "additionalTypes": [
+                  "ItemPair",
+                  "CreativeWork"
+                ],
+                "description": "CreativeWork consisting of exactly two sentences",
+                "identifier": "NvLqzcL4PZo1auwI7EzlLQ",
+                "roleA": "querySentence",
+                "roleB": "sentenceInDB",
+                "sentA": {
+                  "@context": "http://coinform.eu",
+                  "@type": "Sentence",
+                  "additionalTypes": [
+                    "CreativeWork"
+                  ],
+                  "appearance": [],
+                  "description": "A single sentence, possibly appearing in some larger document",
+                  "identifier": "--1RRg8ttsArjJ_WfShZrg",
+                  "text": "Ford Motor Company is moving their small car division out of the USA."
+                },
+                "sentB": {
+                  "@context": "http://coinform.eu",
+                  "@type": "Sentence",
+                  "additionalTypes": [
+                    "CreativeWork"
+                  ],
+                  "appearance": [],
+                  "description": "A single sentence, possibly appearing in some larger document",
+                  "identifier": "BaUOLPRLn0GTbChdn85ejA",
+                  "text": "Now that Renault-Nissan has also taken control of Mitsubishi, we can count on the next generation of L 200 also to be built on a new common picnic."
+                },
+                "text": "Ford Motor Company is moving their small car division out of the USA. Now that Renault-Nissan has also taken control of Mitsubishi, we can count on the next generation of L 200 also to be built on a new common picnic."
+              },
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": 0.7864739120604723,
+                "reviewAspect": "similarity"
+              }
+            },
+            {
+              "@context": "http://coinform.eu",
+              "@type": "SentStanceReview",
+              "additionalType": [
+                "Review"
+              ],
+              "author": {
+                "@context": "http://coinform.eu",
+                "@type": "SentStanceReviewer",
+                "additionalType": [
+                  "SoftwareApplication",
+                  "Bot"
+                ],
+                "applicationCategory": [
+                  "NLP"
+                ],
+                "applicationSubCategory": [
+                  "Stance Detection"
+                ],
+                "applicationSuite": [
+                  "Co-inform"
+                ],
+                "author": {
+                  "@type": "Organization",
+                  "name": "Expert System Iberia Lab",
+                  "url": "http://expertsystem.com"
+                },
+                "dateCreated": "2020-01-13T15:18:00Z",
+                "description": "Assesses the stance between two sentences (e.g. agree, disagree, discuss) it was trained and evaluated on FNC-1 achieving 92% accuracy.",
+                "executionEnvironment": {
+                  "cuda": false,
+                  "hostname": "294b42a5477c",
+                  "python.version": "3.7.3"
+                },
+                "identifier": "Q-HBTj4_Ey5Aat7SXIOQ_mTTRl8TAJcOON1tBORnRfs",
+                "isBasedOn": [],
+                "launchConfiguration": {
+                  "model": {
+                    "batch_size": 64,
+                    "class": "RoBERTa",
+                    "finetuned_from_layer": 8,
+                    "seq_len": 128,
+                    "stance2i": {
+                      "agree": 1,
+                      "disagree": 2,
+                      "discuss": 3,
+                      "unrelated": 0
+                    },
+                    "train_val_result": {
+                      "loss": 0.28,
+                      "metrics": {
+                        "acc": 0.923,
+                        "f1_weighted": 0.9186,
+                        "n": 25413
+                      }
+                    }
+                  },
+                  "model_config": {
+                    "@type": "MediaObject",
+                    "contentSize": "682 B",
+                    "dateCreated": "2020-02-06T14:26:04.601783Z",
+                    "dateModified": "2020-01-13T14:18:40Z",
+                    "name": "config.json",
+                    "sha256Digest": "0a6bdf3e86b77df920446d8be14946eb63a76f9a03bb7a1199967a87e94356e6"
+                  },
+                  "pytorch_model": {
+                    "@type": "MediaObject",
+                    "contentSize": "477.80 MB",
+                    "dateCreated": "2020-02-06T14:26:04.598783Z",
+                    "dateModified": "2020-01-13T14:18:40Z",
+                    "name": "pytorch_model.bin",
+                    "sha256Digest": "e704d40b6dc392c7a6bb5a45a27286210385a49731a996115654585d2a559963"
+                  }
+                },
+                "name": "ESI Sentence Stance Reviewer",
+                "softwareRequirements": [
+                  "python",
+                  "pytorch",
+                  "transformers",
+                  "RoBERTaModel",
+                  "RoBERTaTokenizer"
+                ],
+                "softwareVersion": "0.1.0"
+              },
+              "dateCreated": "2020-04-12T09:25:31.064443Z",
+              "itemReviewed": {
+                "@context": "http://coinform.eu",
+                "@type": "SentencePair",
+                "additionalTypes": [
+                  "ItemPair",
+                  "CreativeWork"
+                ],
+                "description": "CreativeWork consisting of exactly two sentences",
+                "identifier": "NvLqzcL4PZo1auwI7EzlLQ",
+                "roleA": "querySentence",
+                "roleB": "sentenceInDB",
+                "sentA": {
+                  "@context": "http://coinform.eu",
+                  "@type": "Sentence",
+                  "additionalTypes": [
+                    "CreativeWork"
+                  ],
+                  "appearance": [],
+                  "description": "A single sentence, possibly appearing in some larger document",
+                  "identifier": "--1RRg8ttsArjJ_WfShZrg",
+                  "text": "Ford Motor Company is moving their small car division out of the USA."
+                },
+                "sentB": {
+                  "@context": "http://coinform.eu",
+                  "@type": "Sentence",
+                  "additionalTypes": [
+                    "CreativeWork"
+                  ],
+                  "appearance": [],
+                  "description": "A single sentence, possibly appearing in some larger document",
+                  "identifier": "BaUOLPRLn0GTbChdn85ejA",
+                  "text": "Now that Renault-Nissan has also taken control of Mitsubishi, we can count on the next generation of L 200 also to be built on a new common picnic."
+                },
+                "text": "Ford Motor Company is moving their small car division out of the USA. Now that Renault-Nissan has also taken control of Mitsubishi, we can count on the next generation of L 200 also to be built on a new common picnic."
+              },
+              "reviewAspect": "stance",
+              "reviewRating": {
+                "@type": "Rating",
+                "confidence": 0.9987745881080627,
+                "ratingExplanation": "Sentence `dbSent` **unrelated** `qSent`.",
+                "ratingValue": "unrelated",
+                "reviewAspect": "stance"
+              }
+            }
+          ],
+          "itemReviewed": {
+            "@context": "http://coinform.eu",
+            "@type": "SentencePair",
+            "additionalTypes": [
+              "ItemPair",
+              "CreativeWork"
+            ],
+            "description": "CreativeWork consisting of exactly two sentences",
+            "identifier": "NvLqzcL4PZo1auwI7EzlLQ",
+            "roleA": "querySentence",
+            "roleB": "sentenceInDB",
+            "sentA": {
+              "@context": "http://coinform.eu",
+              "@type": "Sentence",
+              "additionalTypes": [
+                "CreativeWork"
+              ],
+              "appearance": [],
+              "description": "A single sentence, possibly appearing in some larger document",
+              "identifier": "--1RRg8ttsArjJ_WfShZrg",
+              "text": "Ford Motor Company is moving their small car division out of the USA."
+            },
+            "sentB": {
+              "@context": "http://coinform.eu",
+              "@type": "Sentence",
+              "additionalTypes": [
+                "CreativeWork"
+              ],
+              "appearance": [],
+              "description": "A single sentence, possibly appearing in some larger document",
+              "identifier": "BaUOLPRLn0GTbChdn85ejA",
+              "text": "Now that Renault-Nissan has also taken control of Mitsubishi, we can count on the next generation of L 200 also to be built on a new common picnic."
+            },
+            "text": "Ford Motor Company is moving their small car division out of the USA. Now that Renault-Nissan has also taken control of Mitsubishi, we can count on the next generation of L 200 also to be built on a new common picnic."
+          },
+          "reviewAspect": "polarSimilarity",
+          "reviewBody": "Sentence `Ford Motor Company is moving their small car division out of the USA.` is similar(?) but unrelated to `Now that Renault-Nissan has also taken control of Mitsubishi, we can count on the next generation of L 200 also to be built on a new common picnic.`",
+          "reviewRating": {
+            "@type": "AggregateRating",
+            "confidence": 0.9987745881080627,
+            "ratingCount": 2,
+            "ratingExplanation": "Sentence `Ford Motor Company is moving their small car division out of the USA.` is similar(?) but unrelated to `Now that Renault-Nissan has also taken control of Mitsubishi, we can count on the next generation of L 200 also to be built on a new common picnic.`",
+            "ratingValue": 0.7078265208544251,
+            "reviewAspect": "polarSimilarity",
+            "reviewCount": 2
+          }
+        },
+        {
+          "@context": "http://coinform.eu",
+          "@type": "DBSentCredReview",
+          "additionalType": [
+            "CredibilityReview",
+            "Review"
+          ],
+          "author": {
+            "@context": "http://coinform.eu",
+            "@type": "DBSentCredReviewer",
+            "additionalType": [
+              "SoftwareApplication",
+              "Bot"
+            ],
+            "applicationSuite": "Co-inform",
+            "dateCreated": "2020-03-20T20:03:00Z",
+            "description": "Estimates the credibility of a sentence in the Co-inform DB based on known ClaimReviews or websites where the sentence has been published.",
+            "identifier": "wyhE2Lk6BWaqDURwOMB7K81oYhb3lxxr6yDUd35S1-0",
+            "isBasedOn": [
+              {
+                "@context": "http://coinform.eu",
+                "@type": "MisinfoMeSourceCredReviewer",
+                "additionalType": [
+                  "Bot",
+                  "SoftwareApplication"
+                ],
+                "applicationSuite": "MisinfoMe",
+                "softwareVersion": "2020-04-06T00:00:00Z",
+                "url": "https://socsem.kmi.open.ac.uk/misinfo"
+              }
+            ],
+            "launchConfiguration": {
+              "acred_factchecker_urls": [
+                "https://factcheckni.org/",
+                "https://mediabiasfactcheck.com/",
+                "https://www.snopes.com/",
+                "http://www.politifact.com/",
+                "http://www.factcheck.org/",
+                "http://www.washingtonpost.com/blogs/fact-checker/",
+                "http://truthbetold.news/category/fact-checks/",
+                "http://www.npr.org/sections/politics-fact-check",
+                "http://eldetectordementiras.com/",
+                "http://www.hoax-slayer.com/",
+                "https://apnews.com/tag/APFactCheck",
+                "https://africacheck.org/",
+                "http://www.lupa.news/",
+                "http://apublica.org/truco",
+                "http://aosfatos.org/",
+                "http://chequeado.com/",
+                "http://climatefeedback.org/",
+                "https://correctiv.org/echtjetzt/",
+                "http://www.dogrulukpayi.com/",
+                "http://www.lasexta.com/programas/el-objetivo/prueba-verificacion/",
+                "http://factcheck.ge/",
+                "http://observers.france24.com/fr/",
+                "https://fullfact.org/",
+                "http://www.istinomer.rs/",
+                "http://istinomjer.ba/",
+                "http://www.lemonde.fr/les-decodeurs/",
+                "http://www.liberation.fr/desintox,99721",
+                "http://observador.pt/seccao/observador/fact-check/",
+                "https://pagellapolitica.it/",
+                "http://www.abc.net.au/news/factcheck/",
+                "https://teyit.org/",
+                "https://theconversation.com/au/factcheck",
+                "http://www.thejournal.ie/factcheck/news/",
+                "https://www.washingtonpost.com/news/fact-checker/",
+                "http://www.metro.se/viralgranskaren",
+                "https://eufactcheck.eu/fact-checks/",
+                "https://factcheckeu.info/en/",
+                "https://correctiv.org/thema/faktencheck/",
+                "https://www.20minutes.fr/",
+                "https://factuel.afp.com/",
+                "https://www.liberation.fr/checknews,100893",
+                "https://www.ellinikahoaxes.gr/",
+                "https://faktograf.hr/",
+                "https://observers.france24.com/fr/",
+                "https://www.lavoce.info/",
+                "https://leadstories.com/",
+                "https://factcheckeu.info/es/publisher/les-d%C3%A9codeurs",
+                "https://maldita.es/",
+                "https://newtral.es/",
+                "https://observador.pt/",
+                "https://pagellapolitica.it/",
+                "https://www.15min.lt/patikrinta-15min",
+                "https://www.thejournal.ie/",
+                "https://www.mm.dk/tjekdet/",
+                "http://sadroz.af/",
+                "http://www.vertetematesi.info/",
+                "http://chequeado.com/",
+                "http://www.abc.net.au/news/factcheck/",
+                "http://www.crikey.com.au/column/get-fact/",
+                "http://www.medicalobserver.com.au/",
+                "http://www.politifact.com.au/",
+                "http://theconversation.com/us/topics/election-factcheck",
+                "https://factcheckeu.org/",
+                "http://blogs.oglobo.globo.com/preto-no-branco/",
+                "http://apublica.org/truco/",
+                "http://istinomjer.ba/",
+                "https://globalnews.ca/tag/baloney-meter/",
+                "http://factscan.ca/",
+                "https://lasillavacia.com/hilos-tematicos/detector-de-mentiras",
+                "http://media.elfinancierocr.com/retealcandidato/",
+                "http://uycheck.com/",
+                "http://morsimeter.com/en",
+                "http://faktabaari.fi/",
+                "http://www.liberation.fr/desintox,99721",
+                "http://tempsreel.nouvelobs.com/politique/les-pinocchios-de-l-obs/",
+                "http://factcheck.ge/en/",
+                "https://faktomat.adhocracy.de/instance/faktomat",
+                "http://www.spiegel.de/thema/muenchhausen_check/",
+                "http://zdfcheck.zdf.de/",
+                "http://idemagog.hu/",
+                "http://factchecker.in/",
+                "https://rouhanimeter.com/",
+                "http://www.politicometro.it/",
+                "http://www.animalpolitico.com/elsabueso/el-sabueso/",
+                "http://www.promis.md/",
+                "https://fhjfactcheck.wordpress.com/",
+                "http://www.journalistiekennieuwemedia.nl/NC/",
+                "http://www.radionz.co.nz/news/political/252810/election-2014-fact-or-fiction",
+                "http://www.buharimeter.ng/",
+                "http://www.bt.no/nyheter/innenriks/faktasjekk/",
+                "http://demagog.org.pl/",
+                "http://www.obywatelerozliczaja.pl/",
+                "http://www.factual.ro/",
+                "http://www.istinomer.rs/",
+                "http://www.demagog.sk/",
+                "https://africacheck.org/",
+                "http://poll.ilyo.co.kr/?ac=poll&tac=main",
+                "http://news.jtbc.joins.com/hotissue/timeline_issue.aspx?comp_id=NC10011176",
+                "http://newstapa.org/tag/%EC%A0%95%EB%A7%90",
+                "http://www.periodistadigital.com/verdadmentira/",
+                "http://blog.svd.se/faktakollen/",
+                "http://www.svt.se/nyheter/2923690",
+                "http://jomaameter.org/?locale=en#.VfNoMpfriio",
+                "http://www.dogrulukpayi.com/",
+                "http://fakecontrol.org/",
+                "http://www.stopfake.org/en/news/",
+                "http://vladometr.org/",
+                "http://www.theguardian.com/news/reality-check",
+                "http://blogs.channel4.com/factcheck/"
+              ],
+              "factchecker_website_to_qclaim_confidence_penalty_factor": 0.5
+            },
+            "name": "ESI DB Sentence Credibility Reviewer",
+            "softwareVersion": "0.1.0",
+            "url": "http://coinform.eu/bot/DBSentCredReviewer/0.1.0"
+          },
+          "dateCreated": "2020-04-12T09:25:31.492864Z",
+          "isBasedOn": [
+            {
+              "@context": "http://coinform.eu",
+              "@type": "WebSiteCredReview",
+              "additionalType": ["CredibilityReview", "Review"],
+              "author": {
+                "@context": "http://coinform.eu",
+                "@type": "MisinfoMeSourceCredReviewer",
+                "additionalType": [
+                  "Bot",
+                  "SoftwareApplication"
+                ],
+                "applicationSuite": "MisinfoMe",
+                "softwareVersion": "2020-04-06T00:00:00Z",
+                "url": "https://socsem.kmi.open.ac.uk/misinfo"
+              },
+              "dateCreated": "2020-04-12T09:25:31.491529Z",
+              "isBasedOn": [],
+              "isBasedOn_assessments": [
+                {
+                  "credibility": {
+                    "confidence": 0.4,
+                    "value": 0.68
+                  },
+                  "domain": "expressen.se",
+                  "granularity": "source",
+                  "itemReviewed": "expressen.se",
+                  "origin": {
+                    "assessments_count": 2375,
+                    "description": "Ever wondered how to check if a website is safe? Get the community to do the website security checks for you.",
+                    "homepage": "https://mywot.com/",
+                    "id": "mywot",
+                    "logo": "https://www.mywot.com/images/logo.png",
+                    "name": "Web Of Trust",
+                    "origin_type": "realtime",
+                    "weight": 5.0
+                  },
+                  "origin_id": "mywot",
+                  "original": {
+                    "blacklists": {},
+                    "categories": {
+                      "303": {
+                        "category_group": "Neutral",
+                        "confidence": 31,
+                        "description": "Opinions, religion, politics"
+                      },
+                      "501": {
+                        "category_group": "Positive",
+                        "confidence": 65,
+                        "description": "Good site"
+                      }
+                    },
+                    "detail_page": "https://www.mywot.com/en/scorecard/expressen.se",
+                    "reputation_components": {
+                      "0": {
+                        "confidence": 40,
+                        "reputation_scale": "Excellent",
+                        "reputation_value": 84,
+                        "type": "Trustworthiness"
+                      },
+                      "1": {
+                        "confidence": 40,
+                        "reputation_scale": "Excellent",
+                        "reputation_value": 84,
+                        "type": "Deprecated"
+                      },
+                      "2": {
+                        "confidence": 40,
+                        "reputation_scale": "Excellent",
+                        "reputation_value": 84,
+                        "type": "Deprecated"
+                      },
+                      "4": {
+                        "confidence": 36,
+                        "reputation_scale": "Excellent",
+                        "reputation_value": 81,
+                        "type": "Child safety"
+                      }
+                    },
+                    "target": "expressen.se"
+                  },
+                  "source": "expressen.se",
+                  "url": "https://www.mywot.com/en/scorecard/expressen.se",
+                  "weights": {
+                    "final_weight": 2.0,
+                    "origin_weight": 5
+                  }
+                }
+              ],
+              "itemReviewed": {
+                "@type": "WebSite",
+                "identifier": "http://www.expressen.se/",
+                "name": "www.expressen.se",
+                "url": "http://www.expressen.se/"
+              },
+              "reviewAspect": "credibility",
+              "reviewRating": {
+                "@type": "AggregateRating",
+                "confidence": 0.4,
+                "ratingCount": 1,
+                "ratingExplanation": "Based on 1 review(s) for site `www.expressen.se` by external rater(s) ([Web Of Trust](https://mywot.com/))",
+                "ratingValue": 0.6800000000000002,
+                "reviewAspect": "credibility",
+                "reviewCount": 1
+              },
+              "timings": {
+                "@context": "http://coinform.eu",
+                "@type": "Timing",
+                "phase": "misinfome_source_credibility",
+                "sub_timings": [],
+                "total_ms": 0
+              }
+            }
+          ],
+          "itemReviewed": {
+            "@context": "http://coinform.eu",
+            "@type": "Sentence",
+            "additionalTypes": [
+              "CreativeWork"
+            ],
+            "appearance": [
+              {
+                "@type": "Article",
+                "coinform_collection": "pilot-se",
+                "datePublished": "2019-03-29T14:44:20.438Z",
+                "inLanguage": "en",
+                "publisher": "www.expressen.se",
+                "url": "https://www.expressen.se/motor/biltester/test-alaskan-kopian-som-ar-dyrare-an-originalet/"
+              }
+            ],
+            "description": "A single sentence, possibly appearing in some larger document",
+            "identifier": "BaUOLPRLn0GTbChdn85ejA",
+            "text": "Now that Renault-Nissan has also taken control of Mitsubishi, we can count on the next generation of L 200 also to be built on a new common picnic."
+          },
+          "reviewAspect": "credibility",
+          "reviewRating": {
+            "@type": "AggregateRating",
+            "confidence": 0.4,
+            "ratingCount": 2,
+            "ratingExplanation": "Sentence published on website with credibility Based on 1 review(s) for site `www.expressen.se` by external rater(s) ([Web Of Trust](https://mywot.com/))",
+            "ratingValue": 0.6800000000000002,
+            "reviewAspect": "credibility",
+            "reviewCount": 2
+          }
+        }
+      ],
+      "itemReviewed": {
+        "@context": "http://coinform.eu",
+        "@type": "Sentence",
+        "additionalTypes": [
+          "CreativeWork"
+        ],
+        "appearance": [],
+        "description": "A single sentence, possibly appearing in some larger document",
+        "identifier": "--1RRg8ttsArjJ_WfShZrg",
+        "text": "Ford Motor Company is moving their small car division out of the USA."
+      },
+      "reviewAspect": "credibility",
+      "reviewRating": {
+        "@context": "http://coinform.eu",
+        "@type": "AggregateRating",
+        "additionalType": [
+          "Rating"
+        ],
+        "confidence": 0.28313060834177006,
+        "ratingCount": 6,
+        "ratingExplanation": "Sentence `Ford Motor Company is moving their small car division out of the USA.` is similar(?) but unrelated to:\n\n * Now that Renault-Nissan has also taken control of Mitsubishi, we can count on the next generation of L 200 also to be built on a new common picnic.\nthat seems credible. Sentence published on website with credibility Based on 1 review(s) for site `www.expressen.se` by external rater(s) ([Web Of Trust](https://mywot.com/))",
+        "ratingValue": 0.6800000000000002,
+        "reviewAspect": "credibility",
+        "reviewCount": 6
+      }
+    },
+    {
+      "@context": "http://coinform.eu",
+      "@type": "QSentCredReview",
+      "additionalType": [
+        "CredibilityReview",
+        "Review"
+      ],
+      "author": {
+        "@context": "http://coinform.eu",
+        "@type": "QSentCredReviewer",
+        "additionalType": [
+          "SoftwareApplication",
+          "Bot"
+        ],
+        "applicationSuite": "Co-inform",
+        "dateCreated": "2020-03-27T22:54:00Z",
+        "description": "Estimates the credibility of a sentence based on its polar similarity with a sentence in the Co-inform database for which a credibility can be estimated",
+        "identifier": "Uq0Fj57weeOOevIFX1grhnn83suv1Qhj9catKSyehYc",
+        "isBasedOn": [],
+        "launchConfiguration": {},
+        "name": "ESI Query Sentence Credibility Reviewer",
+        "softwareVersion": "0.1.0",
+        "url": "http://coinform.eu/bot/QSentenceCredReviewer/0.1.0"
+      },
+      "dateCreated": "2020-04-12T09:25:31.493408Z",
+      "isBasedOn": [
+        {
+          "@context": "http://coinform.eu",
+          "@type": "SentPolarSimilarityReview",
+          "additionalType": [
+            "Review"
+          ],
+          "author": {
+            "@context": "http://coinform.eu",
+            "@type": "SentPolarityReviewer",
+            "additionalType": [
+              "SoftwareApplication",
+              "Bot"
+            ],
+            "applicationSuite": "Co-inform",
+            "dateCreated": "2020-03-27T22:54:00Z",
+            "description": "Estimates the polar similarity between two sentences",
+            "identifier": "KbF8SznYVInInLxwDsoyutkAEUsV5kLnOLI7bajBF30",
+            "isBasedOn": [],
+            "launchConfiguration": {},
+            "name": "ESI Sentence Polarity Reviewer",
+            "softwareVersion": "0.1.0",
+            "url": "http://coinform.eu/bot/SentencePolarSimilarityReviewer/0.1.0"
+          },
+          "dateCreated": "2020-04-12T09:25:31.493144Z",
+          "headline": "is similar(?) but unrelated to",
+          "isBasedOn": [
+            {
+              "@context": "http://coinform.eu",
+              "@type": "SentSimilarityReview",
+              "author": {
+                "@context": "http://coinform.eu",
+                "@type": "SemSentSimReviewer",
+                "additionalType": [
+                  "SoftwareApplication",
+                  "Bot"
+                ],
+                "applicationCategory": [
+                  "NLP"
+                ],
+                "applicationSubCategory": [
+                  "SemanticSimilarity"
+                ],
+                "applicationSuite": [
+                  "Co-inform"
+                ],
+                "author": {
+                  "@type": "Organization",
+                  "name": "Expert System Lab Madrid",
+                  "url": "http://expertsystem.com"
+                },
+                "dateCreated": "2020-03-19T15:09:00Z",
+                "description": "Claim neural index that uses a semantic similarity measure based on a semantic encoder. It achieved 83% accuracy on STS-B.",
+                "executionEnvironment": {
+                  "hostname": "294b42a5477c",
+                  "python.version": "3.7.3"
+                },
+                "identifier": "cbQNmZMDfFeZXgRfSnvBbA8wbrAgOkWUq-JxFAzlMAA",
+                "isBasedOn": [
+                  {
+                    "@context": "http://coinform.eu",
+                    "@type": "SentenceEncoder",
+                    "additionalType": [
+                      "SoftwareApplication",
+                      "Bot"
+                    ],
+                    "applicationCategory": [
+                      "NLP",
+                      "SentenceEncoder"
+                    ],
+                    "applicationSuite": [
+                      "Co-inform"
+                    ],
+                    "author": {
+                      "@type": "Organization",
+                      "name": "Expert System Lab Madrid",
+                      "url": "http://expertsystem.com"
+                    },
+                    "dateCreated": "2019-10-17T10:40:00Z",
+                    "description": "Encodes sentences in a way that, hopefully, places semantically similar sentences close to each other. It was trained on SNS-B and achieved 83% accuracy.",
+                    "executionEnvironment": {},
+                    "launchConfiguration": {
+                      "class": "RoBERTa_Finetuned_Encoder",
+                      "model_name_or_path": "/opt/model/semantic_encoder/",
+                      "pooling_strategy": "pooled",
+                      "powerfun_k": 8,
+                      "powerfun_min_val": 0.85,
+                      "seq_len": 64
+                    },
+                    "name": "RoBERTa_Finetuned_Encoder",
+                    "softwareRequirements": [
+                      "python",
+                      "pytorch",
+                      "transformers",
+                      "RoBERTaTokenizer",
+                      "RoBERTaModel"
+                    ],
+                    "softwareVersion": "0.1.0"
+                  }
+                ],
+                "launchConfiguration": {
+                  "vecSpace": {
+                    "@context": "http://schema.org",
+                    "@type": "Dataset",
+                    "creator": {
+                      "@type": "Organization",
+                      "name": "Expert System Iberia Lab",
+                      "url": "http://expertsystem.com"
+                    },
+                    "dateCreated": "2020-03-25T09:16:42.032125Z",
+                    "dateModified": "2020-03-24T20:18:10Z",
+                    "description": "Dataset of 80298 sentence embeddings extracted from claim reviews and articles collected as part of the Co-inform project",
+                    "encoding": {
+                      "@type": "MediaObject",
+                      "contentSize": "1181.60 MB",
+                      "encodingFormat": "text/tab-separated-values"
+                    },
+                    "identifier": "58ae94d80fc358877932021c33b1dd50c1e2fd1985a093f5c185ddbe19788a07",
+                    "name": "Co-inform Sentence embeddings"
+                  }
+                },
+                "name": "ESI Sentence Similarity Reviewer None",
+                "softwareRequirements": [
+                  "python",
+                  "numpy"
+                ],
+                "softwareVersion": "0.1.0-None"
+              },
+              "dateCreated": "2020-04-12T09:25:31.064443Z",
+              "itemReviewed": {
+                "@context": "http://coinform.eu",
+                "@type": "SentencePair",
+                "additionalTypes": [
+                  "ItemPair",
+                  "CreativeWork"
+                ],
+                "description": "CreativeWork consisting of exactly two sentences",
+                "identifier": "7aJrUn5f7FqmDi6z3x-q3A",
+                "roleA": "querySentence",
+                "roleB": "sentenceInDB",
+                "sentA": {
+                  "@context": "http://coinform.eu",
+                  "@type": "Sentence",
+                  "additionalTypes": [
+                    "CreativeWork"
+                  ],
+                  "appearance": [],
+                  "description": "A single sentence, possibly appearing in some larger document",
+                  "identifier": "--1RRg8ttsArjJ_WfShZrg",
+                  "text": "Ford Motor Company is moving their small car division out of the USA."
+                },
+                "sentB": {
+                  "@context": "http://coinform.eu",
+                  "@type": "Sentence",
+                  "additionalTypes": [
+                    "CreativeWork"
+                  ],
+                  "appearance": [],
+                  "description": "A single sentence, possibly appearing in some larger document",
+                  "identifier": "zAj1PSUqATtbD3emCF8MpQ",
+                  "text": "Ford takes a great digital step with new Ford Mustang with several funny functions."
+                },
+                "text": "Ford Motor Company is moving their small car division out of the USA. Ford takes a great digital step with new Ford Mustang with several funny functions."
+              },
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": 0.7848291397972954,
+                "reviewAspect": "similarity"
+              }
+            },
+            {
+              "@context": "http://coinform.eu",
+              "@type": "SentStanceReview",
+              "additionalType": [
+                "Review"
+              ],
+              "author": {
+                "@context": "http://coinform.eu",
+                "@type": "SentStanceReviewer",
+                "additionalType": [
+                  "SoftwareApplication",
+                  "Bot"
+                ],
+                "applicationCategory": [
+                  "NLP"
+                ],
+                "applicationSubCategory": [
+                  "Stance Detection"
+                ],
+                "applicationSuite": [
+                  "Co-inform"
+                ],
+                "author": {
+                  "@type": "Organization",
+                  "name": "Expert System Iberia Lab",
+                  "url": "http://expertsystem.com"
+                },
+                "dateCreated": "2020-01-13T15:18:00Z",
+                "description": "Assesses the stance between two sentences (e.g. agree, disagree, discuss) it was trained and evaluated on FNC-1 achieving 92% accuracy.",
+                "executionEnvironment": {
+                  "cuda": false,
+                  "hostname": "294b42a5477c",
+                  "python.version": "3.7.3"
+                },
+                "identifier": "Q-HBTj4_Ey5Aat7SXIOQ_mTTRl8TAJcOON1tBORnRfs",
+                "isBasedOn": [],
+                "launchConfiguration": {
+                  "model": {
+                    "batch_size": 64,
+                    "class": "RoBERTa",
+                    "finetuned_from_layer": 8,
+                    "seq_len": 128,
+                    "stance2i": {
+                      "agree": 1,
+                      "disagree": 2,
+                      "discuss": 3,
+                      "unrelated": 0
+                    },
+                    "train_val_result": {
+                      "loss": 0.28,
+                      "metrics": {
+                        "acc": 0.923,
+                        "f1_weighted": 0.9186,
+                        "n": 25413
+                      }
+                    }
+                  },
+                  "model_config": {
+                    "@type": "MediaObject",
+                    "contentSize": "682 B",
+                    "dateCreated": "2020-02-06T14:26:04.601783Z",
+                    "dateModified": "2020-01-13T14:18:40Z",
+                    "name": "config.json",
+                    "sha256Digest": "0a6bdf3e86b77df920446d8be14946eb63a76f9a03bb7a1199967a87e94356e6"
+                  },
+                  "pytorch_model": {
+                    "@type": "MediaObject",
+                    "contentSize": "477.80 MB",
+                    "dateCreated": "2020-02-06T14:26:04.598783Z",
+                    "dateModified": "2020-01-13T14:18:40Z",
+                    "name": "pytorch_model.bin",
+                    "sha256Digest": "e704d40b6dc392c7a6bb5a45a27286210385a49731a996115654585d2a559963"
+                  }
+                },
+                "name": "ESI Sentence Stance Reviewer",
+                "softwareRequirements": [
+                  "python",
+                  "pytorch",
+                  "transformers",
+                  "RoBERTaModel",
+                  "RoBERTaTokenizer"
+                ],
+                "softwareVersion": "0.1.0"
+              },
+              "dateCreated": "2020-04-12T09:25:31.064443Z",
+              "itemReviewed": {
+                "@context": "http://coinform.eu",
+                "@type": "SentencePair",
+                "additionalTypes": [
+                  "ItemPair",
+                  "CreativeWork"
+                ],
+                "description": "CreativeWork consisting of exactly two sentences",
+                "identifier": "7aJrUn5f7FqmDi6z3x-q3A",
+                "roleA": "querySentence",
+                "roleB": "sentenceInDB",
+                "sentA": {
+                  "@context": "http://coinform.eu",
+                  "@type": "Sentence",
+                  "additionalTypes": [
+                    "CreativeWork"
+                  ],
+                  "appearance": [],
+                  "description": "A single sentence, possibly appearing in some larger document",
+                  "identifier": "--1RRg8ttsArjJ_WfShZrg",
+                  "text": "Ford Motor Company is moving their small car division out of the USA."
+                },
+                "sentB": {
+                  "@context": "http://coinform.eu",
+                  "@type": "Sentence",
+                  "additionalTypes": [
+                    "CreativeWork"
+                  ],
+                  "appearance": [],
+                  "description": "A single sentence, possibly appearing in some larger document",
+                  "identifier": "zAj1PSUqATtbD3emCF8MpQ",
+                  "text": "Ford takes a great digital step with new Ford Mustang with several funny functions."
+                },
+                "text": "Ford Motor Company is moving their small car division out of the USA. Ford takes a great digital step with new Ford Mustang with several funny functions."
+              },
+              "reviewAspect": "stance",
+              "reviewRating": {
+                "@type": "Rating",
+                "confidence": 0.9981127977371216,
+                "ratingExplanation": "Sentence `dbSent` **unrelated** `qSent`.",
+                "ratingValue": "unrelated",
+                "reviewAspect": "stance"
+              }
+            }
+          ],
+          "itemReviewed": {
+            "@context": "http://coinform.eu",
+            "@type": "SentencePair",
+            "additionalTypes": [
+              "ItemPair",
+              "CreativeWork"
+            ],
+            "description": "CreativeWork consisting of exactly two sentences",
+            "identifier": "7aJrUn5f7FqmDi6z3x-q3A",
+            "roleA": "querySentence",
+            "roleB": "sentenceInDB",
+            "sentA": {
+              "@context": "http://coinform.eu",
+              "@type": "Sentence",
+              "additionalTypes": [
+                "CreativeWork"
+              ],
+              "appearance": [],
+              "description": "A single sentence, possibly appearing in some larger document",
+              "identifier": "--1RRg8ttsArjJ_WfShZrg",
+              "text": "Ford Motor Company is moving their small car division out of the USA."
+            },
+            "sentB": {
+              "@context": "http://coinform.eu",
+              "@type": "Sentence",
+              "additionalTypes": [
+                "CreativeWork"
+              ],
+              "appearance": [],
+              "description": "A single sentence, possibly appearing in some larger document",
+              "identifier": "zAj1PSUqATtbD3emCF8MpQ",
+              "text": "Ford takes a great digital step with new Ford Mustang with several funny functions."
+            },
+            "text": "Ford Motor Company is moving their small car division out of the USA. Ford takes a great digital step with new Ford Mustang with several funny functions."
+          },
+          "reviewAspect": "polarSimilarity",
+          "reviewBody": "Sentence `Ford Motor Company is moving their small car division out of the USA.` is similar(?) but unrelated to `Ford takes a great digital step with new Ford Mustang with several funny functions.`",
+          "reviewRating": {
+            "@type": "AggregateRating",
+            "confidence": 0.9981127977371216,
+            "ratingCount": 2,
+            "ratingExplanation": "Sentence `Ford Motor Company is moving their small car division out of the USA.` is similar(?) but unrelated to `Ford takes a great digital step with new Ford Mustang with several funny functions.`",
+            "ratingValue": 0.7063462258175659,
+            "reviewAspect": "polarSimilarity",
+            "reviewCount": 2
+          }
+        },
+        {
+          "@context": "http://coinform.eu",
+          "@type": "DBSentCredReview",
+          "additionalType": [
+            "CredibilityReview",
+            "Review"
+          ],
+          "author": {
+            "@context": "http://coinform.eu",
+            "@type": "DBSentCredReviewer",
+            "additionalType": [
+              "SoftwareApplication",
+              "Bot"
+            ],
+            "applicationSuite": "Co-inform",
+            "dateCreated": "2020-03-20T20:03:00Z",
+            "description": "Estimates the credibility of a sentence in the Co-inform DB based on known ClaimReviews or websites where the sentence has been published.",
+            "identifier": "wyhE2Lk6BWaqDURwOMB7K81oYhb3lxxr6yDUd35S1-0",
+            "isBasedOn": [
+              {
+                "@context": "http://coinform.eu",
+                "@type": "MisinfoMeSourceCredReviewer",
+                "additionalType": [
+                  "Bot",
+                  "SoftwareApplication"
+                ],
+                "applicationSuite": "MisinfoMe",
+                "softwareVersion": "2020-04-06T00:00:00Z",
+                "url": "https://socsem.kmi.open.ac.uk/misinfo"
+              }
+            ],
+            "launchConfiguration": {
+              "acred_factchecker_urls": [
+                "https://factcheckni.org/",
+                "https://mediabiasfactcheck.com/",
+                "https://www.snopes.com/",
+                "http://www.politifact.com/",
+                "http://www.factcheck.org/",
+                "http://www.washingtonpost.com/blogs/fact-checker/",
+                "http://truthbetold.news/category/fact-checks/",
+                "http://www.npr.org/sections/politics-fact-check",
+                "http://eldetectordementiras.com/",
+                "http://www.hoax-slayer.com/",
+                "https://apnews.com/tag/APFactCheck",
+                "https://africacheck.org/",
+                "http://www.lupa.news/",
+                "http://apublica.org/truco",
+                "http://aosfatos.org/",
+                "http://chequeado.com/",
+                "http://climatefeedback.org/",
+                "https://correctiv.org/echtjetzt/",
+                "http://www.dogrulukpayi.com/",
+                "http://www.lasexta.com/programas/el-objetivo/prueba-verificacion/",
+                "http://factcheck.ge/",
+                "http://observers.france24.com/fr/",
+                "https://fullfact.org/",
+                "http://www.istinomer.rs/",
+                "http://istinomjer.ba/",
+                "http://www.lemonde.fr/les-decodeurs/",
+                "http://www.liberation.fr/desintox,99721",
+                "http://observador.pt/seccao/observador/fact-check/",
+                "https://pagellapolitica.it/",
+                "http://www.abc.net.au/news/factcheck/",
+                "https://teyit.org/",
+                "https://theconversation.com/au/factcheck",
+                "http://www.thejournal.ie/factcheck/news/",
+                "https://www.washingtonpost.com/news/fact-checker/",
+                "http://www.metro.se/viralgranskaren",
+                "https://eufactcheck.eu/fact-checks/",
+                "https://factcheckeu.info/en/",
+                "https://correctiv.org/thema/faktencheck/",
+                "https://www.20minutes.fr/",
+                "https://factuel.afp.com/",
+                "https://www.liberation.fr/checknews,100893",
+                "https://www.ellinikahoaxes.gr/",
+                "https://faktograf.hr/",
+                "https://observers.france24.com/fr/",
+                "https://www.lavoce.info/",
+                "https://leadstories.com/",
+                "https://factcheckeu.info/es/publisher/les-d%C3%A9codeurs",
+                "https://maldita.es/",
+                "https://newtral.es/",
+                "https://observador.pt/",
+                "https://pagellapolitica.it/",
+                "https://www.15min.lt/patikrinta-15min",
+                "https://www.thejournal.ie/",
+                "https://www.mm.dk/tjekdet/",
+                "http://sadroz.af/",
+                "http://www.vertetematesi.info/",
+                "http://chequeado.com/",
+                "http://www.abc.net.au/news/factcheck/",
+                "http://www.crikey.com.au/column/get-fact/",
+                "http://www.medicalobserver.com.au/",
+                "http://www.politifact.com.au/",
+                "http://theconversation.com/us/topics/election-factcheck",
+                "https://factcheckeu.org/",
+                "http://blogs.oglobo.globo.com/preto-no-branco/",
+                "http://apublica.org/truco/",
+                "http://istinomjer.ba/",
+                "https://globalnews.ca/tag/baloney-meter/",
+                "http://factscan.ca/",
+                "https://lasillavacia.com/hilos-tematicos/detector-de-mentiras",
+                "http://media.elfinancierocr.com/retealcandidato/",
+                "http://uycheck.com/",
+                "http://morsimeter.com/en",
+                "http://faktabaari.fi/",
+                "http://www.liberation.fr/desintox,99721",
+                "http://tempsreel.nouvelobs.com/politique/les-pinocchios-de-l-obs/",
+                "http://factcheck.ge/en/",
+                "https://faktomat.adhocracy.de/instance/faktomat",
+                "http://www.spiegel.de/thema/muenchhausen_check/",
+                "http://zdfcheck.zdf.de/",
+                "http://idemagog.hu/",
+                "http://factchecker.in/",
+                "https://rouhanimeter.com/",
+                "http://www.politicometro.it/",
+                "http://www.animalpolitico.com/elsabueso/el-sabueso/",
+                "http://www.promis.md/",
+                "https://fhjfactcheck.wordpress.com/",
+                "http://www.journalistiekennieuwemedia.nl/NC/",
+                "http://www.radionz.co.nz/news/political/252810/election-2014-fact-or-fiction",
+                "http://www.buharimeter.ng/",
+                "http://www.bt.no/nyheter/innenriks/faktasjekk/",
+                "http://demagog.org.pl/",
+                "http://www.obywatelerozliczaja.pl/",
+                "http://www.factual.ro/",
+                "http://www.istinomer.rs/",
+                "http://www.demagog.sk/",
+                "https://africacheck.org/",
+                "http://poll.ilyo.co.kr/?ac=poll&tac=main",
+                "http://news.jtbc.joins.com/hotissue/timeline_issue.aspx?comp_id=NC10011176",
+                "http://newstapa.org/tag/%EC%A0%95%EB%A7%90",
+                "http://www.periodistadigital.com/verdadmentira/",
+                "http://blog.svd.se/faktakollen/",
+                "http://www.svt.se/nyheter/2923690",
+                "http://jomaameter.org/?locale=en#.VfNoMpfriio",
+                "http://www.dogrulukpayi.com/",
+                "http://fakecontrol.org/",
+                "http://www.stopfake.org/en/news/",
+                "http://vladometr.org/",
+                "http://www.theguardian.com/news/reality-check",
+                "http://blogs.channel4.com/factcheck/"
+              ],
+              "factchecker_website_to_qclaim_confidence_penalty_factor": 0.5
+            },
+            "name": "ESI DB Sentence Credibility Reviewer",
+            "softwareVersion": "0.1.0",
+            "url": "http://coinform.eu/bot/DBSentCredReviewer/0.1.0"
+          },
+          "dateCreated": "2020-04-12T09:25:31.493245Z",
+          "isBasedOn": [
+            {
+              "@context": "http://coinform.eu",
+              "@type": "WebSiteCredReview",
+              "additionalType": ["CredibilityReview", "Review"],
+              "author": {
+                "@context": "http://coinform.eu",
+                "@type": "MisinfoMeSourceCredReviewer",
+                "additionalType": [
+                  "Bot",
+                  "SoftwareApplication"
+                ],
+                "applicationSuite": "MisinfoMe",
+                "softwareVersion": "2020-04-06T00:00:00Z",
+                "url": "https://socsem.kmi.open.ac.uk/misinfo"
+              },
+              "dateCreated": "2020-04-12T09:25:31.491536Z",
+              "isBasedOn": [],
+              "isBasedOn_assessments": [
+                {
+                  "credibility": {
+                    "confidence": 0.4,
+                    "value": 0.68
+                  },
+                  "domain": "expressen.se",
+                  "granularity": "source",
+                  "itemReviewed": "expressen.se",
+                  "origin": {
+                    "assessments_count": 2375,
+                    "description": "Ever wondered how to check if a website is safe? Get the community to do the website security checks for you.",
+                    "homepage": "https://mywot.com/",
+                    "id": "mywot",
+                    "logo": "https://www.mywot.com/images/logo.png",
+                    "name": "Web Of Trust",
+                    "origin_type": "realtime",
+                    "weight": 5.0
+                  },
+                  "origin_id": "mywot",
+                  "original": {
+                    "blacklists": {},
+                    "categories": {
+                      "303": {
+                        "category_group": "Neutral",
+                        "confidence": 31,
+                        "description": "Opinions, religion, politics"
+                      },
+                      "501": {
+                        "category_group": "Positive",
+                        "confidence": 65,
+                        "description": "Good site"
+                      }
+                    },
+                    "detail_page": "https://www.mywot.com/en/scorecard/expressen.se",
+                    "reputation_components": {
+                      "0": {
+                        "confidence": 40,
+                        "reputation_scale": "Excellent",
+                        "reputation_value": 84,
+                        "type": "Trustworthiness"
+                      },
+                      "1": {
+                        "confidence": 40,
+                        "reputation_scale": "Excellent",
+                        "reputation_value": 84,
+                        "type": "Deprecated"
+                      },
+                      "2": {
+                        "confidence": 40,
+                        "reputation_scale": "Excellent",
+                        "reputation_value": 84,
+                        "type": "Deprecated"
+                      },
+                      "4": {
+                        "confidence": 36,
+                        "reputation_scale": "Excellent",
+                        "reputation_value": 81,
+                        "type": "Child safety"
+                      }
+                    },
+                    "target": "expressen.se"
+                  },
+                  "source": "expressen.se",
+                  "url": "https://www.mywot.com/en/scorecard/expressen.se",
+                  "weights": {
+                    "final_weight": 2.0,
+                    "origin_weight": 5
+                  }
+                }
+              ],
+              "itemReviewed": {
+                "@type": "WebSite",
+                "identifier": "http://www.expressen.se/",
+                "name": "www.expressen.se",
+                "url": "http://www.expressen.se/"
+              },
+              "reviewAspect": "credibility",
+              "reviewRating": {
+                "@type": "AggregateRating",
+                "confidence": 0.4,
+                "ratingCount": 1,
+                "ratingExplanation": "Based on 1 review(s) for site `www.expressen.se` by external rater(s) ([Web Of Trust](https://mywot.com/))",
+                "ratingValue": 0.6800000000000002,
+                "reviewAspect": "credibility",
+                "reviewCount": 1
+              },
+              "timings": {
+                "@context": "http://coinform.eu",
+                "@type": "Timing",
+                "phase": "misinfome_source_credibility",
+                "sub_timings": [],
+                "total_ms": 0
+              }
+            }
+          ],
+          "itemReviewed": {
+            "@context": "http://coinform.eu",
+            "@type": "Sentence",
+            "additionalTypes": [
+              "CreativeWork"
+            ],
+            "appearance": [
+              {
+                "@type": "Article",
+                "coinform_collection": "pilot-se",
+                "datePublished": "2019-03-29T14:29:21.285Z",
+                "inLanguage": "en",
+                "publisher": "www.expressen.se",
+                "url": "https://www.expressen.se/motor/biltester/test-ikonen-ford-mustang-bade-sakrare-och-roligare/"
+              }
+            ],
+            "description": "A single sentence, possibly appearing in some larger document",
+            "identifier": "zAj1PSUqATtbD3emCF8MpQ",
+            "text": "Ford takes a great digital step with new Ford Mustang with several funny functions."
+          },
+          "reviewAspect": "credibility",
+          "reviewRating": {
+            "@type": "AggregateRating",
+            "confidence": 0.4,
+            "ratingCount": 2,
+            "ratingExplanation": "Sentence published on website with credibility Based on 1 review(s) for site `www.expressen.se` by external rater(s) ([Web Of Trust](https://mywot.com/))",
+            "ratingValue": 0.6800000000000002,
+            "reviewAspect": "credibility",
+            "reviewCount": 2
+          }
+        }
+      ],
+      "itemReviewed": {
+        "@context": "http://coinform.eu",
+        "@type": "Sentence",
+        "additionalTypes": [
+          "CreativeWork"
+        ],
+        "appearance": [],
+        "description": "A single sentence, possibly appearing in some larger document",
+        "identifier": "--1RRg8ttsArjJ_WfShZrg",
+        "text": "Ford Motor Company is moving their small car division out of the USA."
+      },
+      "reviewAspect": "credibility",
+      "reviewRating": {
+        "@context": "http://coinform.eu",
+        "@type": "AggregateRating",
+        "additionalType": [
+          "Rating"
+        ],
+        "confidence": 0.2825384903270264,
+        "ratingCount": 6,
+        "ratingExplanation": "Sentence `Ford Motor Company is moving their small car division out of the USA.` is similar(?) but unrelated to:\n\n * Ford takes a great digital step with new Ford Mustang with several funny functions.\nthat seems credible. Sentence published on website with credibility Based on 1 review(s) for site `www.expressen.se` by external rater(s) ([Web Of Trust](https://mywot.com/))",
+        "ratingValue": 0.6800000000000002,
+        "reviewAspect": "credibility",
+        "reviewCount": 6
+      }
+    },
+    {
+      "@context": "http://coinform.eu",
+      "@type": "QSentCredReview",
+      "additionalType": [
+        "CredibilityReview",
+        "Review"
+      ],
+      "author": {
+        "@context": "http://coinform.eu",
+        "@type": "QSentCredReviewer",
+        "additionalType": [
+          "SoftwareApplication",
+          "Bot"
+        ],
+        "applicationSuite": "Co-inform",
+        "dateCreated": "2020-03-27T22:54:00Z",
+        "description": "Estimates the credibility of a sentence based on its polar similarity with a sentence in the Co-inform database for which a credibility can be estimated",
+        "identifier": "Uq0Fj57weeOOevIFX1grhnn83suv1Qhj9catKSyehYc",
+        "isBasedOn": [],
+        "launchConfiguration": {},
+        "name": "ESI Query Sentence Credibility Reviewer",
+        "softwareVersion": "0.1.0",
+        "url": "http://coinform.eu/bot/QSentenceCredReviewer/0.1.0"
+      },
+      "dateCreated": "2020-04-12T09:25:31.493789Z",
+      "isBasedOn": [
+        {
+          "@context": "http://coinform.eu",
+          "@type": "SentPolarSimilarityReview",
+          "additionalType": [
+            "Review"
+          ],
+          "author": {
+            "@context": "http://coinform.eu",
+            "@type": "SentPolarityReviewer",
+            "additionalType": [
+              "SoftwareApplication",
+              "Bot"
+            ],
+            "applicationSuite": "Co-inform",
+            "dateCreated": "2020-03-27T22:54:00Z",
+            "description": "Estimates the polar similarity between two sentences",
+            "identifier": "KbF8SznYVInInLxwDsoyutkAEUsV5kLnOLI7bajBF30",
+            "isBasedOn": [],
+            "launchConfiguration": {},
+            "name": "ESI Sentence Polarity Reviewer",
+            "softwareVersion": "0.1.0",
+            "url": "http://coinform.eu/bot/SentencePolarSimilarityReviewer/0.1.0"
+          },
+          "dateCreated": "2020-04-12T09:25:31.493503Z",
+          "headline": "is similar(?) but unrelated to",
+          "isBasedOn": [
+            {
+              "@context": "http://coinform.eu",
+              "@type": "SentSimilarityReview",
+              "author": {
+                "@context": "http://coinform.eu",
+                "@type": "SemSentSimReviewer",
+                "additionalType": [
+                  "SoftwareApplication",
+                  "Bot"
+                ],
+                "applicationCategory": [
+                  "NLP"
+                ],
+                "applicationSubCategory": [
+                  "SemanticSimilarity"
+                ],
+                "applicationSuite": [
+                  "Co-inform"
+                ],
+                "author": {
+                  "@type": "Organization",
+                  "name": "Expert System Lab Madrid",
+                  "url": "http://expertsystem.com"
+                },
+                "dateCreated": "2020-03-19T15:09:00Z",
+                "description": "Claim neural index that uses a semantic similarity measure based on a semantic encoder. It achieved 83% accuracy on STS-B.",
+                "executionEnvironment": {
+                  "hostname": "294b42a5477c",
+                  "python.version": "3.7.3"
+                },
+                "identifier": "cbQNmZMDfFeZXgRfSnvBbA8wbrAgOkWUq-JxFAzlMAA",
+                "isBasedOn": [
+                  {
+                    "@context": "http://coinform.eu",
+                    "@type": "SentenceEncoder",
+                    "additionalType": [
+                      "SoftwareApplication",
+                      "Bot"
+                    ],
+                    "applicationCategory": [
+                      "NLP",
+                      "SentenceEncoder"
+                    ],
+                    "applicationSuite": [
+                      "Co-inform"
+                    ],
+                    "author": {
+                      "@type": "Organization",
+                      "name": "Expert System Lab Madrid",
+                      "url": "http://expertsystem.com"
+                    },
+                    "dateCreated": "2019-10-17T10:40:00Z",
+                    "description": "Encodes sentences in a way that, hopefully, places semantically similar sentences close to each other. It was trained on SNS-B and achieved 83% accuracy.",
+                    "executionEnvironment": {},
+                    "launchConfiguration": {
+                      "class": "RoBERTa_Finetuned_Encoder",
+                      "model_name_or_path": "/opt/model/semantic_encoder/",
+                      "pooling_strategy": "pooled",
+                      "powerfun_k": 8,
+                      "powerfun_min_val": 0.85,
+                      "seq_len": 64
+                    },
+                    "name": "RoBERTa_Finetuned_Encoder",
+                    "softwareRequirements": [
+                      "python",
+                      "pytorch",
+                      "transformers",
+                      "RoBERTaTokenizer",
+                      "RoBERTaModel"
+                    ],
+                    "softwareVersion": "0.1.0"
+                  }
+                ],
+                "launchConfiguration": {
+                  "vecSpace": {
+                    "@context": "http://schema.org",
+                    "@type": "Dataset",
+                    "creator": {
+                      "@type": "Organization",
+                      "name": "Expert System Iberia Lab",
+                      "url": "http://expertsystem.com"
+                    },
+                    "dateCreated": "2020-03-25T09:16:42.032125Z",
+                    "dateModified": "2020-03-24T20:18:10Z",
+                    "description": "Dataset of 80298 sentence embeddings extracted from claim reviews and articles collected as part of the Co-inform project",
+                    "encoding": {
+                      "@type": "MediaObject",
+                      "contentSize": "1181.60 MB",
+                      "encodingFormat": "text/tab-separated-values"
+                    },
+                    "identifier": "58ae94d80fc358877932021c33b1dd50c1e2fd1985a093f5c185ddbe19788a07",
+                    "name": "Co-inform Sentence embeddings"
+                  }
+                },
+                "name": "ESI Sentence Similarity Reviewer None",
+                "softwareRequirements": [
+                  "python",
+                  "numpy"
+                ],
+                "softwareVersion": "0.1.0-None"
+              },
+              "dateCreated": "2020-04-12T09:25:31.064443Z",
+              "itemReviewed": {
+                "@context": "http://coinform.eu",
+                "@type": "SentencePair",
+                "additionalTypes": [
+                  "ItemPair",
+                  "CreativeWork"
+                ],
+                "description": "CreativeWork consisting of exactly two sentences",
+                "identifier": "NJ_dLOUjsKOw5_lXyYcFtw",
+                "roleA": "querySentence",
+                "roleB": "sentenceInDB",
+                "sentA": {
+                  "@context": "http://coinform.eu",
+                  "@type": "Sentence",
+                  "additionalTypes": [
+                    "CreativeWork"
+                  ],
+                  "appearance": [],
+                  "description": "A single sentence, possibly appearing in some larger document",
+                  "identifier": "--1RRg8ttsArjJ_WfShZrg",
+                  "text": "Ford Motor Company is moving their small car division out of the USA."
+                },
+                "sentB": {
+                  "@context": "http://coinform.eu",
+                  "@type": "Sentence",
+                  "additionalTypes": [
+                    "CreativeWork"
+                  ],
+                  "appearance": [],
+                  "description": "A single sentence, possibly appearing in some larger document",
+                  "identifier": "M8VhxN-I53wiY_4Rx74JmQ",
+                  "text": "Around 600,000 employees, EUR 200 billion turnover, 119 factories: Volkswagen builds every eighth car (shipped) in the world."
+                },
+                "text": "Around 600,000 employees, EUR 200 billion turnover, 119 factories: Volkswagen builds every eighth car (shipped) in the world. Ford Motor Company is moving their small car division out of the USA."
+              },
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": 0.7842455716261342,
+                "reviewAspect": "similarity"
+              }
+            },
+            {
+              "@context": "http://coinform.eu",
+              "@type": "SentStanceReview",
+              "additionalType": [
+                "Review"
+              ],
+              "author": {
+                "@context": "http://coinform.eu",
+                "@type": "SentStanceReviewer",
+                "additionalType": [
+                  "SoftwareApplication",
+                  "Bot"
+                ],
+                "applicationCategory": [
+                  "NLP"
+                ],
+                "applicationSubCategory": [
+                  "Stance Detection"
+                ],
+                "applicationSuite": [
+                  "Co-inform"
+                ],
+                "author": {
+                  "@type": "Organization",
+                  "name": "Expert System Iberia Lab",
+                  "url": "http://expertsystem.com"
+                },
+                "dateCreated": "2020-01-13T15:18:00Z",
+                "description": "Assesses the stance between two sentences (e.g. agree, disagree, discuss) it was trained and evaluated on FNC-1 achieving 92% accuracy.",
+                "executionEnvironment": {
+                  "cuda": false,
+                  "hostname": "294b42a5477c",
+                  "python.version": "3.7.3"
+                },
+                "identifier": "Q-HBTj4_Ey5Aat7SXIOQ_mTTRl8TAJcOON1tBORnRfs",
+                "isBasedOn": [],
+                "launchConfiguration": {
+                  "model": {
+                    "batch_size": 64,
+                    "class": "RoBERTa",
+                    "finetuned_from_layer": 8,
+                    "seq_len": 128,
+                    "stance2i": {
+                      "agree": 1,
+                      "disagree": 2,
+                      "discuss": 3,
+                      "unrelated": 0
+                    },
+                    "train_val_result": {
+                      "loss": 0.28,
+                      "metrics": {
+                        "acc": 0.923,
+                        "f1_weighted": 0.9186,
+                        "n": 25413
+                      }
+                    }
+                  },
+                  "model_config": {
+                    "@type": "MediaObject",
+                    "contentSize": "682 B",
+                    "dateCreated": "2020-02-06T14:26:04.601783Z",
+                    "dateModified": "2020-01-13T14:18:40Z",
+                    "name": "config.json",
+                    "sha256Digest": "0a6bdf3e86b77df920446d8be14946eb63a76f9a03bb7a1199967a87e94356e6"
+                  },
+                  "pytorch_model": {
+                    "@type": "MediaObject",
+                    "contentSize": "477.80 MB",
+                    "dateCreated": "2020-02-06T14:26:04.598783Z",
+                    "dateModified": "2020-01-13T14:18:40Z",
+                    "name": "pytorch_model.bin",
+                    "sha256Digest": "e704d40b6dc392c7a6bb5a45a27286210385a49731a996115654585d2a559963"
+                  }
+                },
+                "name": "ESI Sentence Stance Reviewer",
+                "softwareRequirements": [
+                  "python",
+                  "pytorch",
+                  "transformers",
+                  "RoBERTaModel",
+                  "RoBERTaTokenizer"
+                ],
+                "softwareVersion": "0.1.0"
+              },
+              "dateCreated": "2020-04-12T09:25:31.064443Z",
+              "itemReviewed": {
+                "@context": "http://coinform.eu",
+                "@type": "SentencePair",
+                "additionalTypes": [
+                  "ItemPair",
+                  "CreativeWork"
+                ],
+                "description": "CreativeWork consisting of exactly two sentences",
+                "identifier": "NJ_dLOUjsKOw5_lXyYcFtw",
+                "roleA": "querySentence",
+                "roleB": "sentenceInDB",
+                "sentA": {
+                  "@context": "http://coinform.eu",
+                  "@type": "Sentence",
+                  "additionalTypes": [
+                    "CreativeWork"
+                  ],
+                  "appearance": [],
+                  "description": "A single sentence, possibly appearing in some larger document",
+                  "identifier": "--1RRg8ttsArjJ_WfShZrg",
+                  "text": "Ford Motor Company is moving their small car division out of the USA."
+                },
+                "sentB": {
+                  "@context": "http://coinform.eu",
+                  "@type": "Sentence",
+                  "additionalTypes": [
+                    "CreativeWork"
+                  ],
+                  "appearance": [],
+                  "description": "A single sentence, possibly appearing in some larger document",
+                  "identifier": "M8VhxN-I53wiY_4Rx74JmQ",
+                  "text": "Around 600,000 employees, EUR 200 billion turnover, 119 factories: Volkswagen builds every eighth car (shipped) in the world."
+                },
+                "text": "Around 600,000 employees, EUR 200 billion turnover, 119 factories: Volkswagen builds every eighth car (shipped) in the world. Ford Motor Company is moving their small car division out of the USA."
+              },
+              "reviewAspect": "stance",
+              "reviewRating": {
+                "@type": "Rating",
+                "confidence": 0.6436169147491455,
+                "ratingExplanation": "Sentence `dbSent` **unrelated** `qSent`.",
+                "ratingValue": "unrelated",
+                "reviewAspect": "stance"
+              }
+            }
+          ],
+          "itemReviewed": {
+            "@context": "http://coinform.eu",
+            "@type": "SentencePair",
+            "additionalTypes": [
+              "ItemPair",
+              "CreativeWork"
+            ],
+            "description": "CreativeWork consisting of exactly two sentences",
+            "identifier": "NJ_dLOUjsKOw5_lXyYcFtw",
+            "roleA": "querySentence",
+            "roleB": "sentenceInDB",
+            "sentA": {
+              "@context": "http://coinform.eu",
+              "@type": "Sentence",
+              "additionalTypes": [
+                "CreativeWork"
+              ],
+              "appearance": [],
+              "description": "A single sentence, possibly appearing in some larger document",
+              "identifier": "--1RRg8ttsArjJ_WfShZrg",
+              "text": "Ford Motor Company is moving their small car division out of the USA."
+            },
+            "sentB": {
+              "@context": "http://coinform.eu",
+              "@type": "Sentence",
+              "additionalTypes": [
+                "CreativeWork"
+              ],
+              "appearance": [],
+              "description": "A single sentence, possibly appearing in some larger document",
+              "identifier": "M8VhxN-I53wiY_4Rx74JmQ",
+              "text": "Around 600,000 employees, EUR 200 billion turnover, 119 factories: Volkswagen builds every eighth car (shipped) in the world."
+            },
+            "text": "Around 600,000 employees, EUR 200 billion turnover, 119 factories: Volkswagen builds every eighth car (shipped) in the world. Ford Motor Company is moving their small car division out of the USA."
+          },
+          "reviewAspect": "polarSimilarity",
+          "reviewBody": "Sentence `Ford Motor Company is moving their small car division out of the USA.` is similar(?) but unrelated to `Around 600,000 employees, EUR 200 billion turnover, 119 factories: Volkswagen builds every eighth car (shipped) in the world.`",
+          "reviewRating": {
+            "@type": "AggregateRating",
+            "confidence": 0.6436169147491455,
+            "ratingCount": 2,
+            "ratingExplanation": "Sentence `Ford Motor Company is moving their small car division out of the USA.` is similar(?) but unrelated to `Around 600,000 employees, EUR 200 billion turnover, 119 factories: Volkswagen builds every eighth car (shipped) in the world.`",
+            "ratingValue": 0.7058210144635207,
+            "reviewAspect": "polarSimilarity",
+            "reviewCount": 2
+          }
+        },
+        {
+          "@context": "http://coinform.eu",
+          "@type": "DBSentCredReview",
+          "additionalType": [
+            "CredibilityReview",
+            "Review"
+          ],
+          "author": {
+            "@context": "http://coinform.eu",
+            "@type": "DBSentCredReviewer",
+            "additionalType": [
+              "SoftwareApplication",
+              "Bot"
+            ],
+            "applicationSuite": "Co-inform",
+            "dateCreated": "2020-03-20T20:03:00Z",
+            "description": "Estimates the credibility of a sentence in the Co-inform DB based on known ClaimReviews or websites where the sentence has been published.",
+            "identifier": "wyhE2Lk6BWaqDURwOMB7K81oYhb3lxxr6yDUd35S1-0",
+            "isBasedOn": [
+              {
+                "@context": "http://coinform.eu",
+                "@type": "MisinfoMeSourceCredReviewer",
+                "additionalType": [
+                  "Bot",
+                  "SoftwareApplication"
+                ],
+                "applicationSuite": "MisinfoMe",
+                "softwareVersion": "2020-04-06T00:00:00Z",
+                "url": "https://socsem.kmi.open.ac.uk/misinfo"
+              }
+            ],
+            "launchConfiguration": {
+              "acred_factchecker_urls": [
+                "https://factcheckni.org/",
+                "https://mediabiasfactcheck.com/",
+                "https://www.snopes.com/",
+                "http://www.politifact.com/",
+                "http://www.factcheck.org/",
+                "http://www.washingtonpost.com/blogs/fact-checker/",
+                "http://truthbetold.news/category/fact-checks/",
+                "http://www.npr.org/sections/politics-fact-check",
+                "http://eldetectordementiras.com/",
+                "http://www.hoax-slayer.com/",
+                "https://apnews.com/tag/APFactCheck",
+                "https://africacheck.org/",
+                "http://www.lupa.news/",
+                "http://apublica.org/truco",
+                "http://aosfatos.org/",
+                "http://chequeado.com/",
+                "http://climatefeedback.org/",
+                "https://correctiv.org/echtjetzt/",
+                "http://www.dogrulukpayi.com/",
+                "http://www.lasexta.com/programas/el-objetivo/prueba-verificacion/",
+                "http://factcheck.ge/",
+                "http://observers.france24.com/fr/",
+                "https://fullfact.org/",
+                "http://www.istinomer.rs/",
+                "http://istinomjer.ba/",
+                "http://www.lemonde.fr/les-decodeurs/",
+                "http://www.liberation.fr/desintox,99721",
+                "http://observador.pt/seccao/observador/fact-check/",
+                "https://pagellapolitica.it/",
+                "http://www.abc.net.au/news/factcheck/",
+                "https://teyit.org/",
+                "https://theconversation.com/au/factcheck",
+                "http://www.thejournal.ie/factcheck/news/",
+                "https://www.washingtonpost.com/news/fact-checker/",
+                "http://www.metro.se/viralgranskaren",
+                "https://eufactcheck.eu/fact-checks/",
+                "https://factcheckeu.info/en/",
+                "https://correctiv.org/thema/faktencheck/",
+                "https://www.20minutes.fr/",
+                "https://factuel.afp.com/",
+                "https://www.liberation.fr/checknews,100893",
+                "https://www.ellinikahoaxes.gr/",
+                "https://faktograf.hr/",
+                "https://observers.france24.com/fr/",
+                "https://www.lavoce.info/",
+                "https://leadstories.com/",
+                "https://factcheckeu.info/es/publisher/les-d%C3%A9codeurs",
+                "https://maldita.es/",
+                "https://newtral.es/",
+                "https://observador.pt/",
+                "https://pagellapolitica.it/",
+                "https://www.15min.lt/patikrinta-15min",
+                "https://www.thejournal.ie/",
+                "https://www.mm.dk/tjekdet/",
+                "http://sadroz.af/",
+                "http://www.vertetematesi.info/",
+                "http://chequeado.com/",
+                "http://www.abc.net.au/news/factcheck/",
+                "http://www.crikey.com.au/column/get-fact/",
+                "http://www.medicalobserver.com.au/",
+                "http://www.politifact.com.au/",
+                "http://theconversation.com/us/topics/election-factcheck",
+                "https://factcheckeu.org/",
+                "http://blogs.oglobo.globo.com/preto-no-branco/",
+                "http://apublica.org/truco/",
+                "http://istinomjer.ba/",
+                "https://globalnews.ca/tag/baloney-meter/",
+                "http://factscan.ca/",
+                "https://lasillavacia.com/hilos-tematicos/detector-de-mentiras",
+                "http://media.elfinancierocr.com/retealcandidato/",
+                "http://uycheck.com/",
+                "http://morsimeter.com/en",
+                "http://faktabaari.fi/",
+                "http://www.liberation.fr/desintox,99721",
+                "http://tempsreel.nouvelobs.com/politique/les-pinocchios-de-l-obs/",
+                "http://factcheck.ge/en/",
+                "https://faktomat.adhocracy.de/instance/faktomat",
+                "http://www.spiegel.de/thema/muenchhausen_check/",
+                "http://zdfcheck.zdf.de/",
+                "http://idemagog.hu/",
+                "http://factchecker.in/",
+                "https://rouhanimeter.com/",
+                "http://www.politicometro.it/",
+                "http://www.animalpolitico.com/elsabueso/el-sabueso/",
+                "http://www.promis.md/",
+                "https://fhjfactcheck.wordpress.com/",
+                "http://www.journalistiekennieuwemedia.nl/NC/",
+                "http://www.radionz.co.nz/news/political/252810/election-2014-fact-or-fiction",
+                "http://www.buharimeter.ng/",
+                "http://www.bt.no/nyheter/innenriks/faktasjekk/",
+                "http://demagog.org.pl/",
+                "http://www.obywatelerozliczaja.pl/",
+                "http://www.factual.ro/",
+                "http://www.istinomer.rs/",
+                "http://www.demagog.sk/",
+                "https://africacheck.org/",
+                "http://poll.ilyo.co.kr/?ac=poll&tac=main",
+                "http://news.jtbc.joins.com/hotissue/timeline_issue.aspx?comp_id=NC10011176",
+                "http://newstapa.org/tag/%EC%A0%95%EB%A7%90",
+                "http://www.periodistadigital.com/verdadmentira/",
+                "http://blog.svd.se/faktakollen/",
+                "http://www.svt.se/nyheter/2923690",
+                "http://jomaameter.org/?locale=en#.VfNoMpfriio",
+                "http://www.dogrulukpayi.com/",
+                "http://fakecontrol.org/",
+                "http://www.stopfake.org/en/news/",
+                "http://vladometr.org/",
+                "http://www.theguardian.com/news/reality-check",
+                "http://blogs.channel4.com/factcheck/"
+              ],
+              "factchecker_website_to_qclaim_confidence_penalty_factor": 0.5
+            },
+            "name": "ESI DB Sentence Credibility Reviewer",
+            "softwareVersion": "0.1.0",
+            "url": "http://coinform.eu/bot/DBSentCredReviewer/0.1.0"
+          },
+          "dateCreated": "2020-04-12T09:25:31.493613Z",
+          "isBasedOn": [
+            {
+              "@context": "http://coinform.eu",
+              "@type": "WebSiteCredReview",
+              "additionalType": ["CredibilityReview", "Review"],
+              "author": {
+                "@context": "http://coinform.eu",
+                "@type": "MisinfoMeSourceCredReviewer",
+                "additionalType": [
+                  "Bot",
+                  "SoftwareApplication"
+                ],
+                "applicationSuite": "MisinfoMe",
+                "softwareVersion": "2020-04-06T00:00:00Z",
+                "url": "https://socsem.kmi.open.ac.uk/misinfo"
+              },
+              "dateCreated": "2020-04-12T09:25:31.491542Z",
+              "isBasedOn": [],
+              "isBasedOn_assessments": [
+                {
+                  "credibility": {
+                    "confidence": 1.0,
+                    "value": 1.0
+                  },
+                  "domain": "zdf.de",
+                  "granularity": "source",
+                  "itemReviewed": "zdf.de",
+                  "origin": {
+                    "assessments_count": 759,
+                    "description": "NewsGuard uses journalism to fight false news, misinformation, and disinformation. Our trained analysts, who are experienced journalists, research online news brands to help readers and viewers know which ones are trying to do legitimate journalism--and which are not.",
+                    "homepage": "https://www.newsguardtech.com/",
+                    "id": "newsguard",
+                    "logo": "https://logo.clearbit.com/newsguardtech.com",
+                    "name": "NewsGuard",
+                    "origin_type": "realtime",
+                    "weight": 10.0
+                  },
+                  "origin_id": "newsguard",
+                  "original": {
+                    "authorized": false,
+                    "country": "ALL",
+                    "criteria": [
+                      {
+                        "body": "Yes",
+                        "order": 0,
+                        "title": "ownership"
+                      },
+                      {
+                        "body": "Yes",
+                        "order": 0,
+                        "title": "management"
+                      },
+                      {
+                        "body": "Yes",
+                        "order": 0,
+                        "title": "newsOpinion"
+                      },
+                      {
+                        "body": "Yes",
+                        "order": 0,
+                        "title": "falseContent"
+                      },
+                      {
+                        "body": "Yes",
+                        "order": 0,
+                        "title": "basicStandards"
+                      },
+                      {
+                        "body": "Yes",
+                        "order": 0,
+                        "title": "contentCreators"
+                      },
+                      {
+                        "body": "NA",
+                        "order": 0,
+                        "title": "labelsAdvertising"
+                      },
+                      {
+                        "body": "Yes",
+                        "order": 0,
+                        "title": "deceptiveHeadlines"
+                      },
+                      {
+                        "body": "Yes",
+                        "order": 0,
+                        "title": "accountabilityPractices"
+                      }
+                    ],
+                    "groupName": null,
+                    "id": "a8377008-4116-4044-a888-e9e139bd2d19",
+                    "identifier": "zdf.de",
+                    "labelToken": "F7FFDC03B72BE89A6D616FFE1292BA7658D2628F84A18A250648DF31658D73ED6D49BBFF3660747FE2DD4142AB24A667FFA94986623C1E14",
+                    "language": "en",
+                    "locale": "en",
+                    "parent": null,
+                    "rank": "T",
+                    "score": 100.0,
+                    "shieldAuthorized": false,
+                    "topline": "The website of Zweites Deutsches Fernsehen (ZDF), a public-service television broadcaster based in Mainz."
+                  },
+                  "source": "zdf.de",
+                  "url": "https://api.newsguardtech.com/F7FFDC03B72BE89A6D616FFE1292BA7658D2628F84A18A250648DF31658D73ED6D49BBFF3660747FE2DD4142AB24A667FFA94986623C1E14",
+                  "weights": {
+                    "final_weight": 10.0,
+                    "origin_weight": 10
+                  }
+                },
+                {
+                  "credibility": {
+                    "confidence": 0.6,
+                    "value": 0.88
+                  },
+                  "domain": "zdf.de",
+                  "granularity": "source",
+                  "itemReviewed": "zdf.de",
+                  "origin": {
+                    "assessments_count": 2375,
+                    "description": "Ever wondered how to check if a website is safe? Get the community to do the website security checks for you.",
+                    "homepage": "https://mywot.com/",
+                    "id": "mywot",
+                    "logo": "https://www.mywot.com/images/logo.png",
+                    "name": "Web Of Trust",
+                    "origin_type": "realtime",
+                    "weight": 5.0
+                  },
+                  "origin_id": "mywot",
+                  "original": {
+                    "blacklists": {},
+                    "categories": {
+                      "303": {
+                        "category_group": "Neutral",
+                        "confidence": 53,
+                        "description": "Opinions, religion, politics"
+                      },
+                      "501": {
+                        "category_group": "Positive",
+                        "confidence": 100,
+                        "description": "Good site"
+                      }
+                    },
+                    "detail_page": "https://www.mywot.com/en/scorecard/zdf.de",
+                    "reputation_components": {
+                      "0": {
+                        "confidence": 60,
+                        "reputation_scale": "Excellent",
+                        "reputation_value": 94,
+                        "type": "Trustworthiness"
+                      },
+                      "1": {
+                        "confidence": 60,
+                        "reputation_scale": "Excellent",
+                        "reputation_value": 94,
+                        "type": "Deprecated"
+                      },
+                      "2": {
+                        "confidence": 60,
+                        "reputation_scale": "Excellent",
+                        "reputation_value": 94,
+                        "type": "Deprecated"
+                      },
+                      "4": {
+                        "confidence": 58,
+                        "reputation_scale": "Excellent",
+                        "reputation_value": 93,
+                        "type": "Child safety"
+                      }
+                    },
+                    "target": "zdf.de"
+                  },
+                  "source": "zdf.de",
+                  "url": "https://www.mywot.com/en/scorecard/zdf.de",
+                  "weights": {
+                    "final_weight": 3.0,
+                    "origin_weight": 5
+                  }
+                }
+              ],
+              "itemReviewed": {
+                "@type": "WebSite",
+                "identifier": "http://www.zdf.de/",
+                "name": "www.zdf.de",
+                "url": "http://www.zdf.de/"
+              },
+              "reviewAspect": "credibility",
+              "reviewRating": {
+                "@type": "AggregateRating",
+                "confidence": 0.8666666666666667,
+                "ratingCount": 2,
+                "ratingExplanation": "Based on 2 review(s) for site `www.zdf.de` by external rater(s) ([NewsGuard](https://www.newsguardtech.com/) or [Web Of Trust](https://mywot.com/))",
+                "ratingValue": 0.9723076923076923,
+                "reviewAspect": "credibility",
+                "reviewCount": 2
+              },
+              "timings": {
+                "@context": "http://coinform.eu",
+                "@type": "Timing",
+                "phase": "misinfome_source_credibility",
+                "sub_timings": [],
+                "total_ms": 0
+              }
+            }
+          ],
+          "itemReviewed": {
+            "@context": "http://coinform.eu",
+            "@type": "Sentence",
+            "additionalTypes": [
+              "CreativeWork"
+            ],
+            "appearance": [
+              {
+                "@type": "Article",
+                "coinform_collection": "pilot-at",
+                "datePublished": "2019-03-18T16:10:32.954Z",
+                "inLanguage": "en",
+                "publisher": "www.zdf.de",
+                "url": "https://www.zdf.de/dokumentation/zdfzeit/zdfzeit-deutschlands-grosse-clans-die-volkswagen-story-100.html"
+              }
+            ],
+            "description": "A single sentence, possibly appearing in some larger document",
+            "identifier": "M8VhxN-I53wiY_4Rx74JmQ",
+            "text": "Around 600,000 employees, EUR 200 billion turnover, 119 factories: Volkswagen builds every eighth car (shipped) in the world."
+          },
+          "reviewAspect": "credibility",
+          "reviewRating": {
+            "@type": "AggregateRating",
+            "confidence": 0.8666666666666667,
+            "ratingCount": 3,
+            "ratingExplanation": "Sentence published on website with credibility Based on 2 review(s) for site `www.zdf.de` by external rater(s) ([NewsGuard](https://www.newsguardtech.com/) or [Web Of Trust](https://mywot.com/))",
+            "ratingValue": 0.9723076923076923,
+            "reviewAspect": "credibility",
+            "reviewCount": 3
+          }
+        }
+      ],
+      "itemReviewed": {
+        "@context": "http://coinform.eu",
+        "@type": "Sentence",
+        "additionalTypes": [
+          "CreativeWork"
+        ],
+        "appearance": [],
+        "description": "A single sentence, possibly appearing in some larger document",
+        "identifier": "--1RRg8ttsArjJ_WfShZrg",
+        "text": "Ford Motor Company is moving their small car division out of the USA."
+      },
+      "reviewAspect": "credibility",
+      "reviewRating": {
+        "@context": "http://coinform.eu",
+        "@type": "AggregateRating",
+        "additionalType": [
+          "Rating"
+        ],
+        "confidence": 0.6117115458683847,
+        "ratingCount": 7,
+        "ratingExplanation": "Sentence `Ford Motor Company is moving their small car division out of the USA.` is similar(?) but unrelated to:\n\n * Around 600,000 employees, EUR 200 billion turnover, 119 factories: Volkswagen builds every eighth car (shipped) in the world.\nthat seems credible. Sentence published on website with credibility Based on 2 review(s) for site `www.zdf.de` by external rater(s) ([NewsGuard](https://www.newsguardtech.com/) or [Web Of Trust](https://mywot.com/))",
+        "ratingValue": 0.9723076923076923,
+        "reviewAspect": "credibility",
+        "reviewCount": 7
+      }
+    }
+  ],
+  "itemReviewed": {
+    "@context": "http://coinform.eu",
+    "@type": "Sentence",
+    "additionalTypes": [
+      "CreativeWork"
+    ],
+    "appearance": [],
+    "description": "A single sentence, possibly appearing in some larger document",
+    "identifier": "--1RRg8ttsArjJ_WfShZrg",
+    "text": "Ford Motor Company is moving their small car division out of the USA."
+  },
+  "reviewRating": {
+    "@type": "AggregateRating",
+    "confidence": 0.7378329457835578,
+    "ratingCount": 44,
+    "ratingExplanation": "Sentence `Ford Motor Company is moving their small car division out of the USA.` agrees with:\n\n * 'Ford is moving all of their small-car production to Mexico.'\nthat seems mostly not credible. Based on normalised numeric ratingValue 2 in range [1-5]",
+    "ratingValue": -0.5,
+    "reviewAspect": "credibility",
+    "reviewCount": 42
+  }
+}

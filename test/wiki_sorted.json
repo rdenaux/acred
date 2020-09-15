@@ -1,0 +1,232 @@
+{
+  "_version_": 1619654659169845248,
+  "applied_n_rules": 0,
+  "boost": 0.00015053978,
+  "content": "Migration and Refugee Assistance Act\nFrom Wikipedia, the free encyclopedia\nJump to navigation Jump to search\nThe Migration and Refugee Assistance Act was passed in 1962 to deal with unexpected  and urgent needs of refugees, displaced persons, conflict victims, and other persons at risk around the globe.\nThe Act was brought into force during the Clinton administration in 2001 to deal with the crises in the Balkans and Nepal .\nThe Act was cited by President Barack Obama in 2009 to authorize money up to $20.3 million related to needs of Palestinian refugees and conflict victims in Gaza .\n",
+  "contentLength": 8167,
+  "core_s": "70e9e133-52b5-4195-8b43-1aa737cd26de",
+  "digest": "839f8c443f9dc5b094b77a6a3c72cf3d",
+  "dl_update_date_dt": "2018-12-12T13:57:29.897Z",
+  "doc_pages_chunks": [
+    "[{\"pageFrom\":1,\"pageTo\":1,\"text\":\"Migration and Refugee Assistance Act\\nFrom Wikipedia, the free encyclopedia\\nJump to navigation Jump to search\\nThe Migration and Refugee Assistance Act was passed in 1962 to deal with unexpected  and urgent needs of refugees, displaced persons, conflict victims, and other persons at risk around the globe.\\nThe Act was brought into force during the Clinton administration in 2001 to deal with the crises in the Balkans and Nepal .\\nThe Act was cited by President Barack Obama in 2009 to authorize money up to $20.3 million related to needs of Palestinian refugees and conflict victims in Gaza .\\n\",\"offset\":50}]"
+  ],
+  "elaboration_elapsedtime": 136,
+  "essex_id": "10021140",
+  "fact_emotions_tax": [
+    "/EMOTIONS_TAX/29020000/Military Actions/conflict"
+  ],
+  "fact_emotions_tax_hl": [
+    "/EMOTIONS_TAX/29020000|159-353"
+  ],
+  "fact_geo_tax": [
+    "/GEO_TAX/122./Places/Balkans",
+    "/GEO_TAX/185./Places/Gaza",
+    "/GEO_TAX/185./Military Actions/conflict",
+    "/GEO_TAX/122./Influential People/Hillary Clinton",
+    "/GEO_TAX/122./Places/Nepal",
+    "/GEO_TAX/185./People/Barack Obama",
+    "/GEO_TAX/185./Influential People/Barack Obama"
+  ],
+  "fact_geo_tax_hl": [
+    "/GEO_TAX/122.|355-477",
+    "/GEO_TAX/185.|479-640"
+  ],
+  "fact_intelligence_tax": [
+    "/INTELLIGENCE_TAX/11000000/Military Actions/conflict",
+    "/INTELLIGENCE_TAX/16000000/Places/Gaza",
+    "/INTELLIGENCE_TAX/16000000/Military Actions/conflict",
+    "/INTELLIGENCE_TAX/16000000/Influential People/Barack Obama",
+    "/INTELLIGENCE_TAX/16000000/People/Barack Obama"
+  ],
+  "fact_intelligence_tax_hl": [
+    "/INTELLIGENCE_TAX/11000000|159-353",
+    "/INTELLIGENCE_TAX/16000000|159-353|479-640"
+  ],
+  "facts_domain_emotions_tax": [
+    "/EMOTIONS_TAX/29020000"
+  ],
+  "facts_domain_geo_tax": [
+    "/GEO_TAX/185.",
+    "/GEO_TAX/122."
+  ],
+  "facts_domain_intelligence_tax": [
+    "/INTELLIGENCE_TAX/16000000",
+    "/INTELLIGENCE_TAX/11000000"
+  ],
+  "geo": [
+    "POINT(86.733055 26.533054)",
+    "POINT(34.45 31.516666)"
+  ],
+  "geo_mapping_hl": [
+    "Nepal/POINT(86.733055 26.533054)|471-475",
+    "Gaza/POINT(34.45 31.516666)|635-638"
+  ],
+  "geo_mapping_os": [
+    "Gaza/POINT(34.45 31.516666)",
+    "Nepal/POINT(86.733055 26.533054)"
+  ],
+  "geo_mapping_ss": [
+    "Nepal/POINT(86.733055 26.533054)",
+    "Gaza/POINT(34.45 31.516666)"
+  ],
+  "id": "https://en.wikipedia.org/wiki/Migration_and_Refugee_Assistance_Act",
+  "influential_people_hl": [
+    "Barack Obama|510-521",
+    "Hillary Clinton|397-403"
+  ],
+  "influential_people_os": [
+    "Barack Obama",
+    "Hillary Clinton"
+  ],
+  "influential_people_ss": [
+    "Barack Obama",
+    "Hillary Clinton"
+  ],
+  "lang": "en",
+  "lang_orig": "en",
+  "lastModified": "2018-11-13T18:57:39Z",
+  "last_update": "2018-12-12T13:57:29.897Z",
+  "main_elements": [
+    "act",
+    "migration",
+    "Barack Obama",
+    "Balkans",
+    "displaced people",
+    "emigration",
+    "Gaza",
+    "needs",
+    "conflict victims in Gaza",
+    "crisis",
+    "displaced person",
+    "Refugee Assistance Act",
+    "displaced persons",
+    "conflict victim",
+    "globe",
+    "Nepal",
+    "conflict",
+    "Palestinian refugee",
+    "Wikipedia",
+    "jump",
+    "navigation",
+    "encyclopedia",
+    "refugee",
+    "victim",
+    "money",
+    "battle",
+    "free encyclopedia"
+  ],
+  "main_elements_hl": [
+    "act|359-361|483-485",
+    "migration|0-8|50-58|163-171",
+    "Barack Obama|510-521",
+    "Balkans|459-465",
+    "displaced people|274-290",
+    "emigration|0-8|50-58|163-171",
+    "Gaza|635-638",
+    "needs|255-259|581-585",
+    "conflict victims in Gaza|615-638",
+    "crisis|445-450",
+    "displaced person|274-290",
+    "Refugee Assistance Act|14-35|64-85|177-198",
+    "displaced persons|274-290",
+    "conflict victim|293-308|615-630",
+    "globe|348-352",
+    "Nepal|471-475",
+    "conflict|293-300|615-622",
+    "Palestinian refugee|590-609",
+    "Wikipedia|39-47|92-100",
+    "jump|125-128|144-147",
+    "navigation|133-142",
+    "encyclopedia|112-123",
+    "refugee|264-271|602-609",
+    "victim|302-308|624-630",
+    "money|544-548",
+    "battle|293-300|615-622",
+    "free encyclopedia|107-123"
+  ],
+  "military_actions_hl": [
+    "conflict|293-300|615-622"
+  ],
+  "military_actions_os": [
+    "conflict"
+  ],
+  "military_actions_ss": [
+    "conflict"
+  ],
+  "people_hl": [
+    "Barack Obama|510-521"
+  ],
+  "people_os": [
+    "Barack Obama"
+  ],
+  "people_ss": [
+    "Barack Obama"
+  ],
+  "places_hl": [
+    "Balkans|459-465",
+    "Nepal|471-475",
+    "Gaza|635-638"
+  ],
+  "places_os": [
+    "Balkans",
+    "Gaza",
+    "Nepal"
+  ],
+  "places_ss": [
+    "Balkans",
+    "Nepal",
+    "Gaza"
+  ],
+  "publishedDate": "2018-11-13T18:57:39Z",
+  "segment": "20181130000059",
+  "sentiments": [
+    "NEU"
+  ],
+  "sentiments_hl": [
+    "NEU|159-353"
+  ],
+  "sentiments_mapping": [
+    "NEU/EMOTIONS_TAX/29020000"
+  ],
+  "size": 642,
+  "source": "WebCrawl",
+  "source_id": [
+    "en.wikipedia.org"
+  ],
+  "status": "done",
+  "submitted_time": "2018-12-01T04:57:20.801Z",
+  "taxonomy_emotions_tax": [
+    "/EMOTIONS_TAX/29020000"
+  ],
+  "taxonomy_emotions_tax_hl": [
+    "/EMOTIONS_TAX/29020000|159-353"
+  ],
+  "taxonomy_geo_tax": [
+    "/GEO_TAX/122.",
+    "/GEO_TAX/185."
+  ],
+  "taxonomy_geo_tax_hl": [
+    "/GEO_TAX/122.|355-477",
+    "/GEO_TAX/185.|479-640"
+  ],
+  "taxonomy_intelligence_tax": [
+    "/INTELLIGENCE_TAX/16000000/16009000",
+    "/INTELLIGENCE_TAX/16000000/16002000",
+    "/INTELLIGENCE_TAX/11000000/11017000"
+  ],
+  "taxonomy_intelligence_tax_hl": [
+    "/INTELLIGENCE_TAX/16000000/16009000|159-353|479-640",
+    "/INTELLIGENCE_TAX/16000000/16002000|159-353|479-640",
+    "/INTELLIGENCE_TAX/11000000/11017000|0-48|159-353|50-85"
+  ],
+  "tenant": "co-inform.aw.local",
+  "title": "Migration and Refugee Assistance Act - Wikipedia",
+  "translateDocument": "automatic",
+  "tstamp": "2018-11-30T02:39:28.406Z",
+  "type_nutch": [
+    "text/html",
+    "text",
+    "html"
+  ],
+  "url": "https://en.wikipedia.org/wiki/Migration_and_Refugee_Assistance_Act"
+}

@@ -1,0 +1,229 @@
+{
+  "@context": "http://coinform.eu",
+  "@type": "DBSentCredReview",
+  "additionalType": [
+    "CredibilityReview",
+    "Review"
+  ],
+  "itemReviewed": {
+    "@context": "http://coinform.eu",
+    "@type": "Sentence",
+    "identifier": "smEbBlsf8lFdocB3mcWEEw",
+    "text": "Said of the findings in a case against his charitable foundation: \"All they found was incredibly effective philanthropy and some small technical violations, such as not keeping board minutes.\"",
+    "additionalTypes": [
+      "CreativeWork"
+    ],
+    "description": "A single sentence, possibly appearing in some larger document",
+    "appearance": [
+      {
+        "@type": "Article",
+        "url": "https://www.factcheck.org/2019/11/trump-spins-court-ruling-on-trump-foundation/",
+        "coinform_collection": "unknown",
+        "publisher": "www.factcheck.org",
+        "inLanguage": null,
+        "datePublished": "2019-11-07T00:00:00Z",
+        "text": ""
+      }
+    ]
+  },
+  "text": "Sentence `Said of the findings in a case against his charitable foundation: \"All they found was incredibly effective philanthropy and some small technical violations, such as not keeping board minutes.\"` , in [this page](https://www.factcheck.org/2019/11/trump-spins-court-ruling-on-trump-foundation/), seems *credible* as it was published on site `www.factcheck.org`. Site `www.factcheck.org` seems *credible* based on 1 review(s) by external rater(s) ([NewsGuard](https://www.newsguardtech.com/))",
+  "reviewRating": {
+    "@type": "AggregateRating",
+    "reviewAspect": "credibility",
+    "reviewCount": 2,
+    "ratingCount": 2,
+    "ratingValue": 1.0,
+    "confidence": 1.0,
+    "ratingExplanation": "as it was published on site `www.factcheck.org`. Site `www.factcheck.org` seems *credible* based on 1 review(s) by external rater(s) ([NewsGuard](https://www.newsguardtech.com/))"
+  },
+  "reviewAspect": "credibility",
+  "isBasedOn": [
+    {
+      "@context": "http://coinform.eu",
+      "@type": "WebSiteCredReview",
+      "additionalType": [
+        "CredibilityReview",
+        "Review"
+      ],
+      "itemReviewed": {
+        "@type": "WebSite",
+        "url": "http://www.factcheck.org/",
+        "identifier": "http://www.factcheck.org/",
+        "name": "www.factcheck.org"
+      },
+      "text": "Site `www.factcheck.org` seems *credible* based on 1 review(s) by external rater(s) ([NewsGuard](https://www.newsguardtech.com/))",
+      "author": {
+        "@context": "http://coinform.eu",
+        "@type": "MisinfoMeSourceCredReviewer",
+        "softwareVersion": "2020-06-01T00:00:00Z",
+        "additionalType": [
+          "SoftwareApplication",
+          "Bot"
+        ],
+        "url": "https://socsem.kmi.open.ac.uk/misinfo",
+        "applicationSuite": "MisinfoMe",
+        "identifier": "ENpjnextxIgsfTMItEpusCGua7xG1IOJ_N1WybM-I-A"
+      },
+      "reviewRating": {
+        "@type": "AggregateRating",
+        "reviewAspect": "credibility",
+        "ratingValue": 1.0,
+        "confidence": 1.0,
+        "ratingExplanation": "based on 1 review(s) by external rater(s) ([NewsGuard](https://www.newsguardtech.com/))",
+        "reviewCount": 1,
+        "ratingCount": 1
+      },
+      "dateCreated": "2020-06-05T16:20:40.128966Z",
+      "reviewAspect": "credibility",
+      "isBasedOn": [],
+      "isBasedOn_assessments": [
+        {
+          "origin_id": "newsguard",
+          "origin": {
+            "id": "newsguard",
+            "origin_type": "realtime",
+            "weight": 10.0,
+            "homepage": "https://www.newsguardtech.com/",
+            "assessments_count": 811,
+            "name": "NewsGuard",
+            "description": "NewsGuard uses journalism to fight false news, misinformation, and disinformation. Our trained analysts, who are experienced journalists, research online news brands to help readers and viewers know which ones are trying to do legitimate journalism--and which are not.",
+            "logo": "https://logo.clearbit.com/newsguardtech.com"
+          },
+          "url": "https://api.newsguardtech.com/339DC2282534D09CB45329118704997A3664D573285736810086C70D62CA4A1DD8103C18927CE225BE8EF75B0EA19D311790C9CFBFFE1881",
+          "credibility": {
+            "value": 1.0,
+            "confidence": 1.0
+          },
+          "itemReviewed": "factcheck.org",
+          "original": {
+            "id": "6bd6f37c-0dde-469c-812b-c2f89ad7a1a9",
+            "identifier": "factcheck.org",
+            "parent": null,
+            "rank": "T",
+            "score": 100.0,
+            "topline": "A leading U.S. fact-checking organization that primarily vets the statements of politicians.",
+            "country": "US",
+            "language": "en",
+            "criteria": [
+              {
+                "title": "ownership",
+                "body": "Yes",
+                "order": 0
+              },
+              {
+                "title": "management",
+                "body": "Yes",
+                "order": 0
+              },
+              {
+                "title": "newsOpinion",
+                "body": "Yes",
+                "order": 0
+              },
+              {
+                "title": "falseContent",
+                "body": "Yes",
+                "order": 0
+              },
+              {
+                "title": "basicStandards",
+                "body": "Yes",
+                "order": 0
+              },
+              {
+                "title": "contentCreators",
+                "body": "Yes",
+                "order": 0
+              },
+              {
+                "title": "labelsAdvertising",
+                "body": "NA",
+                "order": 0
+              },
+              {
+                "title": "deceptiveHeadlines",
+                "body": "Yes",
+                "order": 0
+              },
+              {
+                "title": "accountabilityPractices",
+                "body": "Yes",
+                "order": 0
+              }
+            ],
+            "labelToken": "339DC2282534D09CB45329118704997A3664D573285736810086C70D62CA4A1DD8103C18927CE225BE8EF75B0EA19D311790C9CFBFFE1881",
+            "groupName": null,
+            "authorized": false,
+            "shieldAuthorized": false,
+            "locale": "en-US"
+          },
+          "domain": "factcheck.org",
+          "source": "factcheck.org",
+          "granularity": "source",
+          "weights": {
+            "origin_weight": 10,
+            "final_weight": 10.0
+          }
+        }
+      ],
+      "timings": {
+        "@context": "http://coinform.eu",
+        "@type": "Timing",
+        "phase": "misinfome_source_credibility",
+        "total_ms": 894,
+        "sub_timings": []
+      }
+    }
+  ],
+  "dateCreated": "2020-06-05T16:20:40.129361Z",
+  "author": {
+    "@context": "http://coinform.eu",
+    "@type": "DBSentCredReviewer",
+    "name": "ESI DB Sentence Credibility Reviewer",
+    "description": "Estimates the credibility of a sentence in the Co-inform DB based on known ClaimReviews or websites where the sentence has been published.",
+    "additionalType": [
+      "SoftwareApplication",
+      "Bot"
+    ],
+    "dateCreated": "2020-03-20T20:03:00Z",
+    "softwareVersion": "0.1.0",
+    "url": "http://coinform.eu/bot/DBSentCredReviewer/0.1.0",
+    "applicationSuite": "Co-inform",
+    "isBasedOn": [
+      {
+        "@context": "http://coinform.eu",
+        "@type": "MisinfoMeSourceCredReviewer",
+        "softwareVersion": "2020-06-01T00:00:00Z",
+        "additionalType": [
+          "SoftwareApplication",
+          "Bot"
+        ],
+        "url": "https://socsem.kmi.open.ac.uk/misinfo",
+        "applicationSuite": "MisinfoMe",
+        "identifier": "ENpjnextxIgsfTMItEpusCGua7xG1IOJ_N1WybM-I-A"
+      },
+      {
+        "@context": "http://coinform.eu",
+        "@type": "ClaimReviewNormalizer",
+        "name": "ESI ClaimReview Credibility Normalizer",
+        "description": "Analyses the alternateName and numerical rating value for a ClaimReview and tries to convert that into a normalised credibility rating",
+        "additionalType": [
+          "SoftwareApplication",
+          "Bot"
+        ],
+        "dateCreated": "2020-06-05T13:23:00Z",
+        "softwareVersion": "0.1.2",
+        "url": "http://coinform.eu/bot/ClaimReviewNormalizer/0.1.2",
+        "applicationSuite": "Co-inform",
+        "isBasedOn": [],
+        "launchConfiguration": {},
+        "identifier": "prPscc9yFIojD5acaKsLL96xzDasQWxGbHBeCyuD6SM"
+      }
+    ],
+    "launchConfiguration": {
+      "factchecker_website_to_qclaim_confidence_penalty_factor": 0.5,
+      "acred_factchecker_urls": []
+    },
+    "identifier": "ko2IDNhW7gsUmbpWYCGu7lsmZ7_kZTrxCJ4fs51tszA"
+  }
+}

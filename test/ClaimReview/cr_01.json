@@ -1,0 +1,169 @@
+{
+  "@context": {
+    "nif": "http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#",
+    "schema": "http://schema.org"
+  },
+  "@id": "http://data.gesis.org/claimskg/claim_review/31178566-4b31-547e-9a8c-ecabb502dc5d",
+  "@type": "schema:ClaimReview",
+  "author": {
+    "@type": "schema:Organization",
+    "url": "http://checkyourfact.com"
+  },
+  "claimReviewed": "‘We Are One Election Away From Open Borders, Socialism, Gun Confiscation’  Did Tim Allen Make This Statement?",
+  "datePublished": "2019-09-11",
+  "headline": "‘We Are One Election Away From Open Borders, Socialism, Gun Confiscation’  Did Tim Allen Make This Statement?",
+  "inLanguage": {
+    "@type": "schema:Language",
+    "alternateName": "en",
+    "name": "English"
+  },
+  "itemReviewed": {
+    "@id": "http://data.gesis.org/claimskg/creative_work/39945874-7f40-516f-91b9-6334bc2ff403",
+    "@type": "schema:CreativeWork",
+    "citation": [
+      "https://checkyourfact.com/2019/08/09/fact-check-did-steve-harvey-author-this-pro-trump-statement/?",
+      "https://natashanews18.blogspot.com/2019/05/trump-re-election-campaign.html?q%3D2020",
+      "https://twitter.com/search?q%3D%22%22interesting%20points%20to%20think%20about%20prior%20to%202020%22%22%20(from%3Aofctimallen)%26src%3Dtyped_query",
+      "https://twitter.com/tschakohl711?",
+      "https://www.facebook.com/ofctimallen/?",
+      "https://www.facebook.com/tim.allen.50552/posts/2405499676182316?",
+      "https://www.washingtonpost.com/news/arts-and-entertainment/wp/2017/03/18/for-tim-allen-being-a-non-liberal-in-hollywood-is-like-being-in-1930s-germany/?noredirect%3Don"
+    ],
+    "mentions": {
+      "@type": "nif:String",
+      "beginIndex": 74,
+      "endIndex": 83,
+      "isString": "Tim Allen"
+    },
+    "text": "‘We Are One Election Away From Open Borders, Socialism, Gun Confiscation’  Did Tim Allen Make This Statement?"
+  },
+  "mentions": [
+    {
+      "@type": "nif:String",
+      "beginIndex": 1904,
+      "endIndex": 1915,
+      "isString": "dailycaller"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 691,
+      "endIndex": 702,
+      "isString": "dailycaller"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 74,
+      "endIndex": 83,
+      "isString": "Tim Allen"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 1420,
+      "endIndex": 1443,
+      "isString": "never Trump Republicans"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 1509,
+      "endIndex": 1517,
+      "isString": "Facebook"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 1769,
+      "endIndex": 1781,
+      "isString": "Daily Caller"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 2102,
+      "endIndex": 2110,
+      "isString": "Facebook"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 2356,
+      "endIndex": 2364,
+      "isString": "facebook"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 168,
+      "endIndex": 176,
+      "isString": "facebook"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 1065,
+      "endIndex": 1073,
+      "isString": "Facebook"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 263,
+      "endIndex": 272,
+      "isString": "Tim Allen"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 879,
+      "endIndex": 890,
+      "isString": "Family Feud"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 924,
+      "endIndex": 932,
+      "isString": "Facebook"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 361,
+      "endIndex": 372,
+      "isString": "dailycaller"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 2440,
+      "endIndex": 2447,
+      "isString": "Twitter"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 453,
+      "endIndex": 462,
+      "isString": "Tim Allen"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 240,
+      "endIndex": 256,
+      "isString": "Home Improvement"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 1016,
+      "endIndex": 1028,
+      "isString": "Steve Harvey"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 715,
+      "endIndex": 731,
+      "isString": "Home Improvement"
+    },
+    {
+      "@type": "nif:String",
+      "beginIndex": 854,
+      "endIndex": 866,
+      "isString": "Steve Harvey"
+    }
+  ],
+  "reviewRating": {
+    "@type": "schema:Rating",
+    "alternateName": "OTHER",
+    "author": "http://data.gesis.org/claimskg/organization/claimskg",
+    "ratingValue": -1
+  },
+  "url": "https://checkyourfact.com/2019/09/11/fact-check-viral-tim-allen-statement-attacking-democrats/"
+}

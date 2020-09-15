@@ -1,0 +1,21 @@
+{
+  "@context": "http://schema.org",
+  "@type": "ClaimReview",
+  "author": {
+    "@type": "Organization",
+    "name": "Newtral",
+    "url": "https://www.newtral.es/"
+  },
+  "claimReviewed": "La Torre Eiffel se ilumina con la bandera de Colombia por el triunfo de Egan Bernal",
+  "datePublished": "2019-08-01",
+  "reviewRating": {
+    "@type": "Rating",
+    "alternateName": "Falso"
+  },
+  "sdPublisher": {
+    "@type": "Organization",
+    "name": "Google Fact Check Tools",
+    "url": "https://g.co/factchecktools"
+  },
+  "url": "https://www.newtral.es/la-torre-eiffel-no-se-ilumino-con-la-bandera-de-colombia-por-el-triunfo-de-egan-bernal/20190801/"
+}

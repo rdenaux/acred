@@ -1,0 +1,101 @@
+{
+    "similarity": 0.673899554137788,
+    "sentence": "That is why Brussels has now entered full crisis - where it is prepared for a British free withdrawal, according to sources of  The Guardian.",
+    "published_date": "2019-03-29T00:35:03.895Z",
+    "lang_orig": "en",
+    "domain_credibility": {
+        "timings": {
+            "total_ms": 0,
+            "sub_timings": [],
+            "phase": "misinfome_source_credibility",
+            "@type": "Timing",
+            "@context": "http://coinform.eu"
+        },
+        "itemReviewed": "www.aftonbladet.se",
+        "credibility": {
+            "value": 0.62,
+            "confidence": 0.39
+        },
+        "assessments": [
+            {
+                "weights": {
+                    "origin_weight": 5,
+                    "final_weight": 1.9500000000000002
+                },
+                "url": "https://www.mywot.com/en/scorecard/aftonbladet.se",
+                "source": "aftonbladet.se",
+                "original": {
+                    "target": "aftonbladet.se",
+                    "reputation_components": {
+                        "4": {
+                            "type": "Child safety",
+                            "reputation_value": 77,
+                            "reputation_scale": "Good",
+                            "confidence": 34
+                        },
+                        "2": {
+                            "type": "Deprecated",
+                            "reputation_value": 81,
+                            "reputation_scale": "Excellent",
+                            "confidence": 39
+                        },
+                        "1": {
+                            "type": "Deprecated",
+                            "reputation_value": 81,
+                            "reputation_scale": "Excellent",
+                            "confidence": 39
+                        },
+                        "0": {
+                            "type": "Trustworthiness",
+                            "reputation_value": 81,
+                            "reputation_scale": "Excellent",
+                            "confidence": 39
+                        }
+                    },
+                    "detail_page": "https://www.mywot.com/en/scorecard/aftonbladet.se",
+                    "categories": {
+                        "501": {
+                            "description": "Good site",
+                            "confidence": 56,
+                            "category_group": "Positive"
+                        },
+                        "303": {
+                            "description": "Opinions, religion, politics",
+                            "confidence": 37,
+                            "category_group": "Neutral"
+                        }
+                    },
+                    "blacklists": {
+                    }
+                },
+                "origin_id": "mywot",
+                "origin": {
+                    "weight": 5.0,
+                    "origin_type": "realtime",
+                    "name": "Web Of Trust",
+                    "logo": "https://www.mywot.com/images/logo.png",
+                    "id": "mywot",
+                    "homepage": "https://mywot.com/",
+                    "description": "Ever wondered how to check if a website is safe? Get the community to do the website security checks for you.",
+                    "assessments_count": 2313
+                },
+                "itemReviewed": "aftonbladet.se",
+                "granularity": "source",
+                "domain": "aftonbladet.se",
+                "credibility": {
+                    "value": 0.62,
+                    "confidence": 0.39
+                }
+            }
+        ],
+        "@type": "DomainCredibility",
+        "@context": "http://coinform.eu"
+    },
+    "domain": "www.aftonbladet.se",
+    "doc_url": "https://www.aftonbladet.se/nyheter/a/50pox1/eu-kraver-473-miljarder--for-att-fortsatta-forhandlingarna",
+    "coinform_collection": "pilot-se",
+    "claimspot_score": 0.3918012934669142,
+    "claimReview": null,
+    "@type": "SimilarSent",
+    "@context": "http://coinform.eu"
+}

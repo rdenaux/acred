@@ -1,0 +1,55 @@
+{
+  "@context": "http://coinform.eu",
+  "@type": "SentStanceReview",
+  "additionalType": [
+    "Review"
+  ],
+  "reviewAspect": "stance",
+  "itemReviewed": {
+    "@context": "http://coinform.eu",
+    "@type": "SentencePair",
+    "identifier": "p7bvzTwmsIEJ6R7WoxGTpA",
+    "additionalTypes": [
+      "ItemPair",
+      "CreativeWork"
+    ],
+    "description": "CreativeWork consisting of exactly two sentences",
+    "sentA": {
+      "@context": "http://coinform.eu",
+      "@type": "Sentence",
+      "identifier": "v2NOv6gP3TEoFnXk_eNTuA",
+      "text": "This is the query claim.",
+      "additionalTypes": [
+        "CreativeWork"
+      ],
+      "description": "A single sentence, possibly appearing in some larger document",
+      "appearance": []
+    },
+    "roleA": "querySentence",
+    "sentB": {
+      "@context": "http://coinform.eu",
+      "@type": "Sentence",
+      "identifier": "smEbBlsf8lFdocB3mcWEEw",
+      "text": "Said of the findings in a case against his charitable foundation: \"All they found was incredibly effective philanthropy and some small technical violations, such as not keeping board minutes.\"",
+      "additionalTypes": [
+        "CreativeWork"
+      ],
+      "description": "A single sentence, possibly appearing in some larger document",
+      "appearance": []
+    },
+    "roleB": "sentenceInDB",
+    "text": "Said of the findings in a case against his charitable foundation: \"All they found was incredibly effective philanthropy and some small technical violations, such as not keeping board minutes.\" This is the query claim."
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "reviewAspect": "stance",
+    "ratingValue": "unrelated",
+    "confidence": 0.9742276072502136,
+    "ratingExplanation": "Sentence `dbSent` **unrelated** `qSent`."
+  },
+  "dateCreated": "2020-03-29T16:07:35.490207Z",
+  "author": {
+    "@type": "SentStanceReviewer",
+    "sotwareVersion": "0.1.0"
+  }
+}
