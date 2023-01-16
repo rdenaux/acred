@@ -23,7 +23,11 @@ Implements a number of AI bots to automatically **review and explain** the credi
 
 ### Uncertain
 
-TODO
+> [the tweet](https://twitter.com/realDonaldTrump/status/936551346299338752) seems *uncertain* based on its least credible part: Sentence `The Kate Steinle killer came back and back over the weakly protected Obama border, always committing crimes and being violent, and yet this info was not used in court.` seems *uncertain* as it *agrees* with:
+>
+> * `Says Jacky&nbsp;Rosen 'voted against stopping criminals from re-entering the United States.'` that seems *uncertain* based on [fact-check](http://www.politifact.com/truth-o-meter/statements/2018/oct/02/senate-leadership-fund/gop-super-pac-ad-skips-over-jacky-rosens-yes-vote-/) by [politifact](http://www.politifact.com/) with textual claim-review rating 'mixture'
+
+Note that in this case, the retrieved evidence sentence is not really that good; the claim fact-checked is not the same being made in the tweet (although they are about the same general topic). A better match would have been [this other fact-check](https://www.politifact.com/article/2017/dec/18/Donald-Trumps-misleading-claims-in-Kate-Steinle/) also by PolitiFact, which we didn't have in our DB of evidences at the time.
 
 ## How does it work?
 
@@ -61,6 +65,8 @@ State-of-the-art performance sounds (and is) good, but you only need to play aro
 # Further details
 
 See our paper [Linked Credibility Reviews for Explainable Misinformation Detection](https://arxiv.org/abs/2008.12742) to appear at the [International Semantic Web Conference 2020](https://iswc2020.semanticweb.org/).
+
+You can also watch our [presentation on YouTube](https://youtu.be/NjHVbgOkKGc).
 
 
 
