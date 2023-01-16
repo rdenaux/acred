@@ -22,6 +22,8 @@ import pandas as pd
 import logging
 import sys
 import datetime
+from os.path import exists
+
 
 logger = logging.getLogger(__name__)
 
@@ -173,17 +175,22 @@ def try_write_review_to_outdir(review, doc, args):
         print('Failed to write %s %s' % (out_path, e))
 
 def review_article(ditem, args):
-    url = '%s/acred/api/v1/acred/reviewer/credibility/webpage' % args.acredapi_url
-    req = {
-        'webpages': [ditem]
-    }
-    resp = requests.post(url, verify=False, json=req)
-    resp.raise_for_status()
-    respd = resp.json()
-    assert type(respd) is list
-    assert len(respd) == 1  # single doc requested
-    review = respd[0]
-    try_write_review_to_outdir(review, ditem, args)
+    try:
+        url = '%s/acred/api/v1/acred/reviewer/credibility/webpage' % args.acredapi_url
+        req = {
+            'webpages': [ditem]
+        }
+        resp = requests.post(url, verify=False, json=req)
+        resp.raise_for_status()
+        respd = resp.json()
+        assert type(respd) is list
+        assert len(respd) == 1  # single doc requested
+        review = respd[0]
+        try_write_review_to_outdir(review, ditem, args)
+    except:
+        review = {
+                'item_id': ditem["id"], 'label': 'not_verifiable',
+                'explanation': 'Error from acred endpoint'}
     return review
 
 def acred_rating_as_acred_label(rating):
@@ -229,6 +236,17 @@ if __name__ == '__main__':
     print('base_dirs %s' % base_dirs)
     preds = []
     for item_id, json_path in gen_data_feature_files(base_dirs, args.data_feature):
+        if exists(f"{args.output_dir}{item_id}.json"):
+            print(f"Review for file with id {item_id} already exists")
+            with open(f"{args.output_dir}{item_id}.json", 'r', encoding='utf-8') as in_file:
+                review = json.load(in_file)
+                preds.append({
+                    'item_id': item_id,
+                    'label': acred_rating_as_fakeNewsNet_label(review['reviewRating']),
+                    'acred_label': acred_rating_as_acred_label(review['reviewRating']),
+                    'explanation': review['text']
+                })
+            continue
         if not os.path.exists(json_path):
             preds.append({
                 'item_id': item_id, 'label': 'not_verifiable',
@@ -242,12 +260,15 @@ if __name__ == '__main__':
             }
             review = review_article(in_doc, args)
             print('review keys', list(review.keys()))
-            preds.append({
-                'item_id': item_id,
-                'label': acred_rating_as_fakeNewsNet_label(review['reviewRating']),
-                'acred_label': acred_rating_as_acred_label(review['reviewRating']),
-                'explanation': review['text']
-            })
+            if review.get('reviewRating'):
+                preds.append({
+                    'item_id': item_id,
+                    'label': acred_rating_as_fakeNewsNet_label(review['reviewRating']),
+                    'acred_label': acred_rating_as_acred_label(review['reviewRating']),
+                    'explanation': review['text']
+                })
+            else:
+                preds.append(review)
             
     path = '%s/predictions.csv' % (args.output_dir)
     pd.DataFrame(preds).to_csv(path)

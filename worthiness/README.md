@@ -10,7 +10,7 @@ It is possible to run this service:
 # Make a request to the service
 To use this service make a POST request both with a string or a list of strings:
 ```
-curl -H "Content-Type: application/json" -X POST -d "{'sentences': 'Vaccines cause autism']}" http://host:port-mapped/worthinesschecker/predict_worthiness
+curl -H "Content-Type: application/json" -X POST -d "{'sentences': 'Vaccines cause autism'}" http://host:port-mapped/worthinesschecker/predict_worthiness
 ```
 ```
 curl -H "Content-Type: application/json" -X POST -d "{'sentences': ['Vaccines cause autism', 'I love beer and open source']}" http://host:port-mappe/worthinesschecker/predict_worthiness

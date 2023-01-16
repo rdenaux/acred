@@ -17,7 +17,6 @@ WORKDIR /opt/claimencoder
 # use pip to install all the requirements
 COPY requirements.txt ./
 COPY requirements-torch.txt ./
-COPY ./requirements/ ./requirements/
 
 RUN pip3 install --upgrade pip \
 &&  pip3 install -r requirements.txt \

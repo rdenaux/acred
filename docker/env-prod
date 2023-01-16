@@ -39,12 +39,12 @@ ACRED_acredapi_stance_pred_url=http://nginx-api:9080/claimneuralindex
 
 ACRED_claimneuralindex_semencoder_url=http://nginx-api:9080/claimencoder
 
-ACRED_claimneuralindex_claim_embeddings_path=/opt/model/claim-embeddings/claim_embs.tsv
-ACRED_claimencoder_semantic_encoder_dir=/opt/model/semantic_encoder/
+ACRED_claimneuralindex_claim_embeddings_path=/opt/data/model/claim-embeddings/claim_embs.tsv
+ACRED_claimencoder_semantic_encoder_dir=/opt/data/model/semantic_encoder/
 
-ACRED_stance_fnc1_model_path=/opt/model/stance/saved_fnc1_classifier_acc_0.92
+ACRED_stance_fnc1_model_path=/opt/data/model/stance/saved_fnc1_classifier_acc_0.92
 
-ACRED_worthinesschecker_check_worthiness_model_path=/opt/model/check_worthiness
+ACRED_worthinesschecker_check_worthiness_model_path=/opt/data/model/check_worthiness
 ACRED_worthinesschecker_clef_test_batch_size=64
 ACRED_worthinesschecker_clef_test_worth_samples=64
 

@@ -75,8 +75,7 @@ We'll use the official python scorer for Clef'18 Task 2, so we need to generate 
 
 ``` shell
 export CLEF18_TE_DIR=data/evaluation/clef18_fact_checking_lab_submissions_and_scores_and_combinations
-mkdir ${CLEF18_TE_DIR}/task2_submissions/acred/
-mkdir ${CLEF18_TE_DIR}/task2_submissions/acred/acred_task2_en 
+mkdir -p ${CLEF18_TE_DIR}/task2_submissions/acred/acred_task2_en 
 ```
 To generate the predictions, we provide `scripts/pred_clef2018.py` which reads the input files and sends them to an `acred` REST API. By default, we assume this is deployed on `localhost`, if this is not the case, please edit `scripts/pred_clef2018-config.json` to point to the correct ip and port. Then you can run the following command to generate the credibility reviews and Clef'18 label predictions (`TRUE`, `FALSE` or `HALF-TRUE`; this should take about 3 minutes, depending on your server hardware):
 
@@ -154,11 +153,23 @@ Scoring credibility accuracy of 248 coinform250 tweets
 First, you need to follow the instructions at the [FakeNewsNet GitHub repo](https://github.com/KaiDMML/FakeNewsNet) to download the data. Since the dataset published only contains the gold label and URLs of the articles, you need to run a script to crawl the URLs. In our ISWC evaluation we only used:
  * `news_source`: `politifact`
  * `label`: `fake` and `real`
- * `data_features_to_collect`: `news_articles** only
+ * `data_features_to_collect`: **news_articles** only
  
-**TODO**: provide instructions for running the prediction and scoring scripts for this dataset.
+You can directly generate the credibility reviews and label predictions by executing the following script:
+
+``` shell
+mkdir data/evaluation/fakeNewsnet_reviews
+python scripts/pred_fakeNewsNet.py -fakeNewsNetFolder data/evaluation/fakeNewsNet -output_dir data/evaluation/fakeNewsnet_reviews/ -acredapi_url https://ACREDAPI
+```
+
+Once this is finished, you should be able to execute the scoring script by executing:
+
+``` shell
+python scripts/score_fakeNewsNet.py -fakeNewsNetFolder data/evaluation/fakeNewsNet -predictions_csv data/evaluation/fakeNewsnet_reviews/predictions.csv
+```
+
 
 # Limitations
-Reproducibility limitation: some of code in the version of `acred` we used during experimentation relied on proprietary code from Expert System which had to be removed from the code released. This code is used during the analysis of long texts like articles, as it identifies sentences which may be claims based on its relevance to topics and the presence of named entities. We plan to replace this code with sentence detection via NLTK and a custom checkworthiness detection model. This should mainly affect results on `FakeNewsNet` (articles), but not `Clef'18` (claims) or `coinform250` (tweets, most of which do not contain links to other web pages**.
+Reproducibility limitation: some of code in the version of `acred` we used during experimentation relied on proprietary code from Expert System which had to be removed from the code released. This code is used during the analysis of long texts like articles, as it identifies sentences which may be claims based on its relevance to topics and the presence of named entities. We plan to replace this code with sentence detection via NLTK and a custom checkworthiness detection model. This should mainly affect results on `FakeNewsNet` (articles), but not `Clef'18` (claims) or `coinform250` (tweets, most of which do not contain links to other web pages).
 
 

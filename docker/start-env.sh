@@ -17,15 +17,15 @@ fi
 export ACRED_docker_env=.env
 export ACRED_docker_logdir=./log/
 
-export DL_MODEL=data/model
-export DATA=data
+export DATA=./data
+export DL_MODEL=${DATA}/model
 
-export COINFOAPY_docker_acred_data_dir=${DATA}/
+export ACRED_docker_acred_data_dir=${DATA}/
 
 if [ -d ${DL_MODEL}/semantic_encoder ] && [ -L ${DL_MODEL}/claim-embeddings ] && [ -L ${DL_MODEL}/check_worthiness ];
 then
     echo "Linking to models in prod environment"
-    export ACRED_docker_model_dir=${DL_MODEL}/
+    export ACRED_docker_acred_model_dir=${DL_MODEL}/
 else
     echo "*** Could not find expected models in ${DL_MODEL}"
 fi

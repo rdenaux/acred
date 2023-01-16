@@ -73,6 +73,7 @@ if __name__ == '__main__':
     print('\trecall:    %.4f' % (metrics.recall_score(goldls, predls, average='macro', zero_division=0)))
 
     pred_valid_df = pred_df[pred_df['explanation'] != 'Missing FakeNewsNet input json']
+    pred_valid_df = pred_valid_df[pred_valid_df['explanation'] != 'Error from acred endpoint']
     print('pred based on data rows %s' % (pred_valid_df.shape[0]))
     merged_valid_df = pred_valid_df.merge(gold_df, on='item_id', suffixes=['_acred','_gold'])
     print('merged valid based on data rows %s' % (merged_valid_df.shape[0]))
@@ -83,6 +84,13 @@ if __name__ == '__main__':
     print('\tf1_macro:  %.4f' % (metrics.f1_score(goldls, predls, average='macro')))
     print('\tprecision: %.4f' % (metrics.precision_score(goldls, predls, average='macro', zero_division=0)))
     print('\trecall:    %.4f' % (metrics.recall_score(goldls, predls, average='macro', zero_division=0)))
+    print('\tconfusion_matrix:\n', metrics.confusion_matrix(goldls, predls))
+    from collections import Counter
+    print(sorted(Counter(goldls).items()))
+    print(sorted(Counter(predls).items()))
+    # print(merged_valid_df['acred_label'].value_counts())
+    # print(merged_valid_df['label_acred'].value_counts())
+    # print(merged_valid_df['label_gold'].value_counts())
 
     
     
