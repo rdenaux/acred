@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 
 logger = logging.getLogger(__name__)
 
-claim_embeddings = '/opt/model/claim-embeddings/claim_embs.tsv'
+claim_embeddings = '/opt/data/model/claim-embeddings/claim_embs.tsv'
 
 def normalize(vectors, norm='l2'):
     if len(vectors.shape) == 2:

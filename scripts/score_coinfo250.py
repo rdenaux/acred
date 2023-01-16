@@ -18,6 +18,7 @@ import os
 import os.path as osp
 import pandas as pd
 import sklearn.metrics as metrics
+from collections import Counter
 
 
 if __name__ == '__main__':
@@ -56,7 +57,9 @@ if __name__ == '__main__':
     print('\taccuracy:  %.4f' % (metrics.accuracy_score(goldl, predl)))
     print('\tf1_macro:  %.4f' % (metrics.f1_score(goldl, predl, average='macro')))
     print('\tprecision: %.4f' % (metrics.precision_score(goldl, predl, average='macro', zero_division=0)))
-    print('\trecall:    %.4f' % (metrics.recall_score(goldl, predl, average='macro')))
+    print('\trecall:    %.4f' % (metrics.recall_score(goldl, predl, average='macro', zero_division=0)))
+    print('\tconfusion_matrix:\n', metrics.confusion_matrix(goldl, predl))
+    print(sorted(Counter(goldl).items()))
+    print(sorted(Counter(predl).items()))
 
     print('Finished in %.3fs' % (time.time() - all_start))
-

@@ -1,4 +1,4 @@
-FROM conda/miniconda3
+FROM continuumio/miniconda3
 MAINTAINER Ronald Denaux <rdenaux@expertsystem.com>
 COPY docker/timezone /etc/timezone
 RUN dpkg-reconfigure -f noninteractive tzdata
@@ -15,14 +15,13 @@ ENV PATH="/opt/claimneuralindex:${PATH}"
 WORKDIR /opt/claimneuralindex
 
 RUN conda update -n base -c defaults conda \
-    && conda install faiss-cpu -c pytorch \
+    && conda install -c pytorch faiss-cpu \
     && conda install -c conda-forge uwsgi \
     && conda install -c anaconda pip    
 
 # use pip to install the other claimneuralindex requirements
 COPY claimneuralindex/requirements-claimneuralindex.txt ./
 COPY requirements-torch.txt ./
-COPY ./requirements/ ./requirements/
 
 RUN pip install -r requirements-torch.txt -f https://download.pytorch.org/whl/torch_stable.html \
  && pip install -r requirements-claimneuralindex.txt

@@ -18,9 +18,25 @@ import requests
 import json
 import pandas as pd
 import logging
-from esiutils import dictu
 
 logger = logging.getLogger(__name__)
+
+
+def get_in(dct, path, default_val=None):
+    """Gets a nested value in a dict by following the path
+
+    :param dct: a python dictionary
+    :param path: a list of keys pointing to a node in dct
+    :returns: the value at the specified path
+    :rtype: any
+    """
+    if dct is None:
+        return default_val
+    assert len(path) > 0
+    next_dct = dct.get(path[0], None)
+    if len(path) == 1:
+        return next_dct
+    return get_in(next_dct, path[1:], default_val=default_val)
 
 
 def read_all_factuality_claims(folder):
@@ -108,7 +124,7 @@ if __name__ == '__main__':
             resp = requests.get(url, verify=False)
             resp.raise_for_status()
             claimcreds = resp.json()
-            credRating = dictu.get_in(claimcreds[0], cred_path)
+            credRating = get_in(claimcreds[0], cred_path)
             clef_pred.append({
                 'id': cid,
                 'label': acred_as_clef_label(

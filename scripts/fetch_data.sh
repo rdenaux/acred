@@ -26,7 +26,7 @@ fi
 mkdir data
 echo "Fetching DB of claims"
 wget -O data/claims-from-ClaimReviews-45K.csv https://zenodo.org/record/4030305/files/claims-from-ClaimReviews-45K.csv?download=1
-wget -O data/sentences-extratedFrom-Articles-40K.csv https://zenodo.org/record/4030305/files/sentences-extractedFrom-Articles-40K.csv?download=1
+wget -O data/sentences-extractedFrom-Articles-40K.csv https://zenodo.org/record/4030305/files/sentences-extractedFrom-Articles-40K.csv?download=1
 wget -O data/claimReviews-pruned-45K.jsonl https://zenodo.org/record/4030305/files/claimReviews-pruned-45K.jsonl?download=1
 
 mkdir data/model
@@ -46,9 +46,11 @@ tar -xzf data/model/saved_fnc1_classifier_acc_0.92.tar.gz -C data/model/stance
 echo "Fetching checkworthiness model"
 wget -O data/model/check_worthiness_acc_0.95.zip https://zenodo.org/record/4030305/files/check_worthiness_acc_0.95.zip?download=1
 unzip data/model/check_worthiness_acc_0.95.zip -d data/model/
-ln -s data/model/check_worthiness_acc_0.95 data/model/check_worthiness 
+ln -sr data/model/check_worthiness_acc_0.95 data/model/check_worthiness 
 
 echo "Fetching embeddings for sentences in DB "
 wget -O data/model/claim_dev_embs_85K_20200426.tar.gz https://zenodo.org/record/4030305/files/claim_dev_embs_85K_20200426.tar.gz?download=1
 tar -zxf data/model/claim_dev_embs_85K_20200426.tar.gz -C data/model/
-ln -s data/model/claim_dev_embs_85K_20200426 data/model/claim-embeddings 
+ln -sr data/model/claim_dev_embs_85K_20200426 data/model/claim-embeddings
+
+cp data/fnc1-classifier.json data/model/stance/saved_fnc1_classifier_acc_0.92

@@ -35,7 +35,7 @@ services:
     command: su -c '/usr/local/bin/uwsgi --ini /opt/acred/wsgi-acred-api.ini' acred
     volumes:
      - ${ACRED_docker_logdir}:/var/log/acred
-     - ${ACRED_docker_acred_model_dir}:/opt/model/
+     - ${ACRED_docker_acred_model_dir}:/opt/data/model/
      - ${ACRED_docker_acred_data_dir}:/opt/data/     
     depends_on:
      - claimneuralindex
@@ -49,10 +49,10 @@ services:
       dockerfile: docker/Dockerfile-claimneuralindex
     expose:
       - "9001"
-    command: su -c '/usr/local/bin/uwsgi --ini /opt/claimneuralindex/wsgi-claimneuralindex-api.ini' acred
+    command: su -c '/opt/conda/bin/uwsgi --ini /opt/claimneuralindex/wsgi-claimneuralindex-api.ini' acred
     volumes:
      - ${ACRED_docker_logdir}:/var/log/claimneuralindex
-     - ${ACRED_docker_acred_model_dir}:/opt/model/
+     - ${ACRED_docker_acred_model_dir}:/opt/data/model/
     depends_on:
      - claimencoder
 
@@ -67,7 +67,7 @@ services:
     command: su -c '/usr/local/bin/uwsgi --ini /opt/claimencoder/wsgi-claimencoder-api.ini' acred
     volumes:
      - ${ACRED_docker_logdir}:/var/log/claimencoder
-     - ${ACRED_docker_acred_model_dir}:/opt/model/
+     - ${ACRED_docker_acred_model_dir}:/opt/data/model/
 
   worthinesschecker:
     image: acred/worthinesschecker
@@ -80,4 +80,4 @@ services:
     command: su -c '/usr/local/bin/uwsgi --ini /opt/worthinesschecker/wsgi-worthinesschecker-api.ini' acred
     volumes:
       - ${ACRED_docker_logdir}:/var/log/worthinesschecker
-      - ${ACRED_docker_acred_model_dir}:/opt/model/
+      - ${ACRED_docker_acred_model_dir}:/opt/data/model/

@@ -56,7 +56,7 @@
       "executionEnvironment": {},
       "launchConfiguration": {
         "class": "RoBERTa_Finetuned_Encoder",
-        "model_name_or_path": "/opt/model/semantic_encoder/",
+        "model_name_or_path": "/opt/data/model/semantic_encoder/",
         "pooling_strategy": "pooled",
         "powerfun_k": 8,
         "powerfun_min_val": 0.85,

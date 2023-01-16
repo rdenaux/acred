@@ -1,0 +1,1 @@
+{"class": "RoBERTa", "batch_size": 64, "finetuned_from_layer": 8, "train_val_result": {"loss": 0.28, "metrics": {"acc": 0.923, "f1_weighted": 0.9186, "n": 25413}}, "stance2i": {"agree": 1, "disagree": 2, "discuss": 3, "unrelated": 0}, "seq_len": 128}

@@ -41,7 +41,7 @@ def acred_as_coinfo_label(credreview, thresh=0.4):
     if val >= -0.25:
         return 'credible_uncertain'
     if val >= -0.5:
-        return 'credible_uncertain'
+        return 'mostly_not_credible'
     return 'not_credible'
 
 
@@ -74,7 +74,7 @@ def exec_req(i, req, args):
     return result
 
 
-def as_acred_requests(tweets, batchSize=5):
+def as_acred_requests(tweets, batchSize=1):
     batch = []
     for i, t in enumerate(tweets):
         batch.append({
@@ -101,7 +101,7 @@ if __name__ == '__main__':
         help='Path to the coinform250.json file',
         required=True)
     parser.add_argument(
-        '-batchSize', type=int, default=5,
+        '-batchSize', type=int, default=1,
         help='Number of tweets to send per request to acred endpoint')
     parser.add_argument(
         '-outDir',
